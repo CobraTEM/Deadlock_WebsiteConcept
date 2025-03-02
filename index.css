@@ -1,0 +1,91 @@
+body {
+    background-color: #283c84;
+    }
+@font-face {
+        font-family: Roboto;
+        src: url(font/Roboto_SemiCondensed-Regular.ttf);
+    }
+.line {
+    display: block;
+    border-left: 4px;
+    width: 85%;
+    margin-left: 5px;
+    background: #ffffff;
+    height: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.SabaLogo {
+    display: block;
+    margin-left: 50px;
+    margin-right: auto;
+    width: 25%;
+    padding-bottom: 25px;
+    padding-top: 5px;
+  }
+
+  .container td, th {
+    width: auto;
+    font-family: Roboto;
+    
+}
+.responsive-table {
+  width: 70%;
+  margin-bottom: 1em;
+  background-color: white;
+  font-family: Roboto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+
+  th {
+    position: relative;
+    background-color: #ff6404;
+      border: 2px solid white;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+
+td {
+  background-color: #189cd4;
+  border: 2px solid white;
+  text-align: left;
+  color: white;
+  position: relative;
+  font-weight: bold;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+
+ul {
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 0px;
+  list-style-type: none;
+  width: 200px;
+  background-color: #f1f1f1;
+  font-family: Roboto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+li a.active {
+  background-color: #ff6404;
+  color: white;
+  font-family: Roboto;
+}
+
+li a:hover:not(.active) {
+  background-color: #189cd4;
+  color: white;
+  font-family: Roboto;
+}
