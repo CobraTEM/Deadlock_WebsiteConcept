@@ -3,4 +3,4 @@
 
 ## Screenshots of the Site (WIP)
 
-![alt text](/main/.markdowncontent/TEMP_sabamanual.png"Screenshot")
+![screenshot](/main/.markdowncontent/TEMP_sabamanual.png)
