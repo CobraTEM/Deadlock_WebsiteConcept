@@ -29,6 +29,11 @@ body {
     padding-top: 5px;
   }
 
+  .framedl {
+    font-size: 70px;
+    margin-left: -50px;
+    margin-top: 100px;
+  }
   .buttondll {
     display: block;
     margin-left: 10px;
