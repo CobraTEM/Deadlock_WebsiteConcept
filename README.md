@@ -3,4 +3,4 @@
 
 ## Screenshots of the Site (WIP)
 
-![screenshot](/.markdowncontent/TEMP_sabamanual.png)
+![screenshot](/.markdowncontent/TEMP_Deadlockscreenshot.png)
