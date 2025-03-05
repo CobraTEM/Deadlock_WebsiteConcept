@@ -7,9 +7,10 @@
          <meta charset="utf-8">
     </head>
 <body>
-  <audio id="song" autoplay loop>
-    <source src="audio/music_teleporter_01.mp3" type="audio/mp3">
-</audio>
+  <script>
+    var audio = new Audio('audio/Deadlock_Main_Theme.mp3');
+    audio.play();
+  </script>
   <div id="menu" class="menuwrapper"> 
     <picture>
         <source srcset="images/DeadlockLogo.png">
@@ -73,9 +74,6 @@
     <br>
     <br>
     <br>
-    <script>
-      window.addEventListener('click', () => { document.getElementById("song").play(); });
-    </script>
 </body>
 
 </html>
