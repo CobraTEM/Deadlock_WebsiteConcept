@@ -69,6 +69,68 @@ body {
   color: white;
 }
 
+.textbox {
+  font-family: ForevsMedium;
+}
+
+.parallax {
+  background: url("images/bg_alley.png") repeat fixed 100%;
+}
+
+.container td, th {
+  width: auto;
+  font-family: ForevsBold;
+}
+
+.responsive-table {
+  width: 70%;
+  margin-left: 25px;
+  border-radius: 25px;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+  font-family: ForevsBold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.responsive-table th {
+    background-color: #ff6404;
+    padding: 5px;
+    border-bottom: 2px solid #ffffff;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.responsive-table tr:nth-child(even) {
+      background-color: #189cd4;
+    }
+
+    .responsive-table tr:nth-child(odd) {
+      background-color: #303494;
+    }
+
+.responsive-table td {
+  text-align: left;
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.responsive-table th:first-of-type {
+  border-top-left-radius: 10px;
+}
+.responsive-table th:last-of-type {
+  border-top-right-radius: 10px;
+}
+.responsive-table tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+.responsive-table tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+
+
+
 .navmenu ul {
   border-radius: 2px;
   margin-left: 200px;
@@ -93,8 +155,6 @@ body {
   text-decoration: none;
   text-align: center;
   font-family: ForevsBold;
-  transition-property: background-color;
-  transition-duration: 0.5s;
 }
 
 .navmenu li a.active {
@@ -106,58 +166,5 @@ body {
 .navmenu li a:hover:not(.active) {
   background-color: #1f1f21;
   color: #ffefd7;
-  font-family: ForevsBold;
-}
-
-.main_footer {
-  margin: -1%;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 100px;
-  background: rgba(0, 0, 0, 0.9);
-  box-sizing: border-box;
-}
-
-.gallery {
-  display: block;
-  margin-top: 125px;
-  margin-right: 250px;
-  float: right;
-}
-
-.forumanddiscordlist li {
-  font-family: ForevsBold;
-  float: center;
-}
-
-.forumanddiscordlist li {
-  font-family: ForevsBold;
-  float: center;
-}
-
-.forumanddiscordlist ul {
-  padding: 0px;
-  width: 550px;
-  list-style-type: none;
-  font-family: ForevsBold;
-  font-size: 50px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-.forumanddiscordlist li a {
-  display: block;
-  margin-top: 40px;
-  color: #ffefd7;
-  padding: 20px 56px;
-  text-decoration: none;
-  text-align: center;
-  font-family: ForevsBold;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-}
-
-.forumanddiscordlist li a:hover {
-  color: #c5ff48;
   font-family: ForevsBold;
 }
