@@ -1,20 +1,22 @@
 body {
-    background-color: #283c84;
+  background: url("images/bg_alley.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
     }
 @font-face {
         font-family: Roboto;
         src: url(font/Roboto_SemiCondensed-Regular.ttf);
-    }
-.line {
-    display: block;
-    border-left: 4px;
-    width: 85%;
-    margin-left: 5px;
-    background: #ffffff;
-    height: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
-.SabaLogo {
+@font-face {
+        font-family: ForevsBold;
+        src: url(font/forevsdemo-bold.ttf);
+}
+@font-face {
+  font-family: ForevsMedium;
+  src: url(forevsdemo-medium.otf);
+}
+.DLLogo {
     display: block;
     margin-left: 50px;
     margin-right: auto;
@@ -23,69 +25,114 @@ body {
     padding-top: 5px;
   }
 
-  .container td, th {
-    width: auto;
-    font-family: Roboto;
-    
+.blackbox {
+  margin: 30px;
+  background-color: #0000;
+  border: 1px solid black;
+  opacity: 0.6;
 }
+
+.blackbox h1 {
+  font-family: ForevsBold;
+  margin-left: 50px;
+  margin-right: auto;
+  color: white;
+}
+
+.textbox {
+  font-family: ForevsMedium;
+}
+
+.parallax {
+  background: url("images/bg_alley.png") repeat fixed 100%;
+}
+
+.container td, th {
+  width: auto;
+  font-family: ForevsBold;
+}
+
 .responsive-table {
   width: 70%;
+  margin-left: 25px;
+  border-radius: 25px;
   margin-bottom: 1em;
-  background-color: white;
-  font-family: Roboto;
+  border-collapse: collapse;
+  font-family: ForevsBold;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-  }
+}
 
-  th {
-    position: relative;
+.responsive-table th {
     background-color: #ff6404;
-      border: 2px solid white;
-      font-weight: bold;
-      text-align: center;
-      color: white;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    padding: 5px;
+    border-bottom: 2px solid #ffffff;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.responsive-table tr:nth-child(even) {
+      background-color: #189cd4;
     }
 
-td {
-  background-color: #189cd4;
-  border: 2px solid white;
+    .responsive-table tr:nth-child(odd) {
+      background-color: #303494;
+    }
+
+.responsive-table td {
   text-align: left;
   color: white;
-  position: relative;
   font-weight: bold;
-  padding: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  padding: 4px;
+}
+
+.responsive-table th:first-of-type {
+  border-top-left-radius: 10px;
+}
+.responsive-table th:last-of-type {
+  border-top-right-radius: 10px;
+}
+.responsive-table tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+.responsive-table tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
 }
 
 
 
-ul {
-  margin-top: 10px;
-  margin-left: 5px;
+.navmenu ul {
+  margin-left: 25px;
+  margin-right: 25px;
   padding: 0px;
   list-style-type: none;
-  width: 200px;
   background-color: #f1f1f1;
-  font-family: Roboto;
+  font-family: ForevsBold;
+  overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
-li a {
+.navmenu li {
+  float: left;
+}
+
+.navmenu li a {
   display: block;
   color: #000;
-  padding: 8px 16px;
+  padding: 14px 16px;
   text-decoration: none;
-  font-family: Roboto;
+  text-align: center;
+  font-family: ForevsBold;
 }
 
-li a.active {
-  background-color: #ff6404;
-  color: white;
-  font-family: Roboto;
+.navmenu li a.active {
+  background-color: #ffefd7;
+  color: black;
+  font-family: ForevsBold;
 }
 
-li a:hover:not(.active) {
-  background-color: #189cd4;
-  color: white;
-  font-family: Roboto;
+.navmenu li a:hover:not(.active) {
+  background-color: #988e80;
+  color: black;
+  font-family: ForevsBold;
 }

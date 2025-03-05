@@ -1,5 +1,5 @@
-# SABA_helpmanual
- A help manual for students at SABA. Private only.
+# Deadlock Website Concept
+ Fun side project making a Deadlock site. Private only.
 
 ## Screenshots of the Site (WIP)
 
