@@ -89,10 +89,11 @@ body {
 .navmenu li a {
   display: block;
   color: #1f1f21;
-  padding: 20px 26px;
+  padding: 30px 36px;
   text-decoration: none;
   text-align: center;
   font-family: ForevsBold;
+  font-size: 25px;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
