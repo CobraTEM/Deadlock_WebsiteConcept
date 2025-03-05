@@ -110,6 +110,35 @@ body {
   font-family: ForevsBold;
 }
 
+.first-heading-upt {
+  font-size: 40px;
+  font-family: ForevsBold;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-top: 50px;
+  text-align: left;
+  display: block;
+  color: white;
+}
+
+div.updates {
+  width: 35%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  border-radius: 0px 30px 30px 0px;
+}
+
+div.container {
+  text-align: center;
+  font-family: ForevsBold;
+  padding: 10px 20px;
+}
+
 .main_footer {
   margin: -1%;
   padding-left: 0px;
