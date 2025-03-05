@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
          <title>Deadlock - Home</title>
          <link rel="stylesheet" href="index.css">
          <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+         <meta charset="utf-8">
     </head>
 <body>
+  <audio id="song" autoplay loop>
+    <source src="audio/music_teleporter_01.mp3" type="audio/mp3">
+</audio>
   <div id="menu" class="menuwrapper"> 
     <picture>
         <source srcset="images/DeadlockLogo.png">
-        <a href="index.html">
+        <a class="buttondll" href="index.html">
         <img src="images/DeadlockLogo.png" class="DLLogo" id="Home" alt="Deadlock Logo">
         </a>
     </picture>
@@ -31,86 +35,16 @@
     <br>
     <br>
     <br>
-    <section class="Home">
+    <section>
+      <div class="Home">
       <div class="first-heading">
-        <div class="blackbox">
-          <h1><span class="first-heading-mw">What is Deadlock?</span></h1>
-        </div>
+          <h1>What is Deadlock?</h1>
       </div>
+      <div class="text">
+       <p>Deadlock is an upcoming team-based multiplayer third-person shooter MOBA game developed and published by Valve. Since April 2024, Deadlock has been in early development playtesting. </p>
+    </div>
+       </div>
     </section>
-    <!--<div id="Hours" class="container">
-        <table class="responsive-table">
-            <tr>
-                <th><a scope="col"class="week">Понеделник</a></th>
-                <th><a scope="col"class="week">Вторник</a></th>
-                <th><a scope="col"class="week">Среда</a></th>
-                <th><a scope="col"class="week">Четврток</a></th>
-                <th><a scope="col"class="week">Петок</a></th>
-            </tr>
-            <tr>
-              <td><a scope="row"class="day"></a></td>
-              <td><a scope="row"class="day">Англиски Јазик</a></td>
-              <td><a scope="row"class="day">Македонски Јазик</a></td>
-              <td><a scope="row"class="day"></a></td>
-              <td><a scope="row"class="day"></a></td>
-            </tr>
-            <tr>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Англиски Јазик</a></td>
-                <td><a scope="row"class="day">Македонски Јазик</a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day"></a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Математика</a></td>
-                <td><a scope="row"class="day">Web Design</a></td>
-                <td><a scope="row"class="day">Пракса</a></td>
-                <td><a scope="row"class="day">Македонски Јазик</a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Математика</a></td>
-                <td><a scope="row"class="day">Web Design</a></td>
-                <td><a scope="row"class="day">Пракса</a></td>
-                <td><a scope="row"class="day">Македонски Јазик</a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day">Англиски Јазик</a></td>
-                <td><a scope="row"class="day">Web Design</a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Adobe Illustrator</a></td>
-                <td><a scope="row"class="day">Македонски Јазик</a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day">Англиски Јазик</a></td>
-                <td><a scope="row"class="day">Web Design</a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Adobe Illustrator</a></td>
-                <td><a scope="row"class="day">Математика</a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day">Интернет</a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Интернет</a></td>
-                <td><a scope="row"class="day">Adobe Illustrator</a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day">Интернет</a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Интернет</a></td>
-                <td><a scope="row"class="day">Adobe Illustrator</a></td>
-              </tr>
-              <tr>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day"></a></td>
-                <td><a scope="row"class="day">Англиски Јазик</a></td>
-                <td><a scope="row"class="day"></a></td>
-              </tr>
-          </table> -->
     </div>
     <br>
     <br>
@@ -135,5 +69,8 @@
     <br>
     <br>
     <br>
+    <script>
+      window.addEventListener('click', () => { document.getElementById("song").play(); });
+    </script>
 </body>
 </html>

@@ -14,28 +14,52 @@ body {
 }
 @font-face {
   font-family: ForevsMedium;
-  src: url(forevsdemo-medium.otf);
+  src: url(font/forevsdemo-medium.ttf);
+}
+@font-face {
+  font-family: ForevsBoldItalic;
+  src: url(font/forevsdemo-bolditalic.ttf);
 }
 .DLLogo {
     display: block;
     margin-left: 50px;
-    margin-right: auto;
+    margin-right: 5px;
     width: 25%;
     padding-bottom: 25px;
     padding-top: 5px;
   }
 
-.blackbox {
+  .buttondll {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+.Home {
   margin: 30px;
-  background-color: #0000;
-  border: 1px solid black;
-  opacity: 0.6;
+  border-radius: 5px;
+  padding: 100px;
+  background: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
 }
 
-.blackbox h1 {
+.Home h1 {
+  font-size: 70px;
   font-family: ForevsBold;
-  margin-left: 50px;
-  margin-right: auto;
+  font-weight: bold;
+  margin-left: -50px;
+  margin-top: 50px;
+  text-align: left;
+  display: block;
+  color: white;
+}
+
+.Home p {
+  font-size: 20px;
+  font-family: ForevsMedium;
+  margin-left: -50px;
+  text-align: left;
+  display: block;
   color: white;
 }
 
@@ -102,8 +126,9 @@ body {
 
 
 .navmenu ul {
-  margin-left: 25px;
-  margin-right: 25px;
+  border-radius: 2px;
+  margin-left: 200px;
+  margin-right: 200px;
   padding: 0px;
   list-style-type: none;
   background-color: #f1f1f1;
@@ -118,8 +143,8 @@ body {
 
 .navmenu li a {
   display: block;
-  color: #000;
-  padding: 14px 16px;
+  color: #1f1f21;
+  padding: 20px 26px;
   text-decoration: none;
   text-align: center;
   font-family: ForevsBold;
@@ -127,12 +152,12 @@ body {
 
 .navmenu li a.active {
   background-color: #ffefd7;
-  color: black;
+  color: #1f1f21;
   font-family: ForevsBold;
 }
 
 .navmenu li a:hover:not(.active) {
-  background-color: #988e80;
-  color: black;
+  background-color: #1f1f21;
+  color: #ffefd7;
   font-family: ForevsBold;
 }
