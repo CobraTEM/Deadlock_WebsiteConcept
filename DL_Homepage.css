@@ -121,7 +121,7 @@ body {
   margin-bottom: 100px;
   margin-left: 50px;
   display: flex;
-  gap: 40px;
+  gap: 80px;
   overflow-x: auto;
 }
 .updates a img {
@@ -131,7 +131,7 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 .playerimage {
-  width: 100%;
+  width: 110%;
   position: relative;
   height: auto;
   display: inline-block;
