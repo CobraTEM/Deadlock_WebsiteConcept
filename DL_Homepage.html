@@ -9,32 +9,44 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <title>Deadlock - Home</title>
          <link rel="stylesheet" href="DL_Homepage.css">
+         <link href="css/bootstrap.min.css" rel="stylesheet">
          <link rel="icon" type="image/x-icon" href="images/favicon.ico">
          <meta charset="utf-8">
+         <meta name="description" content="Deadlock Home Page" />
     </head>
 <body>
-  <script>
-    var audio = new Audio('audio/Deadlock_Main_Theme.mp3');
-    audio.play();
-  </script>
-  <div id="menu" class="menuwrapper"> 
-    <picture>
-        <source srcset="images/DeadlockLogo.png">
-        <a class="buttondll" href="DL_Homepage.html">
-        <img src="images/DeadlockLogo.png" class="DLLogo" id="Home" alt="Deadlock Logo">
-        </a>
-    </picture>
-    <div id="navmenu" class="navmenu"> 
-    <ul>
-        <li><a class="active" href="DL_Homepage.html">Home</a></li>
-        <li><a href="DL_Heroes.html">Heroes</a></li>
-        <li><a href="DL_Items.html">Items</a></li>
-        <li><a href="DL_Mechanics.html">Mechanics</a></li>
-        <li><a href="DL_Lore.html">Lore</a></li>
-        <li><a href="DL_Updates.html">Updates</a></li>
-      </ul>
-    </div>
-    </div>
+  <header class="header-main">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" class="pull-left" href="DL_Homepage.html"><img class="mainlogo" src="images/logo/deadlocklogo_v2.png"></a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navmenu-container">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="DL_Homepage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Heroes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Items</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Lore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mechanics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Updates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Mechanics</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
     <br>
     <br>
     <br>
@@ -64,12 +76,15 @@
     <br>
     <br>
     <section>
-      <div class="first-heading-upt">
-          <h1>Recent Updates and Announcements</h1>
+      <div>
+          <h1 class="first-heading-upt">Recent Updates and Announcements</h1>
       </div>
-      <div class="updates">
+      <div class="updates-image-container">
         <a target="_blank" href="https://store.steampowered.com/news/app/1422450/view/530965072572320687?l=english"><img src="images/updates/updateboardlatest1.png" alt="Map Rework Update" class="playerimage"></a>
-        <a target="_blank" href="https://store.steampowered.com/news/app/1422450/view/786541361952194832?l=english"><img src="images/updates/updateboardlatest2.png" alt="Holliday, Vyper, Calico, and The Magnificent Sinclair" class="playerimage"></a>
+        <a target="_blank" href="https://forums.playdeadlock.com/threads/02-11-2025-update.55677/"><img src="images/updates/updateboardlatest2.png" alt="Holliday, Vyper, Calico, and The Magnificent Sinclair: Balance Patch" class="playerimage"></a>
+        <a target="_blank" href="https://forums.playdeadlock.com/threads/01-27-2025-update.54590/"><img src="images/updates/updateboardlatest3.png" alt="Holliday, Vyper, Calico, and The Magnificent Sinclair: Balance Patch" class="playerimage"></a>
+        <a target="_blank" href="https://forums.playdeadlock.com/threads/01-19-2025-update.53961/"><img src="images/updates/updateboardlatest4.png" alt="Holliday, Vyper, Calico, and The Magnificent Sinclair: Balance Patch" class="playerimage"></a>
+        <a target="_blank" href="https://store.steampowered.com/news/app/1422450/view/786541361952194832?l=english"><img src="images/updates/updateboardlatest5.png" alt="Holliday, Vyper, Calico, and The Magnificent Sinclair" class="playerimage"></a>
       </div>
       </section>
     <br>
