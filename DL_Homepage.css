@@ -152,14 +152,16 @@ div.container {
   text-align: center;
   font-family: ForevsBold;
   padding: 10px 20px;
+  
 }
 
-.main_footer {
-  margin: -1%;
-  margin-top: 100px;
+.main-footer {
+  margin-left: -19vw;
+  margin-right: -19vw;
+  margin-bottom: -15px;
   padding-left: 0px;
   padding-right: 0px;
-  padding-bottom: 100px;
+  padding-bottom: 15px;
   background: rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
 }
@@ -171,28 +173,26 @@ div.container {
   float: right;
 }
 
-.forumanddiscordlist li {
-  font-family: ForevsBold;
-  float: center;
-}
 
 .forumanddiscordlist li {
   font-family: ForevsBold;
-  float: center;
+  list-style-type: none;
 }
 
 .forumanddiscordlist ul {
   padding: 0px;
-  width: 550px;
+  width: auto;
   list-style-type: none;
   font-family: ForevsBold;
   font-size: 50px;
+  position: absolute;
+  display: inline-block;
+  text-align: justify;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .forumanddiscordlist li a {
-  display: block;
   margin-top: 40px;
   color: #ffefd7;
   padding: 20px 56px;
@@ -201,9 +201,11 @@ div.container {
   font-family: ForevsBold;
   transition-property: background-color;
   transition-duration: 0.5s;
+  list-style-type: none;
 }
 
 .forumanddiscordlist li a:hover {
   color: #c5ff48;
   font-family: ForevsBold;
 }
+

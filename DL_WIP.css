@@ -34,29 +34,15 @@ body {
   }
 
 .Home {
-  margin: 30px;
-  border-radius: 5px;
-  padding: 100px;
-  background: rgba(0, 0, 0, 0.7);
-  box-sizing: border-box;
 }
 
 .Home h1 {
   font-size: 70px;
   font-family: ForevsBold;
   font-weight: bold;
-  margin-left: -50px;
-  margin-top: 50px;
-  text-align: left;
-  display: block;
-  color: white;
-}
-
-.Home p {
-  font-size: 20px;
-  font-family: ForevsMedium;
-  margin-left: -50px;
-  text-align: left;
+  margin-left: -5px;
+  margin-right: auto;
+  text-align: center;
   display: block;
   color: white;
 }
@@ -66,6 +52,13 @@ body {
   float: left;
   height: auto;
 
+}
+.mainlogo1 {
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
 }
 
 .navmenu-container ul {
