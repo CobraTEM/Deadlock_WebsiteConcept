@@ -140,7 +140,7 @@ body {
   margin-bottom: 100px;
   margin-left: 50px;
   display: flex;
-  gap: 30px;
+  gap: 3vw;
   overflow-x: auto;
   overflow: visible !important;
   width: 90vw;
