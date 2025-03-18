@@ -41,6 +41,24 @@ body {
   box-sizing: border-box;
 }
 
+.HomeUP {
+  margin: 30px;
+  border-radius: 5px;
+  padding: 100px;
+  background: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+.HomeImage {
+  margin: 30px;
+  display: block;
+  border-radius: 15px;
+  padding: 100px;
+  width: 50vw;
+  height: auto;
+  
+}
+
 .WIP h1 {
   font-size: 70px;
   font-family: ForevsBold;
@@ -50,6 +68,7 @@ body {
   text-align: center;
   display: block;
   color: white;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.61);
 }
 
 .wiplogo1 {
@@ -100,6 +119,7 @@ body {
 .navmenu-container li {
   float: left;
   list-style-type: none;
+  text-align: center;
 }
 
 .navmenu-container li a {
@@ -131,15 +151,17 @@ body {
   margin-left: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
-  text-align: left;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.61);
+  text-align: center;
   display: block;
   color: white;
 }
 
 .updates-image-container {
   margin-bottom: 100px;
-  margin-left: 50px;
   display: flex;
+  margin-left: -2.5vw;
+  margin-right: auto;
   gap: 3vw;
   overflow-x: auto;
   overflow: visible !important;
@@ -175,12 +197,9 @@ body {
 
 .playerimage {
   width: 100%;
-  position: relative;
   height: auto;
   display: inline-block;
   margin-bottom: 25px;
-  margin-right: 50px;
-  z-index: -1;
   margin-top: 25px;
 }
 
@@ -252,3 +271,25 @@ div.container {
   font-family: ForevsBold;
 }
 
+.herotable {
+  display:inline;
+  border: 2px solid transparent;
+  margin-top:10px;margin-bottom:10px;
+  background-color:transparent;
+  margin: auto;
+}
+
+.Hereos {
+  display:block;
+  text-align: center; 
+  font-family: "ForevsBold"
+  font-size: 22px;
+}
+
+.heroestaghead{
+
+  color:#FFF5E8; 
+  font-family: 'ForevsBold'; 
+  font-weight:bold; 
+  text-shadow: 0px 2px 2px black, 0px 0px 2px black;
+}
