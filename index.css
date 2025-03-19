@@ -44,7 +44,7 @@ body {
 }
 
 .fullscreen-bg__video {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -53,6 +53,7 @@ body {
 
 .Home {
   margin: 30px;
+  margin-top: 200px;
   border-radius: 5px;
   padding: 100px;
   background: rgba(0, 0, 0, 0.7);
@@ -90,9 +91,21 @@ body {
   text-shadow: 1px 1px 8px rgba(0,0,0,0.61);
 }
 
+@media only screen and (max-width: 600px) {
+  .logoP {
+  width: 140%;
+  max-width: 50%;
+  margin: auto;
+  padding-bottom: 50px;
+  display: block;
+  position: relative;
+  height: auto;
+  }
+  }
 
+@media only screen and (min-width: 600px) {
 .logoP {
-width: 30%;
+width: 50%;
 max-width: 50%;
 margin: auto;
 padding-bottom: 50px;
@@ -100,6 +113,44 @@ display: block;
 position: relative;
 height: auto;
 }
+}
+
+@media only screen and (min-width: 768px) {
+  .logoP {
+  width: 60%;
+  max-width: 50%;
+  margin: auto;
+  padding-bottom: 50px;
+  display: block;
+  position: relative;
+  height: auto;
+  }
+  }
+
+@media only screen and (min-width: 992px) {
+    .logoP {
+    width: 40%;
+    max-width: 50%;
+    margin: auto;
+    padding-bottom: 50px;
+    display: block;
+    position: relative;
+    height: auto;
+    }
+    }
+
+@media only screen and (min-width: 1200px) {
+    .logoP {
+    width: 30%;
+    max-width: 50%;
+    margin: auto;
+    padding-bottom: 50px;
+    display: block;
+    position: relative;
+    height: auto;
+    }
+    }
+
 
 .wiplogo1 {
   width: 250px;
@@ -188,24 +239,20 @@ height: auto;
 }
 
 .updates-image-container {
-  margin-bottom: 100px;
-  display: flex;
-  margin-left: -2.5vw;
-  margin-right: auto;
+  display: inline-flex;
+  margin: auto;
   gap: 3vw;
   overflow-x: auto;
   overflow: visible !important;
-  width: 90vw;
+  width: 100%;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   flex-shrink: 0;
 }
 .updates-image-container a img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 12px;
-  display: inline-flex;
 }
-
+/*
 .updates-image-container::-webkit-scrollbar {
   width: 10px;
   overflow: visible !important;
@@ -220,7 +267,7 @@ height: auto;
   background: transparent;
   overflow: visible !important;
 }
-
+*/
 .updates-image-container a img {
   transition: transform 0.3s ease-in-out;
 }
@@ -228,9 +275,7 @@ height: auto;
 .playerimage {
   width: 100%;
   height: auto;
-  display: inline-block;
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin: auto;
 }
 
 .updates-image-container a:hover img {
