@@ -1,8 +1,6 @@
 .HP {
-  background: url("images/bg_alley.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  background: #000000;
+
     }
 
     .HP2 {
@@ -61,9 +59,57 @@
     position: relative;
     top: 0;
     left: 0;
+    overflow: hidden;
+    overflow-x: hidden;
     width: 100%;
-    height: 100%;
+    height: 80%;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.i3o0340 {
+  z-index: 0;
+}
+
+.eE3ffgr4 {
+  width: 100%;
+  z-index: 0;
+}
+
 
 .nav {
   width: 100%;
@@ -84,6 +130,15 @@
   background-color: transparent
 }
 
+.textBig {
+  text-align:center;
+  margin-top:30px;
+  max-width:1000px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-items:center;
+}
 .nav .nav3 {
   width: 100%;
   height: 100%;
@@ -1008,11 +1063,11 @@ div.container {
 }
 
 .Footer {
+  background-image: linear-gradient(180deg, transparent, black 8%);
   text-align: center;
   width: 100%;
   z-index: 5;
   padding: 30px;
-  background-image: linear-gradient(180deg, transparent, black 8%);
 }
 
 .Footer .ValveLink {
