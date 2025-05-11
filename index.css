@@ -1,115 +1,369 @@
+
+
 .HP {
   background: #000000;
+}
 
-    }
-
-    .HP2 {
-      background: url("images/Background_Buildings.png");
-      background-size: 150%;
-      background-repeat: repeat;
-      background-attachment: fixed;
-        }
+.HP2 {
+  background: url("images/Background_Buildings.png");
+  background-size: 150%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
 
 .H {
-     background: url("images/Background_Menu.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    }
-@font-face {
-        font-family: Roboto;
-        src: url(font/Roboto_SemiCondensed-Regular.ttf);
-}
-@font-face {
-        font-family: ForevsBold;
-        src: url(font/forevsdemo-bold.ttf);
-}
-@font-face {
-  font-family: ForevsMedium;
-  src: url(font/forevsdemo-medium.ttf);
-}
-@font-face {
-  font-family: ForevsBoldItalic;
-  src: url(font/forevsdemo-bolditalic.ttf);
+  background: url("images/Background_Menu2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
-  .framedl {
-    font-size: 70px;
-    margin-left: -50px;
-    margin-top: 100px;
-    margin-right: auto;
-  }
-  .buttondll {
-    display: block;
-    margin-left: 10px;
-    margin-right: auto;
-  }
+.HP3 {
+  background: url("images/Background_Menu2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
 
-  .fullscreen-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
+.akd {
+  padding-left:70px;
+  padding-top:155px;
+  padding-bottom:45px;
 }
 
 .fullscreen-bg__video {
     position: relative;
     top: 0;
     left: 0;
+    z-index: 1;
     overflow: hidden;
     overflow-x: hidden;
     width: 100%;
-    height: 80%;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+.fullscreen-bg__video2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
+.HeroCard2 {
+  transition: 0.1s transform ease-in-out;
+  z-index: 0;
+}
+
+.HeroCard2:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   z-index: 1;
-}
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
 }
-.tooltip .tooltiptext::after {
-  content: " ";
-  position: absolute;
-  bottom: 100%;  /* At the top of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
-}
-
 .i3o0340 {
   z-index: 0;
 }
 
-.eE3ffgr4 {
+#HeroDetailsContainer {
   width: 100%;
+  position: 0.0px 0.0px 0.0px;
+  flex-direction: column-reverse;
+}
+
+#HeroDetailsContainer #HeroDetails {
+  width: 100%;
+  flex-direction: column-reverse;
+}
+
+#Heroes {margin: 0; height: 100%; overflow: hidden}
+
+#HeroDetails {
+  padding: 40px;
+  position: 0.0px 0.0px 0.0px;
+}
+
+#LeftPanel {
+  width: 600px;
+  margin-top: 150px;
+  flex-direction: column-reverse;
+  margin-left: 150px;
+  z-index: 1;
+  align-items: center;
+}
+
+#RightPanel {
+  width: 1300px;
+  height: 100%;
+  margin-left: 150px;
+  flex-direction: column-reverse;
+  z-index: -1;
+  align-items: center;
+}
+
+#HeroScenePanel {
+  width: 1640px;
+  padding-left: 450px;
+  margin-top: -500px;
+  height: 100%;
+  align-items: center;
+  z-index: 100;
+}
+
+.imagesize {
+  width: 70%;
+}
+
+.HeroNameAndLevelsIcon {
+  align-items: center;
   z-index: 0;
 }
 
+.LeftRightFlow {
+  flex-direction: row;
+}
+
+#HeroName {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Forevs Demo";
+  letter-spacing: 0.5px;
+  line-height: 80px;
+  text-overflow: shrink;
+  text-align: center;
+  align-items: center;
+  display: block;
+  color: #ffefd7;
+  text-transform: uppercase;
+  max-height: 140px;
+  z-index: 0;
+  position: 0.0px 0.0px 0.0px;
+}
+
+#HeroType {
+  font-size: 22px;
+  font-weight: bold;
+  color: #988e80;
+  font-weight: medium;
+  display: block;
+  margin-bottom: 15px;
+  text-align: center;
+  align-items: center;
+  position: 0.0px 91.0px 0.0px;
+}
+
+#HeroLore {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 0px #00000090;
+  margin-top: 15px;
+  padding-top: 15px;
+  font-family: "Retail";
+  color: #FFEFD790;
+}
+
+/*
+#AbilityIconsContainer {
+  z-index: 10;
+  float: right;
+  overflow: hidden;
+  align-items: center;
+  margin: -10px 0px 20px 0px;
+  position: 0.0px 135.0px 0.0px;
+}
+
+.CitadelAbilityIcon {
+  margin: 0px -5px;
+  border-radius: 10px;
+  width: 67%;
+  height: 67%;
+  opacity: 0.9;
+}
+
+.ability_container {
+  width: fit-content;
+  align-items: center;
+  height: fit-content;
+}
+
+.button_container {
+  width: 120px;
+  margin: 0px -5px;
+  align-items: center;
+  height: 120px;
+}
+
+.ability_bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: brightness(0) saturate(100%) invert(91%) sepia(15%) saturate(724%) hue-rotate(317deg) brightness(105%) contrast(106%);
+  background-image: url(svg/ability_frame.svg);
+} 
+
+
+
+
+.ability_name {
+  text-align: center;
+  align-items: center;
+  font-size: 12px;
+  color: darkgrey;
+  text-transform: uppercase;
+}
+
+.has_ability_image .ability_name {
+  visibility: collapse;
+}
+
+.HasKeyBind .ability_key_container {
+  visibility: visible;
+}
+
+.ability_key_container {
+  width: fit-content;
+  align-items: center;
+  padding-top: 0px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+  background-size: cover;
+  border-radius: 2px;
+  height: fit-content;
+}
+
+.ability_image {
+  height: 50%;
+  margin-top: 0px;
+  width: 100%;
+  align-items: center;
+  opacity: 0.95;
+  z-index: 10;
+}
+
+.has_ability_image .ability_image {
+  visibility: visible;
+}
+*/
+
+.ability-icon {
+  filter: invert(100%);
+  opacity: 0.7;
+}
+
+.abilityImage {
+margin: 6px;
+}
+
+.image_container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+#active_toggle {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: 2px solid yellow;
+  box-shadow: inset rgba(255,255,0, 0.2) 0px 0px 12px 0px;
+}
+
+figure[typeof~='mw:File/Thumb'].mw-halign-center,figure[typeof~='mw:File/Frame'].mw-halign-center {
+  margin: 0 auto 0.5em auto;
+  clear: none;
+  float: none;
+}
+
+figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].mw-halign-center {
+  margin: 0 auto;
+  display: table;
+  border-collapse: collapse;
+  clear: none;
+  float: none;
+}
+
+.embedvideo.mw-halign-right,.embedvideo.mw-halign-left,.embedvideo.mw-halign-none,.embedvideo.mw-halign-center {
+  display: block;
+}
+
+.embedvideo.mw-halign-center {
+  margin: 0 auto;
+  display: table;
+  border-collapse: collapse;
+  clear: none;
+  float: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.eE3ffgr4 {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.bar3 {
+  width: 150px;
+  height: 3px;
+  min-height: 3px;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  margin-top: 45px;
+  justify-content: center;
+  background-color: #ff5757;
+  border-radius: 1px;
+}
+
+.e3refd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Reaver",serif;
+  font-weight: 600;
+  padding-left: 130px;
+  padding-top: 52px;
+  padding-right: 130px;
+  color: #e2dace;
+
+}
+
+.e3refd09 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 82px;
+  font-family: "Reaver",serif;
+}
+
+@media(max-width: 1600px) {
+
+  .e3refd {
+      font-size: 30px;
+  }
+}
 
 .nav {
   width: 100%;
@@ -120,7 +374,7 @@
   height: 80px;
   padding: 0px 30px;
   background-color: #000;
-  position: relative
+  position: relative;
 }
 
 .nav.nav2 {
@@ -144,7 +398,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center
+  align-items: center;
 }
 
 .nav .nav3 .LogoResponsive {
@@ -654,262 +908,6 @@
   margin: 10px 0px 10px 10px
 }
 
-.Home {
-  margin-top: 200px;
-  padding: 100px;
-  background: rgba(0, 0, 0, 0.7);
-  box-sizing: border-box;
-}
-
-.HomeUP {
-  margin: 30px;
-  border-radius: 5px;
-  padding: 100px;
-  background: rgba(0, 0, 0, 0.7);
-  box-sizing: border-box;
-}
-
-.HomeImage {
-  margin: 30px;
-  display: block;
-  border-radius: 15px;
-  padding: 100px;
-  width: 50vw;
-  height: auto;
-  
-}
-
-.imgtable {
-  width: 100%;
-  display: block;
-  position: relative;
-  height: auto;
-  margin: auto;
-  border: 0;
-  vertical-align: middle;
-  overflow: clip;
-  overflow-clip-margin: content-box;
-}
-
-.HeroCard2 {
-  display: inline-block;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  background-image: linear-gradient(#A69885, #72695A);
-  max-width: 132px;
-  width: 30%;
-  height: auto;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  transition: 0.1s transform ease-in-out;
-}
-
-
-.Cardtemplate {
-  display: block;
-  border-radius: 5px;
-  background-color: #FFF5E8;
-  overflow: hidden;
-}
-
-.Cardheroestaghead{
-  color:#FFF5E8; 
-  font-family: 'ForevsBold'; 
-  font-weight:bold; 
-  text-align: center;
-  text-shadow: 0px 2px 2px black, 0px 0px 2px black;
-}
-
-.tableHeroes {
-  display: inline-block;
-}
-
-.WIP h1 {
-  font-size: 70px;
-  font-family: ForevsBold;
-  font-weight: bold;
-  margin-left: -5px;
-  margin-right: auto;
-  padding-left: 20px;
-  text-align: center;
-  display: block;
-  color: white;
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.61);
-}
-
-@media only screen and (max-width: 600px) {
-  .logoP {
-  width: 140%;
-  max-width: 50%;
-  margin: auto;
-  padding-bottom: 50px;
-  display: block;
-  position: relative;
-  height: auto;
-  }
-  }
-
-@media only screen and (min-width: 600px) {
-.logoP {
-width: 50%;
-max-width: 50%;
-margin: auto;
-padding-bottom: 50px;
-display: block;
-position: relative;
-height: auto;
-}
-}
-
-@media only screen and (min-width: 768px) {
-  .logoP {
-  width: 60%;
-  max-width: 50%;
-  margin: auto;
-  padding-bottom: 50px;
-  display: block;
-  position: relative;
-  height: auto;
-  }
-  }
-
-@media only screen and (min-width: 992px) {
-    .logoP {
-    width: 40%;
-    max-width: 50%;
-    margin: auto;
-    padding-bottom: 50px;
-    display: block;
-    position: relative;
-    height: auto;
-    }
-    }
-
-@media only screen and (min-width: 1200px) {
-    .logoP {
-    width: 30%;
-    max-width: 50%;
-    margin: auto;
-    padding-bottom: 50px;
-    display: block;
-    position: relative;
-    height: auto;
-    }
-    }
-
-
-.wiplogo1 {
-  width: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-}
-
-.Home h1 {
-  font-size: 50px;
-  font-family: ForevsBold;
-  font-weight: bold;
-  margin-left: -50px;
-  margin-top: 50px;
-  text-align: left;
-  display: block;
-  color: white;
-}
-
-.Home p {
-  font-size: 25px;
-  font-family: ForevsMedium;
-  margin-left: -50px;
-  text-align: left;
-  display: block;
-  color: white;
-}
-
-.mainlogo {
-  margin-left: 8px;
-  width: 300px;
-  float: left;
-  height: auto;
-
-}
-
-.navmenu-container ul {
-  font-family: ForevsBold;
-  width: auto;
-  list-style-type: none;
-  background-color: #f1f1f1;
-  margin: auto;
-  padding: auto;
-}
-
-.navmenu-container li {
-  float: left;
-  list-style-type: none;
-  text-align: center;
-}
-
-.navmenu-container li a {
-  display: block;
-  margin-top: 15px;
-  /*background-color: #ffefd7;*/
-  padding: 20px 46px;
-  text-align: center;
-  font-family: ForevsBold;
-  font-size: 27px;
-  position: relative;
-  color: #ffefd7;
-  list-style-type: none;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-}
-
-.navmenu-container li a:hover:not(.active) {
-  background-color: #1f1f21;
-  color: #ffefd7;
-  list-style-type: none;
-  font-family: ForevsBold;
-}
-
-.first-heading-upt {
-  font-size: 60px;
-  font-family: ForevsBold;
-  font-weight: bold;
-  margin-left: 50px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.61);
-  text-align: center;
-  display: block;
-  color: white;
-}
-
-.updates-image-container {
-  display: inline-flex;
-  margin-left: 35px;
-  margin-right: 35px;
-  margin-bottom: 25px;
-  margin-top: 25px;
-}
-.updates-image-container a img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.playerimage {
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-
-
-
-div.container {
-  text-align: center;
-  font-family: ForevsBold;
-  padding: 10px 20px;
-  
-}
-
 .main-footer {
   margin-left: -19vw;
   margin-right: -19vw;
@@ -926,57 +924,6 @@ div.container {
   margin-top: 125px;
   margin-right: 250px;
   float: right;
-}
-
-
-.forumanddiscordlist li {
-  font-family: ForevsBold;
-  list-style-type: none;
-}
-
-.forumanddiscordlist ul {
-  padding: 0px;
-  width: auto;
-  list-style-type: none;
-  font-family: ForevsBold;
-  font-size: 50px;
-  position: absolute;
-  display: inline-block;
-  text-align: justify;
-  overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-.forumanddiscordlist li a {
-  margin-top: 40px;
-  color: #ffefd7;
-  padding: 20px 56px;
-  text-decoration: none;
-  text-align: center;
-  font-family: ForevsBold;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  list-style-type: none;
-}
-
-.forumanddiscordlist li a:hover {
-  color: #c5ff48;
-  font-family: ForevsBold;
-}
-
-.herotable {
-  display:inline;
-  border: 2px solid transparent;
-  margin-top:10px;margin-bottom:10px;
-  background-color:transparent;
-  margin: auto;
-}
-
-.Hereos {
-  display:block;
-  text-align: center; 
-  font-family: "ForevsBold"
-  font-size: 22px;
 }
 
 .ringespiel {
@@ -1011,7 +958,7 @@ div.container {
   margin-top: 5px;
   margin-bottom: 8px;
   text-shadow: 0px 0px 10px #000;
-  font-family: "ForevsDemo",serif;
+  font-family: "Forevs",serif;
   font-weight: bold;
   text-transform: none;
   letter-spacing: 1px;

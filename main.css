@@ -7815,7 +7815,35 @@ a {
     src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.eot");
     src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.ttf") format("truetype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.svg#ywftsvg") format("svg");
     font-weight: normal;
-    font-style: normal
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Retail";
+    src: url("font/retaildemo-regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Retail";
+    src: url("font/retaildemo-bold.ttf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Retail";
+    src: url("font/retaildemo-semibold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Retail";
+    src: url("font/retaildemo-medium.ttf");
+    font-weight: medium;
+    font-style: normal;
 }
 
 @font-face {
@@ -7929,7 +7957,7 @@ a {
 }
 
 @font-face {
-    font-family: "ForevsDemo";
+    font-family: 'Forevs';
     src: url("font/forevsdemo-bold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal
@@ -18414,6 +18442,19 @@ a {
     margin-right: 40px
 }
 
+.U7wdCoQycRPyErCfTw2sv .RsnZktJ6AqSXT0LNzVzby .ZFf5SKOhUeoF1JmIVX9RT {
+    width: 200px;
+    min-width: 200px;
+    height: 50px;
+    min-height: 50px;
+    background-image: url("images/logo/deadlocklogo_v2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: .8;
+    margin-right: 40px
+}
+
 .U7wdCoQycRPyErCfTw2sv .RsnZktJ6AqSXT0LNzVzby .ZFf5SKOhUeoF1JmIVX9RT:hover {
     opacity: 1;
     cursor: pointer
@@ -18745,7 +18786,7 @@ a {
     min-width: 200px;
     height: 50px;
     min-height: 50px;
-    background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png");
+    background-image: url("images/logo/deadlocklogo_v2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -71437,3 +71478,60 @@ body.in_global_drag .title-area {
 #dota_react_root .DialogContent_InnerWidth::-webkit-scrollbar-thumb:hover {
     background-color: rgba(180, 192, 201, .8)
 }
+
+.peoerorkkjfk {
+    margin-top: 80px;
+  }
+  
+  .ko2ko92 {
+      font-family: "Forevs Demo", serif;
+      color: #ffefd7;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 100px;
+      justify-items: center;
+      font-size: 82px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding-bottom:0px;
+  }
+
+  .ko2ko23 {
+    font-family: "Radiance", serif;
+    color: #b1b1b1;
+    display: flex;
+    flex-direction: row;
+    padding-left: 100px;
+    align-items: center;
+    justify-items: center;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: auto;
+  }
+
+  .k2ko23 {
+    font-family: "Radiance", serif;
+    color: #b1b1b1;
+    display: inline-flex;
+    flex-direction: row;
+    padding-top: 50px;
+    margin-right: 400px;
+    padding-left: 100px;
+    padding-right: 350px;
+    align-items: center;
+    justify-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .lo33i09ij {
+    display: inline-flex;
+    flex-direction: row;
+    padding-right: 100px;
+    width: 70%;
+    z-index: -1;
+    float: right;
+  }
