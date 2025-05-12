@@ -12,14 +12,14 @@
 }
 
 .H {
-  background: url("images/Background_Menu2.png");
+  background: #000000;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
 
 .HP3 {
-  background: url("images/Background_Menu2.png");
+  background: #000000;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -63,8 +63,112 @@
   z-index: 1;
 
 }
+
 .i3o0340 {
   z-index: 0;
+}
+
+#NavigationButtons {
+  width: 100%;
+  align-items: center;
+  vertical-align: middle;
+  z-index: -1;
+}
+
+#StaticContent {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+#NextButton {
+  vertical-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 450px;
+}
+
+#NextButton:hover {
+  vertical-align: right;
+  transform: scale(1.2);
+  transition: 0.1s transform ease-in-out;
+}
+
+#NextButton:not(:hover) {
+  vertical-align: right;
+  transform: scale(1.0);
+  transition: 0.1s transform ease-in-out;
+}
+
+#PrevButton {
+  vertical-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 450px;
+}
+
+#PrevButton:hover {
+  vertical-align: left;
+  transform: scale(1.2);
+  transition: 0.1s transform ease-in-out;
+}
+#PrevButton:not(:hover) {
+  vertical-align: left;
+  transform: scale(1.0);
+  transition: 0.1s transform ease-in-out;
+}
+
+#NextButton .backArrow2 {
+  transform: rotateY( 180deg );
+  vertical-align: right;
+}
+
+.navigationButton {
+  padding: 10px;
+  height: 100px;
+  opacity: 0.8;
+  float: left;
+  background-color: #ffffff10;
+  transition-property: opacity, border, background-color;
+  transition-duration: 0.3s;
+}
+
+.navigationButton2 {
+  padding: 10px;
+  height: 100px;
+  opacity: 0.8;
+  float: right;
+  background-color: #ffffff10;
+  transition-property: opacity, border, background-color;
+  transition-duration: 0.3s;
+}
+
+.navigationButton .backArrow {
+  width: 20px;
+  padding-top: 75px;
+  filter: brightness(0) saturate(100%) invert(99%) sepia(16%) saturate(33%) hue-rotate(253deg) brightness(114%) contrast(100%);
+  height: 20px;  
+  position: 0.0px, 0.0px, 0.0px;
+}
+
+.navigationButton2 .backArrow2 {
+  width: 20px;
+  filter: brightness(0) saturate(100%) invert(99%) sepia(16%) saturate(33%) hue-rotate(253deg) brightness(114%) contrast(100%);
+  height: 20px;
+  padding-top: 75px;
+  position: 0.0px, 0.0px, 0.0px;
+}
+
+.backArrow {
+  background-size: 100% 100%;
+  background-image: url("images/graphics/arrow_west.svg");
+  vertical-align: center;
+}
+
+.backArrow2 {
+  background-size: 100% 100%;
+  background-image: url("images/graphics/arrow_west.svg");
+  vertical-align: center;
 }
 
 #HeroDetailsContainer {
@@ -107,6 +211,15 @@
   width: 1640px;
   padding-left: 450px;
   margin-top: -500px;
+  height: 100%;
+  align-items: center;
+  z-index: 100;
+}
+
+#HeroScenePanel2 {
+  width: 1640px;
+  padding-left: 450px;
+  margin-top: -550px;
   height: 100%;
   align-items: center;
   z-index: 100;
