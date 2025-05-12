@@ -216,12 +216,37 @@
   z-index: 100;
 }
 
+.mu24 {
+  font-family: "Forevs", serif;
+  color: #ffefd7;
+  font-size: 114px;
+  text-align: center;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 250px;
+  letter-spacing: 6px;
+}
+
+.updates-container {
+  width: 100%;
+}
+
+.imagerupdate1 {
+  display:flex; 
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  width: 65%;
+  opacity: 0.8;
+}
+
 #HeroScenePanel2 {
   width: 1640px;
   padding-left: 450px;
   margin-top: -550px;
   height: 100%;
   align-items: center;
+  display: flex;
   z-index: 100;
 }
 
