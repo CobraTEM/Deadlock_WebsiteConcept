@@ -1,9 +1,4 @@
 
-import {Howl, Howler} from 'howler';
-
-const {Howl, Howler} = require('howler');
-
-var label = document.getElementById('HeroCard4');
 
 window.onload = setInterval(Loop, 1000 / 10); //10fps
 window.onload = setInterval(Loop2, 1000 / 10); //10fps
