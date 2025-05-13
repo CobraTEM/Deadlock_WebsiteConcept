@@ -11,6 +11,13 @@
   background-attachment: fixed;
 }
 
+.HP4 {
+  background: url("images/bg_alley3.png");
+  background-size: 150%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
 .H {
   background: #000000;
   background-size: cover;
@@ -87,6 +94,29 @@
   right: 0;
   bottom: 450px;
 }
+  #PrevButton {
+  vertical-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 450px;
+}
+
+@media all and(max-width: 1100px) {
+  #NextButton {
+  vertical-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+}
+@media all and(max-width: 1100px) {
+#PrevButton {
+  vertical-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+}
+}
 
 #NextButton:hover {
   vertical-align: right;
@@ -100,18 +130,13 @@
   transition: 0.1s transform ease-in-out;
 }
 
-#PrevButton {
-  vertical-align: left;
-  position: absolute;
-  left: 0;
-  bottom: 450px;
-}
 
 #PrevButton:hover {
   vertical-align: left;
   transform: scale(1.2);
   transition: 0.1s transform ease-in-out;
 }
+
 #PrevButton:not(:hover) {
   vertical-align: left;
   transform: scale(1.0);
@@ -198,6 +223,11 @@
   align-items: center;
 }
 
+@media all and (max-width: 1600px) {
+  #LeftPanel {
+    margin-left: 50px;
+  }
+}
 #RightPanel {
   width: 1300px;
   height: 100%;
@@ -207,24 +237,16 @@
   align-items: center;
 }
 
-#HeroScenePanel {
-  width: 1640px;
-  padding-left: 450px;
-  margin-top: -500px;
-  height: 100%;
-  align-items: center;
-  z-index: 100;
-}
 
 .mu24 {
-  font-family: "Forevs", serif;
+  font-family: "Reaver", serif;
   color: #ffefd7;
   font-size: 114px;
+  font-weight: bold;
   text-align: center;
   align-items: center;
   padding-top: 25px;
-  padding-bottom: 250px;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
 }
 
 .updates-container {
@@ -232,12 +254,87 @@
 }
 
 .imagerupdate1 {
-  display:flex; 
+  width: 65%;
+    display:flex; 
+  border: 3px solid #988e80;
   justify-content: center;
   margin: auto;
   position: relative;
-  width: 65%;
+  height: auto;
   opacity: 0.8;
+}
+
+
+@media all and (min-width: 992px) {
+.imagerupdate1 {
+  width: 60%;
+    display:flex; 
+  border: 3px solid #988e80;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  height: auto;
+  opacity: 0.8;
+}
+}
+
+@media all and (min-width: 768px) {
+  .imagerupdate1 {
+  width: 30%;
+    display:flex; 
+  border: 3px solid #988e80;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  height: auto;
+  opacity: 0.8;
+}
+}
+
+@media all and (min-width: 600px) {
+  .imagerupdate1 {
+  width: 10%;
+    display:flex; 
+  border: 3px solid #988e80;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  height: auto;
+  opacity: 0.8;
+}
+}
+
+.imagerupdate1 {
+  width: 65%;
+    display:flex; 
+  border: 3px solid #988e80;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  height: auto;
+  opacity: 0.8;
+}
+
+.imagerupdate1:hover {
+transform: scale(1.1);
+opacity: 1.0;
+transition: 0.1s ease-in-out;
+}
+
+.imagerupdate1:not(hover) {
+transform: scale(1.0);
+opacity: .8;
+transition: 0.1s ease-in-out;
+}
+
+#HeroScenePanel {
+  width: 1640px;
+  display: block;
+  padding-left: 450px;
+  margin-top: -500px;
+  height: 100%;
+  align-items: center;
+  z-index: 100;
 }
 
 #HeroScenePanel2 {
@@ -252,6 +349,31 @@
 
 .imagesize {
   width: 70%;
+}
+
+@media all and (max-width: 1600px) {
+  #HeroScenePanel2 {
+    margin-top: -500px;
+    display: block;
+  }
+  }
+
+@media all and (max-width: 1600px) {
+  .imagesize {
+    width: 50%;
+  }
+  }
+
+
+@media all and (max-width: 1300px) {
+.imagesize {
+  width: 50%;
+}
+}
+
+
+.TableSkills {
+   align-items: center; display:inline-block; padding-bottom: 15px; margin-left: 30px; width:min(768px, 90vw);
 }
 
 .HeroNameAndLevelsIcon {
@@ -468,6 +590,20 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   justify-content: center;
   background-color: #ff5757;
   border-radius: 1px;
+}
+
+.bar69 {
+  width: 250px;
+  height: 3px;
+  min-height: 3px;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+  justify-content: center;
+  background-color: #ff5757;
+  border-radius: 1px;
+  margin-bottom: 200px;
 }
 
 .e3refd {
