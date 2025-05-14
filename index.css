@@ -110,7 +110,7 @@
 
 #Heroes {margin: 0; height: 100%; overflow-x: hidden}
 
-#AbilityMovie {
+.AbilityMovie {
   width: 474px;
   height: 270px;
   border: 2px solid #ffffff10;
@@ -553,8 +553,28 @@ transition: 0.1s ease-in-out;
   opacity: 0.7;
 }
 
+.abilityImageRe {
+  z-index: -1; 
+  position:absolute;
+  filter: invert(42%) sepia(10%) saturate(2912%) hue-rotate(-40deg) brightness(190%) contrast(77%);
+}
+
 .abilityImage {
 margin: 6px;
+}
+
+.abilityImage:hover {
+margin: 6px;
+transform: scale(1.1);
+transition: 0.1s ease-in-out;
+
+
+}
+
+.abilityImage:not(hover) {
+margin: 6px;
+transform: scale(1.0);
+transition: 0.1s ease-in-out;
 }
 
 .image_container {
