@@ -33,7 +33,11 @@
 }
 
 .akd {
-  padding-left:70px;
+  margin: auto;
+  padding-left: 35px;
+  width: 100%;
+  align-items: center;
+  position: relative;
   padding-top:155px;
   padding-bottom:45px;
 }
@@ -61,6 +65,7 @@
 .HeroCard2 {
   transition: 0.1s transform ease-in-out;
   z-index: 0;
+  margin: 2px;
 }
 
 .HeroCard2:hover {
@@ -291,21 +296,9 @@
   width: 100%;
 }
 
-.imagerupdate1 {
-  width: 65%;
-    display:flex; 
-  border: 3px solid #988e80;
-  justify-content: center;
-  margin: auto;
-  position: relative;
-  height: auto;
-  opacity: 0.8;
-}
-
-
 @media all and (min-width: 992px) {
 .imagerupdate1 {
-  width: 60%;
+  width: 40%;
     display:flex; 
   border: 3px solid #988e80;
   justify-content: center;
@@ -343,7 +336,7 @@
 }
 
 .imagerupdate1 {
-  width: 65%;
+  width: 55%;
     display:flex; 
   border: 3px solid #988e80;
   justify-content: center;
