@@ -1,41 +1,38 @@
+window.onload= function(){ loadTextBIG(); loadTextSMALL(); }
 
+const randomIndex = Math.floor(Math.random() * 5);
 
-window.onload = setInterval(Loop, 1000 / 10); //10fps
-window.onload = setInterval(Loop2, 1000 / 10); //10fps
-window.onload = setInterval(Loop3, 1000 / 10); //10fps
+const textSelect= [
+    '"The Next Big Thing It Will Overtake Overwatch For Sure"',
+    '"One Of The Most Innovative Games In The MOBA Genre"',
+    '"Might Be Better Than Fortnite"',
+    '"I\'m Already Addicted!"',
+    '"A Unique Take On The MOBA Genre"'
+  ];
+   
 
-let HomeAudio = new Audio();
-let UpAudio = new Audio();
-let HoverAudio = new Audio();
+  function getRandomText() {
+    return textSelect[randomIndex];
+  }
 
-
-HomeAudio.src = 'audio/Deadlock_Main_Theme.mp3';
-UpAudio.src = 'audio/music_teleporter_01.mp3';
-HoverAudio.src = 'audio/ui/ui_menu_hover_01.mp3';
-
-function Loop() {
-    if (document.getElementById("Home").innerHTML) {
-        HomeAudio.play();
-    if (HomeAudio.paused == true) {
-        HomeAudio.play();
-        }
+  function loadTextBIG() {
+    const myDiv = document.getElementById('div1_text');
+    myDiv.innerHTML= getRandomText();
+  }
+   
+  const textSelect2= [
+    '- Shroud',
+    '- Destructoid',
+    '- XQC',
+    '- OhnePixel',
+    '- PC Gamer'
+  ];
+   
+  function getRandomText2() {
+      return textSelect2[randomIndex];
     }
 
-}
-function Loop2() {
-if (document.getElementById("Updates").innerHTML) {
-        UpAudio.play();
-    if (UpAudio.paused == true) {
-        UpAudio.play();
-        }
-    }
-}
-function Loop3() {
-    if (document.getElementById("Heroes").innerHTML) {
-        HomeAudio.play();
-    if (HomeAudio.paused == true) {
-        HomeAudio.play();
-        }
-    }
-
-}
+    function loadTextSMALL() {
+        const myDiv2 = document.getElementById('div2_text');
+        myDiv2.innerHTML= getRandomText2();
+      }

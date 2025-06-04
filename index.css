@@ -32,14 +32,85 @@
   background-attachment: scroll;
 }
 
+.ContainerShitWE {
+  height: 100%;
+  width: fit-content;
+  max-width: 60%;
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-end;
+  pointer-events: auto;
+  font-size: 20px;
+  font-family: "Radiance", sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff90;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  bottom: 0;
+  top: 1;
+  z-index: 10;
+  position: absolute;
+}
+
+@media(max-width: 1900px) {
+  .ShitWE .WE .ContainerShitWE {
+    font-size: 1px;
+  }
+}
+
+
+.ShitWE {
+  font-size: 60px;
+  line-height: 113%;
+  font-family: "Reaver", serif;
+  letter-spacing: 5px;
+  font-weight: 600;
+  color: #ffffffee;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 20px #000
+}
+
+.WE {
+  font-size: 20px;
+  font-family: "Radiance", sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff90;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-transform: uppercase
+}
+
 .akd {
   margin: auto;
-  padding-left: 35px;
+  padding-left: 50px;
   width: 100%;
   align-items: center;
   position: relative;
   padding-top:155px;
   padding-bottom:45px;
+}
+
+@media (max-width: 1600px) {
+  .akd {
+  padding-left: 35px;
+}
+}
+
+@media (max-width: 1900px) {
+  .akd {
+  padding-left: 50px;
+}
+}
+
+@media (max-width: 1300px) {
+  .akd {
+  padding-left: 15px;
+}
 }
 
 .fullscreen-bg__video {
