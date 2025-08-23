@@ -7957,15 +7957,8 @@ a {
 }
 
 @font-face {
-    font-family: 'Forevs';
-    src: url("font/forevsdemo-bold.ttf") format("truetype");
-    font-weight: 800;
-    font-style: normal
-}
-
-@font-face {
-    font-family: "ForevsMed";
-    src: url("font/forevsdemo-medium.ttf") format("truetype");
+    font-family: 'Pulp';
+    src: url("font/valvepulp-bold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal
 }
@@ -18288,7 +18281,7 @@ a {
 }
 
 ._3mkXBKss9wSruUD_7H5MtF .jIe9rI7tP_TtNi1NrkgzW {
-    font-family: "ForevsMed", serif;
+    font-family: "Pulp", serif;
     text-decoration: none;
     font-size: 20px;
     font-weight: 700;
@@ -18500,7 +18493,7 @@ a {
 .U7wdCoQycRPyErCfTw2sv .RsnZktJ6AqSXT0LNzVzby ._3WYkc7ouYrp_o9fb9euwrA ._15Uwp7E3cvI8g0xSa_K9WK {
     text-decoration: none;
     font-size: 26px;
-    font-family: "ForevsMed", serif;
+    font-family: "Pulp", serif;
     letter-spacing: 1.5px;
     opacity: .8;
     color: #fff;
@@ -18517,7 +18510,7 @@ a {
 .U7wdCoQycRPyErCfTw2sv .RsnZktJ6AqSXT0LNzVzby ._3WYkc7ouYrp_o9fb9euwrA ._15Uwp7E3cvI8g0xSa_K9WL {
     text-decoration: none;
     font-size: 26px;
-    font-family: "ForevsMed", serif;
+    font-family: "Pulp", serif;
     letter-spacing: 1.5px;
     opacity: .4;
     color: #fff;
@@ -28082,7 +28075,7 @@ a {
     margin-top: 5px;
     margin-bottom: 8px;
     text-shadow: 0px 0px 10px #000;
-    font-family: "Forevsdemo", serif;
+    font-family: "Pulp", serif;
     font-weight: bold;
     text-transform: none;
     letter-spacing: 1px;
@@ -58310,7 +58303,7 @@ a {
 
 ._37wqywF8EOMUQCBZPa5GkU,
 ._37wqywF8EOMUQCBZPa5GkU * {
-    font-family: Reaver, serif;
+    font-family: "Pulp", serif;
     font-weight: 700;
     font-size: 100px;
     color: #e2dace;
@@ -71484,7 +71477,7 @@ body.in_global_drag .title-area {
   }
   
   .ko2ko92 {
-      font-family: "Forevs Demo", serif;
+      font-family: 'Pulp', serif;
       color: #ffefd7;
       display: flex;
       flex-direction: row;

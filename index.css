@@ -66,7 +66,7 @@
 .ShitWE {
   font-size: 60px;
   line-height: 113%;
-  font-family: "Reaver", serif;
+  font-family: "Pulp", serif;
   letter-spacing: 5px;
   font-weight: 600;
   color: #ffffffee;
@@ -353,7 +353,7 @@
 
 
 .mu24 {
-  font-family: "Reaver", serif;
+  font-family: "Pulp", serif;
   color: #ffefd7;
   font-size: 114px;
   font-weight: bold;
@@ -490,7 +490,7 @@ transition: 0.1s ease-in-out;
 #HeroName {
   font-size: 80px;
   font-weight: bold;
-  font-family: "Forevs Demo";
+  font-family: "Pulp";
   letter-spacing: 0.5px;
   line-height: 80px;
   text-overflow: shrink;
@@ -854,7 +854,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
 
 .nav .nav3 .Navbar .ListedItems {
   font-size: 18px;
-  font-family: "Reaver",serif;
+  font-family: "Pulp",serif;
   font-weight: 600;
   letter-spacing: 3px;
   opacity: .8;
@@ -1128,7 +1128,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   height: 60px;
   background-color: #1b1b1b;
   color: #fff;
-  font-family: "Reaver",serif;
+  font-family: "Pulp",serif;
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1159,7 +1159,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   height: 30px;
   background-color: #0f0f0f;
   color: #cacaca;
-  font-family: "Reaver",serif;
+  font-family: "Pulp",serif;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1303,7 +1303,10 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   width: calc(100% - 20px);
   margin: 10px 0px 10px 10px
 }
+.imagebg3 {
 
+  
+}
 .main-footer {
   margin-left: -19vw;
   margin-right: -19vw;
@@ -1354,7 +1357,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   margin-top: 5px;
   margin-bottom: 8px;
   text-shadow: 0px 0px 10px #000;
-  font-family: "Forevs",serif;
+  font-family: "Pulp",serif;
   font-weight: bold;
   text-transform: none;
   letter-spacing: 1px;
