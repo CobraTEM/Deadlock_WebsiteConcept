@@ -1,4 +1,31 @@
 
+@font-face {
+  font-family: 'Pulp';
+  src: url("font/valvepulp-bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: bold
+}
+
+@font-face {
+  font-family: 'Occult';
+  src: url("font/valveoccult-semibold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: bold
+}
+
+@font-face {
+  font-family: 'Reaver';
+  src: url("font/reaver-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Reaver Bold';
+  src: url("font/reaver-bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: bold
+}
 
 .HP {
   background: #000000;
@@ -66,7 +93,7 @@
 .ShitWE {
   font-size: 60px;
   line-height: 113%;
-  font-family: "Pulp", serif;
+  font-family: "Occult", serif;
   letter-spacing: 5px;
   font-weight: 600;
   color: #ffffffee;
@@ -76,7 +103,7 @@
 
 .WE {
   font-size: 20px;
-  font-family: "Radiance", sans-serif;
+  font-family: "Reaver", sans-serif;
   letter-spacing: 2px;
   color: #ffffff90;
   font-weight: 600;
@@ -85,32 +112,38 @@
   text-transform: uppercase
 }
 
-.akd {
-  margin: auto;
-  padding-left: 50px;
-  width: 100%;
-  align-items: center;
-  position: relative;
-  padding-top:155px;
-  padding-bottom:45px;
+.clampwidth {
+width: 100%;
+height: 100%;
+align-items: center;
 }
 
-@media (max-width: 1600px) {
-  .akd {
-  padding-left: 35px;
-}
-}
-
-@media (max-width: 1900px) {
-  .akd {
-  padding-left: 50px;
-}
+.HeroInfo {
+width: 600px;
+padding: 0px;
+margin: 50px;
+flex-wrap: wrap;
+vertical-align: bottom;
+overflow: hidden;
 }
 
-@media (max-width: 1300px) {
-  .akd {
-  padding-left: 15px;
-}
+.HeroCard2:hover + #hidden{display:block;}
+
+.HeroInfo .HeroLogo #hidden {
+  width: 600px;
+  height: 160px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+  display: none;
+  vertical-align: middle;
+  background-image: url("images/hero_names/abrams.svg");
+  }
+
+.hero_abrams:hover \ .HeroInfo .HeroLogo {
+ visibility: visible;
+ display: block;
 }
 
 .fullscreen-bg__video {
@@ -139,12 +172,623 @@
   margin: 2px;
 }
 
+.CardText {
+  position: absolute; 
+  bottom: 0px; 
+  text-align: center;
+  width: 100%; 
+  font-weight: bold; 
+  font-family: 'Occult', 'Open Sans'; 
+  color: #FFEFD7; 
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.5); 
+  font-size: min(5vw, 21px); 
+  letter-spacing: 0.5px; 
+  margin: 0; 
+  text-transform: uppercase; 
+  text-overflow: ellipsis; 
+  pointer-events: none;
+}
+
+.CardBG {
+  display:inline-block; 
+  border-radius: 1px; 
+  overflow:hidden; 
+  position: relative; 
+  background-color:#564a48;
+  border: 3px solid #777;
+  border-radius: 5px;
+}
+
 .HeroCard2:hover {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.);
+  -ms-transform: scale(1.1);
   z-index: 1;
 
+}
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0px 30px;
+  padding-bottom: 100px;
+  position: absolute;
+  z-index: 9999;
+}
+
+.navbar-container .navbar-border {
+  top: 0;
+  position: fixed;
+  z-index: 9999;
+  background-color: transparent;
+}
+
+.navbar-container .navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.navbar-container .navbar .TitleLogo {
+  width: 200px;
+  min-width: 200px;
+  height: 50px;
+  min-height: 50px;
+  background-image: url("images/logo/deadlocklogo_v2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: .8;
+  margin-right: 40px
+}
+
+.navbar-container .navbar .TitleLogo:hover {
+  opacity: 1;
+  cursor: pointer
+}
+
+@media(max-width: 1300px) {
+  .navbar-container .navbar .TitleLogo {
+      background-image: url("images/logo/deadlocklogo_v4.png");
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      min-height: 50px
+  }
+}
+
+@media(max-width: 900px) {
+  .navbar-container .navbar .TitleLogo {
+      display: none
+  }
+}
+
+@media(max-width: 700px) {
+  .navbar-container .navbar .TitleLogo {
+      display: block
+  }
+}
+
+.navbar-container .navbar .navbar-buttons-container {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding-top: 4px;
+}
+
+@media(max-width: 700px) {
+  .navbar-container .navbar .navbar-buttons-container {
+      justify-content: center
+  }
+}
+
+.navbar-container .navbar .navbar-buttons-container .button {
+  text-decoration: none;
+  font-size: 26px;
+  font-family: "Pulp", serif;
+  letter-spacing: 1.5px;
+  opacity: .8;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0px;
+  margin: 0px 20px;
+  text-transform: none;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent
+}
+
+.navbar-container .navbar .navbar-buttons-container .buttonnotactive {
+  text-decoration: none;
+  font-size: 26px;
+  font-family: "Pulp", serif;
+  letter-spacing: 1.5px;
+  opacity: .4;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0px;
+  margin: 0px 20px;
+  text-transform: none;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent
+}
+
+@media(max-width: 700px) {
+  .navbar-container .navbar .navbar-buttons-container .button .buttonnotactive {
+      display: none
+  }
+
+  .navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .dropdownbutton{
+      display: flex
+  }
+}
+
+.navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .dropdown {
+  border: 2px solid transparent;
+  transition-duration: .2s;
+  padding: 12px 20px;
+  margin: 0px
+}
+
+.navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .dropdownbutton .dropdown {
+  padding: 12px 20px;
+  margin: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: rgba(244, 244, 244, .2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, .6);
+  transition-duration: .2s
+}
+
+.navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .dropdownbutton {
+  border-bottom: 3px solid #ff6046;
+  opacity: 1
+}
+
+.navbar-container .navbar .navbar-buttons-container .button:hover {
+  opacity: 1;
+  cursor: pointer
+}
+
+.navbar-container .navbar .navbar-buttons-container .buttonnotactive:hover {
+  opacity: 0.4;
+}
+
+.navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .dropdownflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start
+}
+
+.navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .dropdownbutton2 {
+  width: 10px;
+  height: 6px;
+  opacity: .9;
+  margin-left: 5px
+}
+
+.navbar-container .navbar .navbar-buttons-container .button .buttonnotactive .viewallbutton {
+  width: 24px;
+  height: 24px;
+  margin: 0px 4px;
+  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/arrow_left.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotateZ(135deg);
+  filter: brightness(0.7)
+}
+
+.navbar-container .navbar .navbar-buttons-container .dropdown-container {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: rgba(244, 244, 244, .2);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  z-index: 10000;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  transition-duration: .2s;
+  border: 2px solid rgba(255, 255, 255, .6)
+}
+
+.navbar-container .navbar .navbar-buttons-container .dropdown-container .invisiblebutton {
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: .2s
+}
+
+.navbar-container .navbar .navbar-buttons-container .dropdown-container a {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  opacity: .8;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition-duration: .2s
+}
+
+.navbar-container .navbar .navbar-buttons-container .dropdown-container a:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition-duration: .2s;
+  transform: translateX(5px)
+}
+
+.navbar-container .navbar .playtest-container {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media(max-width: 700px) {
+  .navbar-container .navbar .playtest-container {
+      text-decoration: none;
+      display: none
+  }
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container {
+  text-decoration: none;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .loginsystem {
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff90
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .loginbutton:hover {
+  text-decoration: none;
+  color: #fff
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .loginbutton .invisiblebutton {
+  text-decoration: none;
+  display: none
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .logoutbutton {
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #fff;
+  display: flex;
+  flex-direction: row
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .logoutbutton .invisiblebuttonx {
+  text-decoration: none;
+  display: none
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .logoutbutton .logoutbuttona {
+  text-decoration: none;
+  margin-left: 4px;
+  color: #999
+}
+
+.navbar-container .navbar .playtest-container .sideoptions-container .logoutbutton .logoutbuttona:hover {
+  text-decoration: none;
+  color: #ccc
+}
+
+.navbar-container .navbar .playtest-container .playtestbutton-container ._3mkXBKss9wSruUD_7H5MtF {
+  text-decoration: none;
+  margin: 10px 0px 10px 20px
+}
+
+@media(max-width: 1200px) {
+  .navbar-container .navbar .sideoptions-container .playtestbutton-container {
+      text-decoration: none;
+      display: none
+  }
+}
+
+.navbar-container .navbar .hamburger-container {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+  padding: 10px 0px 10px 10px;
+  margin-left: 40px;
+  opacity: .8;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer
+}
+
+@media(max-width: 700px) {
+  .navbar-container .navbar .hamburger-container {
+      display: flex
+  }
+}
+
+.navbar-container .navbar .hamburger-container:hover {
+  opacity: 1
+}
+
+.navbar-container .navbar .hamburger-container .hamburger-line {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 2px
+}
+
+.navbar-container .mobile-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #0f0f0f;
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+  transition-duration: .1s
+}
+
+.navbar-container .mobile-container .mobile-stuff {
+  opacity: 1;
+  pointer-events: unset;
+  display: flex
+}
+
+.navbar-container .mobile-container .TitleLogo-mobile {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+.navbar-container .mobile-container .TitleLogo-mobile .TitleLogo {
+  width: 200px;
+  min-width: 200px;
+  height: 50px;
+  min-height: 50px;
+  background-image: url("images/logo/deadlocklogo_v2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-left: 20px
+}
+
+.navbar-container .mobile-container .TitleLogo-mobile .closebutton {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 26px
+}
+
+.navbar-container .mobile-container .button-mobile {
+  width: 100%;
+  height: 60px;
+  background-color: #1b1b1b;
+  color: #fff;
+  font-family: "Reaver", serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px
+}
+
+.navbar-container .mobile-container .button-mobile .arrow-right {
+  width: 16px;
+  height: 24px;
+  margin-right: 18px
+}
+
+.navbar-container .mobile-container .list-mobile {
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0px
+}
+
+.navbar-container .mobile-container .list-mobile .list-button {
+  width: 100%;
+  height: 30px;
+  background-color: #0f0f0f;
+  color: #cacaca;
+  font-family: "Reaver", serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px
+}
+
+.navbar-container .mobile-container .list-mobile .list-button .arrow-right {
+  width: 8px;
+  height: 12px;
+  margin-left: 4px;
+  margin-top: 1px
+}
+
+.navbar-container .mobile-container .line-color {
+  width: 100%;
+  height: 1px;
+  background-color: #494949
+}
+
+.navbar-container .mobile-container .bg-color {
+  width: 100%;
+  flex-grow: 1;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container .loginstuff {
+  font-size: 18px;
+  margin-left: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff90
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container .loginstuff .invisiblebutton {
+  display: none
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container .logoutbutton {
+  font-size: 18px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container .logoutbutton .invisiblebutton {
+  display: none
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container .logoutbutton .logoutbuttona {
+  margin-left: 4px;
+  color: #999
+}
+
+.navbar-container .mobile-container .bg-color .login-mobile-container .logoutbutton .logoutbuttona:hover {
+  color: #ccc
+}
+
+.navbar-container .mobile-container .bg-color .playtestbutton-container .playtestbutton {
+  text-decoration: none;
+  width: calc(100% - 20px);
+  margin: 10px 0px 10px 10px
+}
+
+.playtestbutton {
+  border: 3px solid #ffffff50;
+  padding: 15px 25px;
+  margin: 10px 2px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition-duration: .2s
+}
+
+.playtestbutton:hover {
+  border: 3px solid #ffefd7;
+  text-decoration: none;
+  transform: translateY(-2px);
+  color: #ff6046
+}
+
+.playtestbutton .playtestbutton-text {
+  font-family: "Pulp", serif;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, .3)
+}
+
+@media(max-width: 900px) {
+  .playtestbutton .playtestbutton-text {
+      text-decoration: none;
+      font-size: 16px
+  }
+}
+
+.playtestbutton .icon-container {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat
+}
+
+.playtestbutton .icon-container .playicon {
+  text-decoration: none;
+  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/icons/icon-play.svg")
+}
+
+.playtestbutton .steamicon {
+  text-decoration: none;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/icons/steam_icon.svg")
+}
+
+.borderstyle {
+  border: 3px solid #ffffff50;
+  padding: 15px 25px;
+  margin: 10px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition-duration: .2s
 }
 
 .i3o0340 {
@@ -367,11 +1011,19 @@
   width: 100%;
 }
 
+.LinkContainer {
+  display:flex; 
+  justify-content: center;
+  margin-left: 400px;
+  margin-right: 400px;
+  position: relative;
+  height: auto;
+}
+
 @media all and (min-width: 992px) {
-.imagerupdate1 {
+.imagerupdate1 .imagerupdate10 {
   width: 40%;
     display:flex; 
-  border: 3px solid #988e80;
   justify-content: center;
   margin: auto;
   position: relative;
@@ -381,10 +1033,9 @@
 }
 
 @media all and (min-width: 768px) {
-  .imagerupdate1 {
+  .imagerupdate1 .imagerupdate10 {
   width: 30%;
     display:flex; 
-  border: 3px solid #988e80;
   justify-content: center;
   margin: auto;
   position: relative;
@@ -394,10 +1045,9 @@
 }
 
 @media all and (min-width: 600px) {
-  .imagerupdate1 {
+  .imagerupdate1 .imagerupdate10 {
   width: 10%;
     display:flex; 
-  border: 3px solid #988e80;
   justify-content: center;
   margin: auto;
   position: relative;
@@ -406,9 +1056,9 @@
 }
 }
 
-.imagerupdate1 {
-  width: 55%;
-    display:flex; 
+.imagerupdate1  {
+  width: 100%;
+  display:flex; 
   border: 3px solid #988e80;
   justify-content: center;
   margin: auto;
@@ -416,6 +1066,29 @@
   height: auto;
   opacity: 0.8;
 }
+
+.imagerupdate10  {
+  width: 100%;
+    display:flex; 
+  border: 3px solid #1886B9;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  height: auto;
+  opacity: 0.8;
+}
+
+.imagerupdate10:hover {
+  transform: scale(1.1);
+  opacity: 1.0;
+  transition: 0.1s ease-in-out;
+  }
+  
+  .imagerupdate10:not(hover) {
+  transform: scale(1.0);
+  opacity: .8;
+  transition: 0.1s ease-in-out;
+  }
 
 .imagerupdate1:hover {
 transform: scale(1.1);
@@ -761,552 +1434,6 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   }
 }
 
-.nav {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 0px 30px;
-  background-color: #000;
-  position: relative;
-}
-
-.nav.nav2 {
-  top: 0;
-  position: absolute;
-  z-index: 9999;
-  background-color: transparent
-}
-
-.textBig {
-  text-align:center;
-  margin-top:30px;
-  max-width:1000px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-items:center;
-}
-.nav .nav3 {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.nav .nav3 .LogoResponsive {
-  width: 200px;
-  min-width: 200px;
-  height: 50px;
-  min-height: 50px;
-  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: .8;
-  margin-right: 40px
-}
-
-.nav .nav3 .LogoResponsive:hover {
-  opacity: 1;
-  cursor: pointer
-}
-
-@media(max-width: 1300px) {
-  .nav .nav3 .LogoResponsive {
-      background-image:url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_symbol.png");
-      width: 50px;
-      min-width: 50px;
-      height: 50px;
-      min-height: 50px
-  }
-}
-
-@media(max-width: 900px) {
-  .nav .nav3 .LogoResponsive {
-      display:none
-  }
-}
-
-@media(max-width: 700px) {
-  .nav .nav3 .LogoResponsive {
-      display:block
-  }
-}
-
-.nav .nav3 .Navbar {
-  flex-grow: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative
-}
-
-@media(max-width: 700px) {
-  .nav .nav3 .Navbar {
-      justify-content:center
-  }
-}
-
-.nav .nav3 .Navbar .ListedItems {
-  font-size: 18px;
-  font-family: "Pulp",serif;
-  font-weight: 600;
-  letter-spacing: 3px;
-  opacity: .8;
-  color: #fff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 3px 0px;
-  margin: 0px 20px;
-  text-transform: uppercase;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent
-}
-
-@media(max-width: 700px) {
-  .nav .nav3 .Navbar .ListedItems {
-      display:none
-  }
-
-  .nav .nav3 .Navbar .ListedItems._3ulNR3VlHLYvZ3PQlOXxdm {
-      display: flex
-  }
-}
-
-.nav .nav3 .Navbar .ListedItems._2cfJEfHMOVXTgPzE1sBfg0 {
-  border: 2px solid transparent;
-  transition-duration: .2s;
-  padding: 12px 20px;
-  margin: 0px
-}
-
-.nav .nav3 .Navbar .ListedItems._2cfJEfHMOVXTgPzE1sBfg0._3ulNR3VlHLYvZ3PQlOXxdm {
-  padding: 12px 20px;
-  margin: 0px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: rgba(244,244,244,.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,.6);
-  transition-duration: .2s
-}
-
-.nav .nav3 .Navbar .ListedItems._3ulNR3VlHLYvZ3PQlOXxdm {
-  border-bottom: 3px solid #ff6046;
-  opacity: 1
-}
-
-.nav .nav3 .Navbar .ListedItems:hover {
-  opacity: 1;
-  cursor: pointer
-}
-
-.nav .nav3 .Navbar .ListedItems.VEHD2297Ndpov6UyGDN2s {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: flex-start
-}
-
-.nav .nav3 .Navbar .ListedItems ._1VjIj4C2gNORnSYO0XDjr7 {
-  width: 10px;
-  height: 6px;
-  opacity: .9;
-  margin-left: 5px
-}
-
-.nav .nav3 .Navbar .ListedItems .RsneXJyv2d7XpUegBKvkH {
-  width: 24px;
-  height: 24px;
-  margin: 0px 4px;
-  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/arrow_left.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  transform: rotateZ(135deg);
-  filter: brightness(0.7)
-}
-
-.nav .nav3 .Navbar ._18ww9vt_1WGh9I2bAcqmjt {
-  position: absolute;
-  top: 64px;
-  left: 0;
-  color: #fff;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  background-color: rgba(244,244,244,.2);
-  backdrop-filter: blur(10px);
-  opacity: 1;
-  z-index: 10000;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  transition-duration: .2s;
-  border: 2px solid rgba(255,255,255,.6)
-}
-
-.nav .nav3 .Navbar ._18ww9vt_1WGh9I2bAcqmjt._3P4BKE-VROgNdCbvjA1bex {
-  opacity: 0;
-  pointer-events: none;
-  transition-duration: .2s
-}
-
-.nav .nav3 .Navbar ._18ww9vt_1WGh9I2bAcqmjt a {
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-top: 5px;
-  opacity: .8;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition-duration: .2s
-}
-
-.nav .nav3 .Navbar ._18ww9vt_1WGh9I2bAcqmjt a:hover {
-  opacity: 1;
-  cursor: pointer;
-  transition-duration: .2s;
-  transform: translateX(5px)
-}
-
-.nav .nav3 .RightNavbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center
-}
-
-@media(max-width: 700px) {
-  .nav .nav3 .RightNavbar {
-      display:none
-  }
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex {
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex ._1RIIB0kU4TD5l8z65xKLF6 {
-  font-size: 14px;
-  margin-bottom: 4px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #ffffff90
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex ._1RIIB0kU4TD5l8z65xKLF6:hover {
-  color: #fff
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex ._1RIIB0kU4TD5l8z65xKLF6._3P4BKE-VROgNdCbvjA1bex {
-  display: none
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex .lcq6hIYMdUKWW8dS3D27y {
-  font-size: 18px;
-  margin-bottom: 4px;
-  color: #fff;
-  display: flex;
-  flex-direction: row
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex .lcq6hIYMdUKWW8dS3D27y._3P4BKE-VROgNdCbvjA1bex {
-  display: none
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex .lcq6hIYMdUKWW8dS3D27y .rirOy0r_67jY_QlZSo2gx {
-  margin-left: 4px;
-  color: #999
-}
-
-.nav .nav3 .RightNavbar ._22B7ZEhhTc8upmU0RNUiex .lcq6hIYMdUKWW8dS3D27y .rirOy0r_67jY_QlZSo2gx:hover {
-  color: #ccc
-}
-
-.nav .nav3 .RightNavbar .BordersPButton .BordersPButton2 {
-  margin: 10px 0px 10px 20px
-}
-
-@media(max-width: 1200px) {
-  .nav .nav3 .RightNavbar .BordersPButton {
-      display:none
-  }
-}
-
-.nav .nav3 .MM-C2Bi-pVHzw7EMKBDgZ {
-  width: 50px;
-  min-width: 50px;
-  height: 50px;
-  min-height: 50px;
-  padding: 10px 0px 10px 10px;
-  margin-left: 40px;
-  opacity: .8;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer
-}
-
-@media(max-width: 700px) {
-  .nav .nav3 .MM-C2Bi-pVHzw7EMKBDgZ {
-      display:flex
-  }
-}
-
-.nav .nav3 .MM-C2Bi-pVHzw7EMKBDgZ:hover {
-  opacity: 1
-}
-
-.nav .nav3 .MM-C2Bi-pVHzw7EMKBDgZ .vkYBh8y2GsZajPZsy64Rb {
-  width: 100%;
-  height: 5px;
-  background-color: #fff;
-  border-radius: 2px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  background-color: #0f0f0f;
-  display: none;
-  flex-direction: column;
-  opacity: 0;
-  pointer-events: none;
-  transition-property: opacity;
-  transition-timing-function: ease-in;
-  transition-duration: .1s
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG.hLuNN-Ls4yPxmA3Md1aio {
-  opacity: 1;
-  pointer-events: unset;
-  display: flex
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._2H33BWocDYqqID_glE3bXC {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._2H33BWocDYqqID_glE3bXC .LogoResponsive {
-  width: 200px;
-  min-width: 200px;
-  height: 50px;
-  min-height: 50px;
-  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-left: 20px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._2H33BWocDYqqID_glE3bXC ._1cGE-FsJspekk1ARZ6DGkb {
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-right: 26px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._3IxVZ0C6lRZGJ2RcYamrHs {
-  width: 100%;
-  height: 60px;
-  background-color: #1b1b1b;
-  color: #fff;
-  font-family: "Pulp",serif;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 20px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._3IxVZ0C6lRZGJ2RcYamrHs ._3k0_Xqm3P0GN5pCBMcsZGZ {
-  width: 16px;
-  height: 24px;
-  margin-right: 18px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._3GiVqq74kEopEWqd_yhTZh {
-  width: 100%;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 4px 0px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._3GiVqq74kEopEWqd_yhTZh ._2HVs2fT-Gh1v0FIsXHJ5lH {
-  width: 100%;
-  height: 30px;
-  background-color: #0f0f0f;
-  color: #cacaca;
-  font-family: "Pulp",serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 20px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._3GiVqq74kEopEWqd_yhTZh ._2HVs2fT-Gh1v0FIsXHJ5lH ._3k0_Xqm3P0GN5pCBMcsZGZ {
-  width: 8px;
-  height: 12px;
-  margin-left: 4px;
-  margin-top: 1px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG .YWlJqqBsK2TojTjzNvOLq {
-  width: 100%;
-  height: 1px;
-  background-color: #494949
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv {
-  width: 100%;
-  flex-grow: 1;
-  background-color: #1b1b1b;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E ._1RIIB0kU4TD5l8z65xKLF6 {
-  font-size: 18px;
-  margin-left: 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #ffffff90
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E ._1RIIB0kU4TD5l8z65xKLF6._3P4BKE-VROgNdCbvjA1bex {
-  display: none
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E .lcq6hIYMdUKWW8dS3D27y {
-  font-size: 18px;
-  margin-bottom: 4px;
-  display: flex;
-  flex-direction: row;
-  margin-left: 20px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E .lcq6hIYMdUKWW8dS3D27y._3P4BKE-VROgNdCbvjA1bex {
-  display: none
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E .lcq6hIYMdUKWW8dS3D27y .rirOy0r_67jY_QlZSo2gx {
-  margin-left: 4px;
-  color: #999
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._204pij6W-LGmOF13ds561E .lcq6hIYMdUKWW8dS3D27y .rirOy0r_67jY_QlZSo2gx:hover {
-  color: #ccc
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv .BordersPButton .BordersPButton2 {
-  width: calc(100% - 20px);
-  margin: 10px 0px 10px 10px
-}
-
-.PlaytestArea {
-  border: 3px solid #ffffff50;
-  padding: 15px 25px;
-  margin: 10px 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  transition-duration: .2s
-}
-
-.PlaytestArea:hover {
-  border: 3px solid #ff6046;
-  transform: translateY(-2px);
-  color: #ff6046
-}
-
-.PlaytestArea .PText {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0px 2px 8px rgba(0,0,0,.3)
-}
-
-@media(max-width: 900px) {
-  .PlaytestArea .PText {
-      font-size:16px
-  }
-}
-
-.PlaytestArea ._3vDBWG9mmEpfIWKhzRc0uW {
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-repeat: no-repeat
-}
-
-.PlaytestArea ._3vDBWG9mmEpfIWKhzRc0uW._14TOJpgNQtffgW9vtDNc_u {
-  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/icons/icon-play.svg")
-}
-
-.PlaytestArea .SteamIcon {
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url("https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/icons/steam_icon.svg")
-}
-
-.nav .nav3 ._11fequj40klP5KTtmPsvjc ._3vieaG5rLZslvZ_VHHW52V .PlaytestArea {
-  margin: 10px 0px 10px 20px
-}
-
-.nav ._27Q74UuZ44HRqM7xwtBYRG ._1E5o8M3cqdvzv7RmkyAGqv ._3vieaG5rLZslvZ_VHHW52V .PlaytestArea {
-  width: calc(100% - 20px);
-  margin: 10px 0px 10px 10px
-}
-.imagebg3 {
-
-  
-}
 .main-footer {
   margin-left: -19vw;
   margin-right: -19vw;
@@ -1331,7 +1458,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
 }
 
 .addspaces {
-  margin-top: 150px;
+  padding-top: 150px;
 }
 .textlist {
   list-style-position: outside;
@@ -1357,7 +1484,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   margin-top: 5px;
   margin-bottom: 8px;
   text-shadow: 0px 0px 10px #000;
-  font-family: "Pulp",serif;
+  font-family: "Reaver",serif;
   font-weight: bold;
   text-transform: none;
   letter-spacing: 1px;
@@ -1431,7 +1558,7 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   }
 }
 
-.Footer .ValveLink .ValveLogo {
+.Footer .ValveLink .ValveLogo  {
   margin: 0px 15px 20px 15px;
   max-height: 30px;
 }
