@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="addspaces"></div>
-  <div class="clampwidth">
+  <div  data-aos="fade-right" data-aos-duration="2000"  data-aos-anchor-placement="left-bottom" class="clampwidth">
     <div class="HeroInfo">
       <img class="HeroLogo" src="images/hero_names/abrams.svg">
       <div class="HeroTags">
@@ -101,10 +101,10 @@
   </div>
   <div id="RightPanel">
     <div id="HeroScenePanel">
-      <img class="imagesize" src="images/ingame/Abrams_Render.png">
+      <img data-aos="fade-left" data-aos-duration="2000"  data-aos-anchor-placement="right-bottom" class="imagesize" src="images/ingame/Abrams_Render.png">
     </div>
     <video class="fullscreen-bg__video2" autoplay muted loop playsinline>
-      <source src="videos/selectscreen_bg1.webm" preload="auto" decoding="async" type="video/webm">
+      <source src="videos/selectscreen_bg1.mp4" preload="auto" decoding="async" type="video/mp4">
     </video>
   </div>
   <div class="Footer">
@@ -114,5 +114,9 @@
     <div class="rights">Deadlock and the Deadlock logo are trademarks and/or registered trademarks of Valve Corporation.
       2025 Valve Corporation, all rights reserved.</div>
   </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
