@@ -1,4 +1,5 @@
 
+
 @font-face {
   font-family: 'Pulp';
   src: url("font/valvepulp-bold.ttf") format("truetype");
@@ -127,30 +128,252 @@ vertical-align: bottom;
 overflow: hidden;
 }
 
-.HeroCard2:hover + #hidden{display:block;}
 
-.HeroInfo .HeroLogo #hidden {
+.HeroInfo .HeroLogo {
   width: 600px;
   height: 160px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 30px;
-  display: none;
+  display: flex;
   vertical-align: middle;
   background-image: url("images/hero_names/abrams.svg");
   }
 
-.hero_abrams:hover \ .HeroInfo .HeroLogo {
- visibility: visible;
- display: block;
+  .HeroInfo .HeroTags
+  {
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 10px 0px;
+    overflow: collapse;
+    display: flex;
+    width: 100%;
+  }
+
+  .HeroInfo .HeroTags .heroTag
+{
+	padding: 5px;
+	height: 50px;
+}
+
+.HeroInfo .HeroTags .heroTag .tagBacker
+{
+	width: 100%;
+	height: 96%;
+	background-color: #2092AE;
+  box-shadow: 0px 0px 1px #2092AE;
+	margin: 1px;
+}
+
+.HeroInfo .HeroTags .heroTag.Tag3
+{
+	x: 350px;
+	y: 10px;
+	transform: rotateZ(5deg);
+}
+
+.HeroInfo .HeroTags .Tag1 .tagBacker
+{
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.HeroInfo .HeroTags .Tag2 .tagBacker
+{
+	animation-name: TagGroove2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.HeroInfo .HeroTags .Tag3 .tagBacker
+{
+	animation-name: TagGroove3;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.HeroInfo .HeroTags .heroTag.Tag1
+{
+	x: 0px;
+	y: 10px;
+	transform: rotateZ(-3deg);
+}
+
+.HeroInfo .HeroTags .heroTag.Tag2
+{
+	x: 170px;
+	y: 45px;
+	margin-top: 10px;
+	transform: rotateZ(3deg);
+}
+
+.HeroInfo .HeroTags .heroTag div
+{
+	font-family: "Pulp";
+	font-size: 22px;
+	text-transform: uppercase;
+	color: white;
+	margin: 1px;
+  margin-top: 41px;
+  padding: 0px 10px;  
+	max-width: 200px;
+	text-overflow: clip;
+	max-height: 36px;
+	text-align: center;
+}
+
+
+
+@keyframes TagGroove1
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+
+@keyframes TagGroove2
+{
+	0%
+	{
+		transform: rotateZ(4deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(4deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+}
+
+@keyframes TagGroove3
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+
+.HeroAbilities
+{
+	align-items: center;
+	vertical-align: bottom;
+	width: 450px;
+	height: 100px;
+  display: block;
+	opacity: 1;
+	visibility: collapse;
 }
 
 .fullscreen-bg__video {
     position: relative;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: -5s;
     overflow: hidden;
     overflow-x: hidden;
     width: 100%;
@@ -164,6 +387,292 @@ overflow: hidden;
   overflow: hidden;
   overflow-x: hidden;
   width: 100%;
+}
+
+.newsbutton {
+  border: 3px solid #ffffff50;
+  padding: 15px 25px;
+  margin: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition-duration: .2s
+}
+
+.newsbutton:hover {
+  border: 3px solid #ffefd7;
+  transform: translateY(-2px);
+  color: #ffefd7;
+}
+
+.newsbutton .newsbuttontext {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Pulp", sans-serif;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, .3)
+}
+
+@media(max-width: 900px) {
+  .newsbutton .newsbuttontext {
+      font-size: 16px
+  }
+}
+
+.SNH_bg {
+  width: 100%;
+  max-width: 100%;
+  min-height: 1000px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -2;
+  z-index: 40;
+  position: relative;
+  background-image: url("images/SNH_image.png")
+}
+
+@media(max-width: 900px) {
+  .SNH_bg {
+      background-image: url("images/NYC_Image.png");
+      background-size: 100% auto;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      top: 0px;
+      border-top: 400px solid rgba(0, 0, 0, .7);
+      z-index: -1;
+      width: 900px;
+      height: 0px
+  }
+}
+
+.SNH_bg {
+  bottom: 0px
+}
+
+@media(max-width: 900px) {
+  .SNH_bg {
+      margin-top: 400px
+  }
+}
+
+.SNH_bg {
+  text-align: center;
+  z-index: 40;
+  width: 100%;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+@media(max-width: 600px) {
+  .SNH_bg {
+  width: 100%;
+  max-width: 100%;
+  min-height: 1000px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -2;
+  z-index: 40;
+  position: relative;
+  background-image: url("images/NYC_Image.png")
+}
+
+@media(max-width: 900px) {
+  .SNH_bg {
+      background-image: url("images/NYC_Image.png");
+      background-size: 100% auto;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      top: 0px;
+      border-top: 400px solid rgba(0, 0, 0, .7);
+      z-index: -1;
+      width: 900px;
+      height: 0px
+  }
+}
+
+.SNH_bg {
+  bottom: 0px
+}
+
+@media(max-width: 900px) {
+  .SNH_bg {
+      margin-top: 400px
+  }
+}
+
+.SNH_bg {
+  text-align: center;
+  z-index: 40;
+  width: 100%;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+@media(max-width: 600px) {
+  .SNH_bg {
+      width: 90%
+  }
+}
+
+.SNH_bg {
+  margin-top: 30px
+} {
+      width: 90%
+  }
+}
+
+.SNH_bg {
+  margin-top: 30px
+}
+
+.NYC_bg {
+  width: 100%;
+  max-width: 100%;
+  min-height: 1000px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -2;
+  z-index: 40;
+  position: relative;
+  background-image: url("images/NYC_Image.png")
+}
+
+@media(max-width: 900px) {
+  .NYC_bg {
+      background-image: url("images/NYC_Image.png");
+      background-size: 100% auto;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      top: 0px;
+      border-top: 400px solid rgba(0, 0, 0, .7);
+      z-index: -1;
+      width: 900px;
+      height: 0px
+  }
+}
+
+.NYC_bg {
+  bottom: 0px
+}
+
+@media(max-width: 900px) {
+  .NYC_bg {
+      margin-top: 400px
+  }
+}
+
+.NYC_bg {
+  text-align: center;
+  z-index: 40;
+  width: 100%;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+@media(max-width: 600px) {
+  .NYC_bg {
+      width: 90%
+  }
+}
+
+.NYC_bg {
+  margin-top: 30px
+}
+
+.Major,
+.Major * {
+    font-family: "Pulp", serif;
+    font-weight: 700;
+    font-size: 100px;
+    color: #e2dace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align:center; 
+    position:relative;
+    align-items: center; 
+    padding-top: 550px;
+    line-height: 105%
+}
+
+.Major .Minor,
+.Major * .Minor {
+    font-size: 70px;
+    color: #E2DACE90;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+
+@media(max-width: 1600px) {
+
+    .Major .Minor,
+    .Major * .Minor {
+        font-size: 50px
+    }
+}
+
+@media(max-width: 900px) {
+
+    .Major .Minor,
+    .Major * .Minor {
+        font-size: 40px
+    }
+}
+
+@media(max-width: 1600px) {
+
+    .Major,
+    .Major * {
+        font-size: 100px
+    }
+}
+
+@media(max-width: 900px) {
+
+    .Major,
+    .Major * {
+        font-size: 60px
+    }
+}
+
+@media(max-width: 600px) {
+
+    .Major,
+    .Major * {
+        font-size: 50px
+    }
 }
 
 .HeroCard2 {
@@ -218,6 +727,7 @@ overflow: hidden;
   padding-bottom: 100px;
   position: absolute;
   z-index: 9999;
+  background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 24%, rgba(255, 255, 255, 0) 100%);
 }
 
 .navbar-container .navbar-border {
@@ -733,7 +1243,7 @@ overflow: hidden;
   border: 3px solid #ffefd7;
   text-decoration: none;
   transform: translateY(-2px);
-  color: #ff6046
+  color: #ffefd7
 }
 
 .playtestbutton .playtestbutton-text {
@@ -989,7 +1499,7 @@ overflow: hidden;
 #RightPanel {
   width: 1300px;
   height: 100%;
-  margin-left: 150px;
+  margin-left: 550px;
   flex-direction: column-reverse;
   z-index: -1;
   align-items: center;
@@ -1103,10 +1613,10 @@ transition: 0.1s ease-in-out;
 }
 
 #HeroScenePanel {
-  width: 1640px;
+  width: 1840px;
   display: block;
-  padding-left: 450px;
-  margin-top: -500px;
+  padding-left: 150px;
+  margin-top: -650px;
   height: 100%;
   align-items: center;
   z-index: 100;
@@ -1148,7 +1658,7 @@ transition: 0.1s ease-in-out;
 
 
 .TableSkills {
-   align-items: center; display:inline-block; padding-bottom: 15px; margin-left: 30px; width:min(768px, 90vw);
+   align-items: center; display:inline-block; padding-bottom: 15px; padding-left: 75px; width:min(768px, 90vw);
 }
 
 .HeroNameAndLevelsIcon {
@@ -1288,16 +1798,18 @@ transition: 0.1s ease-in-out;
 .ability-icon {
   filter: invert(100%);
   opacity: 0.7;
+  width: 90%;
 }
 
 .abilityImageRe {
   z-index: -1; 
   position:absolute;
-  filter: invert(42%) sepia(10%) saturate(2912%) hue-rotate(-40deg) brightness(190%) contrast(77%);
+  filter: brightness(0) saturate(100%) invert(44%) sepia(60%) saturate(566%) hue-rotate(145deg) brightness(96%) contrast(91%);
 }
 
 .abilityImage {
 margin: 6px;
+width: 90%;
 }
 
 .abilityImage:hover {
@@ -1410,9 +1922,9 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   font-size: 32px;
   font-family: "Reaver",serif;
   font-weight: 600;
-  padding-left: 130px;
+  padding-left: 230px;
   padding-top: 52px;
-  padding-right: 130px;
+  padding-right: 230px;
   color: #e2dace;
 
 }
