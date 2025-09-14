@@ -750,6 +750,156 @@ overflow: hidden;
   background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 24%, rgba(255, 255, 255, 0) 100%);
 }
 
+#WeaponStats,#ArmorStats,#TechStats
+{
+	width: 520px;
+	display: flex;
+	border-radius: 10px;
+	padding-top: 0px;
+	padding: 0px;
+}
+
+.HeroStatsWeapon {
+  overflow: visible;
+}
+
+.HeroStatsWeapon .BackgroundContainer {
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #493516 ), to( #271904) );
+  background-image: url(images/shop/catalog_tooltip_modifies_header_weapon_psd.png);
+  background-size: cover;
+}
+
+.BackgroundContainer {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.WeaponContainer {
+  background-color: #00000080;
+  height: 120px;
+  width: 100%;
+  overflow: visible;
+}
+
+.GunImage {
+  width: 250px;
+  height: 120px;
+  align-content: right;
+  margin-left: 270px;
+  margin-right: auto;
+  vertical-align: bottom;
+}
+
+.weaponNameAndAttributes {
+  width: 100%;
+  padding: 15px;
+  top: 1px;
+}
+
+.statTitle {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.6;
+  margin-bottom: 0px;
+  color: white;
+  font-family: "Reaver";
+}
+
+.WeaponName {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  margin-top: 4px;
+}
+
+.WeaponAttributesContainer .AttributeLabel {
+  background-color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 6px 1px 6px;
+  border-radius: 3px;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.AttributeLabel {
+  color: white;
+}
+
+.WeaponAttributesContainer {
+  width: 370px;
+  min-height: 27px;
+  display: flex;
+}
+
+.BulletDPSContainer {
+  vertical-align: top;
+  margin-bottom: 50px;
+}
+
+.StatContainer_DPS {
+  margin: 0px;
+  border-radius: 0px;
+  min-width: 100px;
+  right: 0px;
+  top: 0px;
+}
+
+.statAttributeContainer {
+  width: 80px;
+  height: 40px;
+  margin: 2px;
+  padding: 0px 0px 0px 10px;
+  border-radius: 3px;
+}
+
+.LabelsContainer {
+  vertical-align: center;
+  font-weight: bold;
+  margin-right: 5px;
+  float:left;
+}
+
+.StatDesc_DPS {
+  background-image: url("images/stats/damage_bullet_color.svg");
+  opacity: 1;
+}
+
+.StatImage {
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  margin-right: 4px;
+  margin-top: 3px;
+  vertical-align: center;
+}
+
+.StatImageArea {
+  vertical-align: middle;
+  float: left;
+}
+
+.BaseLabel {
+  font-family: "Reaver";
+  max-height: 35px;
+  color: white;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.AdditionalText {
+  font-size: 17px;
+  vertical-align: middle;
+  font-weight: bold;
+  opacity: 0.6;
+  max-height: 28px;
+  color: white;
+  float: right;
+}
+
 .navbar-container .navbar-border {
   top: 0;
   position: fixed;
@@ -1891,7 +2041,24 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
 
 
 
-
+@keyframes BGGroove
+{
+	0%
+	{
+		transform: skew(-10deg);
+	}
+	
+	50%
+	{
+		transform: skew(10deg);
+	}
+	
+	100%
+	{
+		transform: skew(-10deg);
+	}
+	
+}
 
 
 
@@ -2108,4 +2275,358 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   .Footer .rights {
       width:80%;
   }
+}
+
+.stats-container {
+  border-radius: 3px;
+  background-color: #000;
+  border-bottom: 3px;
+  border-top: 3px;
+  border-color: #494949;
+  width: 100%;
+  align-content: center;
+}
+
+[data-aos=fade-zoom-in] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transform: scale(0)
+}
+
+[data-aos=fade-zoom-in] &.aos-animate {
+  opacity: 1;
+  transform: scale(1)
+}
+
+[data-aos=fade-slide-right] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transform: translateX(-40%)
+}
+
+[data-aos=fade-slide-right] &.aos-animate {
+  opacity: 1;
+  transform: translateX(0)
+}
+
+[data-aos=fade-slide-left] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transform: translateX(40%)
+}
+
+[data-aos=fade-slide-left] &.aos-animate {
+  opacity: 1;
+  transform: translateX(0)
+}
+
+[data-aos=fade-slide-up] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transform: translateY(40%)
+}
+
+[data-aos=fade-slide-up] &.aos-animate {
+  opacity: 1;
+  transform: translateX(0)
+}
+
+[data-aos=fade-slide-down] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transform: translateY(-40%)
+}
+
+[data-aos=fade-slide-down] &.aos-animate {
+  opacity: 1;
+  transform: translateX(0)
+}
+
+[data-aos=rotate] {
+  transition-property: transform;
+  transform: rotateZ(0deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate-bottom] {
+  transform-origin: bottom center
+}
+
+[data-aos=rotate] &[data-aos-rotate="10"].aos-animate {
+  transform: rotateZ(10deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="20"].aos-animate {
+  transform: rotateZ(20deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="30"].aos-animate {
+  transform: rotateZ(30deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="40"].aos-animate {
+  transform: rotateZ(40deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="50"].aos-animate {
+  transform: rotateZ(50deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="60"].aos-animate {
+  transform: rotateZ(60deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="70"].aos-animate {
+  transform: rotateZ(70deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="80"].aos-animate {
+  transform: rotateZ(80deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="90"].aos-animate {
+  transform: rotateZ(90deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="100"].aos-animate {
+  transform: rotateZ(100deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="110"].aos-animate {
+  transform: rotateZ(110deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="120"].aos-animate {
+  transform: rotateZ(120deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="130"].aos-animate {
+  transform: rotateZ(130deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="140"].aos-animate {
+  transform: rotateZ(140deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="150"].aos-animate {
+  transform: rotateZ(150deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="160"].aos-animate {
+  transform: rotateZ(160deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="170"].aos-animate {
+  transform: rotateZ(170deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="180"].aos-animate {
+  transform: rotateZ(180deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="190"].aos-animate {
+  transform: rotateZ(190deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="200"].aos-animate {
+  transform: rotateZ(200deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="210"].aos-animate {
+  transform: rotateZ(210deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="220"].aos-animate {
+  transform: rotateZ(220deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="230"].aos-animate {
+  transform: rotateZ(230deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="240"].aos-animate {
+  transform: rotateZ(240deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="250"].aos-animate {
+  transform: rotateZ(250deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="260"].aos-animate {
+  transform: rotateZ(260deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="270"].aos-animate {
+  transform: rotateZ(270deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="280"].aos-animate {
+  transform: rotateZ(280deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="290"].aos-animate {
+  transform: rotateZ(290deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="300"].aos-animate {
+  transform: rotateZ(300deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="310"].aos-animate {
+  transform: rotateZ(310deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="320"].aos-animate {
+  transform: rotateZ(320deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="330"].aos-animate {
+  transform: rotateZ(330deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="340"].aos-animate {
+  transform: rotateZ(340deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="350"].aos-animate {
+  transform: rotateZ(350deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-10"].aos-animate {
+  transform: rotateZ(-10deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-20"].aos-animate {
+  transform: rotateZ(-20deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-30"].aos-animate {
+  transform: rotateZ(-30deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-40"].aos-animate {
+  transform: rotateZ(-40deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-50"].aos-animate {
+  transform: rotateZ(-50deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-60"].aos-animate {
+  transform: rotateZ(-60deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-70"].aos-animate {
+  transform: rotateZ(-70deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-80"].aos-animate {
+  transform: rotateZ(-80deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-90"].aos-animate {
+  transform: rotateZ(-90deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-100"].aos-animate {
+  transform: rotateZ(-100deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-110"].aos-animate {
+  transform: rotateZ(-110deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-120"].aos-animate {
+  transform: rotateZ(-120deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-130"].aos-animate {
+  transform: rotateZ(-130deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-140"].aos-animate {
+  transform: rotateZ(-140deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-150"].aos-animate {
+  transform: rotateZ(-150deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-160"].aos-animate {
+  transform: rotateZ(-160deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-170"].aos-animate {
+  transform: rotateZ(-170deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-180"].aos-animate {
+  transform: rotateZ(-180deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-190"].aos-animate {
+  transform: rotateZ(-190deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-200"].aos-animate {
+  transform: rotateZ(-200deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-210"].aos-animate {
+  transform: rotateZ(-210deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-220"].aos-animate {
+  transform: rotateZ(-220deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-230"].aos-animate {
+  transform: rotateZ(-230deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-240"].aos-animate {
+  transform: rotateZ(-240deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-250"].aos-animate {
+  transform: rotateZ(-250deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-260"].aos-animate {
+  transform: rotateZ(-260deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-270"].aos-animate {
+  transform: rotateZ(-270deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-280"].aos-animate {
+  transform: rotateZ(-280deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-290"].aos-animate {
+  transform: rotateZ(-290deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-300"].aos-animate {
+  transform: rotateZ(-300deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-310"].aos-animate {
+  transform: rotateZ(-310deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-320"].aos-animate {
+  transform: rotateZ(-320deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-330"].aos-animate {
+  transform: rotateZ(-330deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-340"].aos-animate {
+  transform: rotateZ(-340deg)
+}
+
+[data-aos=rotate] &[data-aos-rotate="-350"].aos-animate {
+  transform: rotateZ(-350deg)
 }
