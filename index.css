@@ -28,6 +28,64 @@
   font-style: bold
 }
 
+@font-face {
+  font-family: "Retail";
+  src: url("font/retaildemo-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Retail";
+  src: url("font/retaildemo-bold.ttf") format("truetype");
+  font-weight: 1200;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Retail";
+  src: url("font/retaildemo-medium.ttf") format("truetype");
+  font-weight: 600;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: "Radiance";
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.eot");
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.ttf") format("truetype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.svg#ywftsvg") format("svg");
+  font-weight: 900;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "Radiance";
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.eot");
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.ttf") format("truetype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.svg#ywftsvg") format("svg");
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "Open Sans Thai";
+  src: url("notosansthai-regular.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans Thai";
+  src: url("notosansthai-light.ttf");
+  font-weight: 400;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "Open Sans Thai";
+  src: url("notosansthai-bold.ttf");
+  font-weight: 600;
+  font-style: bold
+}
+
 .HP {
   background: #000000;
 }
@@ -2629,4 +2687,49 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
 
 [data-aos=rotate] &[data-aos-rotate="-350"].aos-animate {
   transform: rotateZ(-350deg)
+}
+
+.AbilityContainer {
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Retail', 'Open Sans';
+  color: #FFEFD7;
+  display: flex;
+  flex-direction: column;
+  background: rgb(52, 52, 52);
+  background: linear-gradient(90deg, rgba(52, 52, 52, 1) 0%, rgba(66, 66, 66, 1) 14%, rgba(77, 77, 77, 1) 100%);
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 13px 13px 4px 4px;
+}
+
+.AbilityHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #121212;
+  font-size: calc(1em - 2px);
+  border-radius: 13px 13px 0 0;
+  padding: 0 8px 14px 8px
+}
+
+.AbilityHeaderTop {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.AbilityHeaderFlex {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  height: 40px
+}
+
+.AbilityStatsMainContainer {
+  background-color: #2C2C2C;
+  padding: 10px 6px 10px 6px;
+  margin-right: 20px;
+  white-space: nowrap;
 }
