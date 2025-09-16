@@ -58,3 +58,18 @@ const textSelect= [
          placeholder.innerHTML = out;
       });
     }
+    function loadHero() {
+      fetch("heroes.json")
+      .then(function(response){
+         return response.json();
+      })
+      .then(function(heroes){
+         let placeholder = document.querySelector("#abrams-output");
+    for(let hero of heroes){
+      hero_name = hero_name.get('name')
+    if(hero_name == "Abrams") {
+
+    }
+    }
+    });
+  }
