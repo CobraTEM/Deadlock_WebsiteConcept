@@ -2709,7 +2709,6 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   align-items: center;
   width: 100%;
   max-width: 500px;
-  display: none;
   border-radius: 13px 13px 4px 4px;
 }
 
@@ -2746,4 +2745,16 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
 .AbilityStatsIconGrey {
   position: relative; 
   filter: brightness(0) saturate(100%) invert(69%) sepia(4%) saturate(19%) hue-rotate(356deg) brightness(87%) contrast(95%);
+}
+
+.bulletColor {
+  filter: brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(1803%) hue-rotate(356deg) brightness(105%) contrast(85%)
+}
+
+.healthColor {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(86%) saturate(449%) hue-rotate(38deg) brightness(90%) contrast(84%)
+}
+
+.spiritColor {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(1455%) hue-rotate(231deg) brightness(85%) contrast(87%)
 }

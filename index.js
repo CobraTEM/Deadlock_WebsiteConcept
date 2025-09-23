@@ -47,7 +47,7 @@ const textSelect= [
          let out = "";
          for(let hero of heroes){
             out += `
-                <div class="HeroCard2 CardBG">
+                <div id="rosterselect" class="HeroCard2 CardBG">
           <span><span><a href="${hero.name}.html" title="${hero.name}">
             <img src="${hero.images.top_bar_vertical_image}" decoding="async" width="120" height="200"></a></span></span>
           <p class="CardText">${hero.name}</p>

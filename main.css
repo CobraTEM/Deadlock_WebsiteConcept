@@ -56076,13 +56076,16 @@ a {
 ._1UCH67z6WK1mp_uchyPL5g {
     width: 100%;
     max-width: 1600px;
-    padding: 20px 0px;
+    padding: 20px 350px 0px 0px;
     position: relative;
     z-index: 3;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    background-image: url("images/shop/catalog_tooltip_bg_weapon_psd.png");
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 @media(max-width: 900px) {
@@ -56096,7 +56099,8 @@ a {
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center
+    align-items: center;
+
 }
 
 @media(max-width: 900px) {
@@ -56120,7 +56124,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px #000;
-    margin-top: 12px
+    margin-top: 12px;
 }
 
 @media(max-width: 900px) {
@@ -56137,7 +56141,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 @media(max-width: 900px) {
@@ -56159,12 +56163,12 @@ a {
     height: 135px;
     min-height: 0;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .SW4jLoyYgrWKEEa2jahVK ._3GFuRHyARXuguhn-W3MXZ0 ._3_e-k8tQmrPB4DxdIvGyCe .CR-BbB851VmrcN5s9HpGZ {
     width: 150px;
-    height: 84px
+    height: 150px
 }
 
 .SW4jLoyYgrWKEEa2jahVK ._3GFuRHyARXuguhn-W3MXZ0 ._3_e-k8tQmrPB4DxdIvGyCe .D6gmc38sczQBtacU66_b4 {
@@ -56252,7 +56256,7 @@ a {
 
 .SW4jLoyYgrWKEEa2jahVK ._3GFuRHyARXuguhn-W3MXZ0 ._3rZsO1TmY6wv8agXaABNF2 ._1Bhn_fi_8uQWYB8mqwNyNy ._3Gsggcx9qe3qVMxUs_XeOo {
     color: #fff;
-    font-family: Reaver, serif;
+    font-family: "Reaver", serif;
     font-size: 20px;
     font-weight: 600;
     text-shadow: 1px 1px 2px #000;
@@ -56261,11 +56265,14 @@ a {
 
 .SW4jLoyYgrWKEEa2jahVK ._3GFuRHyARXuguhn-W3MXZ0 ._3rZsO1TmY6wv8agXaABNF2 ._1Bhn_fi_8uQWYB8mqwNyNy .DpX1zhKaVPKBeFg4KrB0B {
     color: #999;
-    font-size: 15px;
+    font-size: 12px;
+    font-family: "Occult", serif;
     text-shadow: 1px 1px 2px #000;
     margin-left: 8px;
+    margin-right: 20px;
+    width: 100%;
     flex-grow: 1;
-    text-align: right
+    text-align: left;
 }
 
 ._3zWGygZT2aKUiOyokg4h1v {
