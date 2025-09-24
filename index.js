@@ -1,3 +1,4 @@
+
 window.onload= function(){ loadTextBIG(); loadTextSMALL(); }
 
 const randomIndex = Math.floor(Math.random() * 5);
