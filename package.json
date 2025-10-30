@@ -1,0 +1,24 @@
+{
+  "name": "deadlock_websiteconcept",
+  "version": "1.0.0",
+  "description": "Deadlock Website Concept",
+  "homepage": "https://github.com/CobraTEM/Deadlock_WebsiteConcept#readme",
+  "bugs": {
+    "url": "https://github.com/CobraTEM/Deadlock_WebsiteConcept/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CobraTEM/Deadlock_WebsiteConcept.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

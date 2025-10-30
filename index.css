@@ -97,6 +97,10 @@
   background-attachment: fixed;
 }
 
+.dingdong {
+font-size: 65px;
+}
+
 .HP4 {
   background: url("images/bg_alley3.png");
   background-size: 150%;
@@ -795,9 +799,10 @@ overflow: hidden;
 }
 
 .HeroCard2:hover {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.);
-  -ms-transform: scale(1.1);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  filter: brightness(1.1);
   z-index: 1;
 
 }
