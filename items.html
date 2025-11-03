@@ -52,15 +52,15 @@
                             style="background-image: url(&quot;images/shop/shop_tab_weapon.png&quot;);"></div>
                         </div>
                       </div>
-                      <div class="category-tab is-vitality ">
+                      <div class="category-tab" id="vitality">
                         <div class="category-icon-container">
-                          <div class="category-icon "
+                          <div id="vitalitycont"class="category-icon "
                             style="background-image: url(&quot;images/shop/shop_tab_vitality.png&quot;);"></div>
                         </div>
                       </div>
-                      <div class="category-tab is-tech ">
+                      <div class="category-tab" id="spirit">
                         <div class="category-icon-container">
-                          <div class="category-icon "
+                          <div id="spiritcont" class="category-icon "
                             style="background-image: url(&quot;images/shop/shop_tab_tech.png&quot;);"></div>
                         </div>
                       </div>
@@ -72,6 +72,86 @@
                       </div>
                     </div>
                     <div id="list-output"></div>
+                    <div id="tooltip" class="item-tooltip-container"
+                      style=" z-index: 10000; pointer-events: none; display: none">
+                      <div class="citadel-tooltip-mod-details weapon-mod  " >
+                        <div id="primary-tooltip-container">
+                          <div id="mod-tooltip-container">
+                            <div class="header-container weapon-mod"
+                              style="background-image: url(&quot;images/shop/catalog_tooltip_header_weapon_psd.png&quot;);">
+                              <div class="mod-name-container">
+                                <div class="mod-name">Close Quarters</div>
+                                <div class="mod-cost-container">
+                                  <div class="mod-cost"><img class="gold-icon" alt="Soul Icon"
+                                      src="/all-icons/upgrade-icons/icon_soul.svg">800</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="properties-container"
+                              style="background-image: url(&quot;images/shop/catalog_tooltip_bg_weapon_psd.png&quot;);">
+                              <div id="stats-applied-container">
+                                <div class="stats-applied-background">
+                                  <div id="attributes-section-innate-0">
+                                    <div class="attribute-line-item "><span class="attribute-value-group"><span
+                                          class="attribute-bonus-fix ">+</span><span class="attribute-bonus-value ">20</span><span
+                                          class="attribute-bonus-fix ">%</span></span><span class="attribute-bonus-name"> Melee
+                                        Resist</span></div>
+                                  </div>
+                                </div>
+                                <div id="ability-type-passive-1" class="cooldown-header ">
+                                  <div class="active-passive-label">Passive</div>
+                                </div>
+                                <div class="stats-applied-background">
+                                  <div id="attributes-section-passive-1">
+                                    <div class="mod-info-label">
+                                      <div>Deal additional <span class="highlight">Weapon Damage</span> when in <span
+                                          class="highlight">close range</span> to your target.</div>
+                                    </div>
+                                    <div class="stats-flex-container one-important-with-regular-props">
+                                      <div class="important-stats-wrapper one-important-with-regular-props">
+                                        <div class="important-stat-box prop-bullet-damage">
+                                          <div class="stat-scaling-container"></div>
+                                          <div class="important-stat-image-value-container"><img alt="Weapon Damage"
+                                              class="important-stat-image prop-bullet-damage"
+                                              src="https://assets-bucket.deadlock-api.com/assets-api-res/icons/damage_bullet_color.svg">
+                                            <div id="important-stat-value" class="">+20<span class="attribute-bonus-fix">%</span></div>
+                                          </div>
+                                          <div class="important-stat-labels-container">
+                                            <div class="important-stat-type prop-bullet-damage">Weapon Damage</div>
+                                            <div class="important-stat-label">Conditional</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="standard-attribute-container one-important-with-regular-props">
+                                        <div class="attribute-line-item "><span class="attribute-value-group"><span
+                                              class="attribute-bonus-fix "></span><span class="attribute-bonus-value ">15</span><span
+                                              class="attribute-bonus-fix ">m</span></span><span class="attribute-bonus-name"> Close
+                                            Range</span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="components-container">
+                                <div class="components-label">UPGRADES TO:</div>
+                                <div id="components-list">
+                                  <div class="component-mod">
+                                    <div class="component-of-mod-icon-container is-weapon-component">
+                                      <div class="component-of-mod-icon"
+                                        style="background-image: url(&quot;https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/point_blank_sm.webp&quot;);">
+                                      </div>
+                                    </div>
+                                    <div class="component-mod-details">
+                                      <div class="component-mod-name">Point Blank</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -100,10 +180,34 @@
   </div>
 
 </body>
-<script>    const weaponbutton = document.getElementById('weapon');
+<script>   
 
-  weaponbutton.addEventListener('click', (e) => {weaponShopClick()
-  })</script>
+var tooltipSpan = document.getElementById('tooltip');
+
+window.onmousemove = function (e) {
+    var x = e.clientX,
+        y = e.clientY;
+    tooltipSpan.style.top = (y + 20) + 'px';
+    tooltipSpan.style.left = (x + 20) + 'px';
+};
+
+ const weaponbutton = document.getElementById('weapon');
+
+weaponbutton.addEventListener('click', (e) => {weaponShopClick()
+
+})
+const vitalitybutton = document.getElementById('vitality');
+
+vitalitybutton.addEventListener('click', (e) => {vitalityShopClick()
+
+})
+
+const spiritbutton = document.getElementById('spirit');
+
+spiritbutton.addEventListener('click', (e) => {spiritShopClick()
+
+})
+</script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
