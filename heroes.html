@@ -66,5 +66,17 @@
       </div>
       <script>LoadData();
       </script>
+      <script defer>
+            document.addEventListener('DOMContentLoaded', () => {
+    var audiohover = new Audio('audio/ui_shop_panel_weapon.mp3');
+    const hover = document.getElementById('rosterselect');
+
+    console.log(hover);
+
+    hover.addEventListener('mouseover', function() {
+      audiohover.play();
+    });
+  });
+      </script>
       </body>
       </html>

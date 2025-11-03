@@ -798,6 +798,10 @@ overflow: hidden;
   border-radius: 5px;
 }
 
+#rosterselect:hover {
+
+}
+
 .HeroCard2:hover {
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
