@@ -812,10 +812,26 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-    fetch("ability.json")
-      .then(function(response){
-         return response2.json();
-      })
+    const menumusiclayer1 = new Audio("audio/music_hideout_play_base_lp_155bpm.mp3");
+  const menumusiclayer2 = new Audio("audio/music_hideout_play_low_lp_155bpm.mp3");
+  const menumusiclayer3 = new Audio("audio/music_hideout_play_high_lp_155bpm.mp3");
+
+  menumusiclayer1.play();
+  menumusiclayer2.play();
+  menumusiclayer3.play();
+
+  menumusiclayer1.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+menumusiclayer2.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+menumusiclayer3.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
   </script>
 </body>
 </html>

@@ -1,6 +1,39 @@
 
 window.onload= function(){ loadTextBIG(); loadTextSMALL(); }
 
+    
+const weaponaudioArray = ["audio/ui_shop_mod_hover_weapon_01.mp3", "audio/ui_shop_mod_hover_weapon_02.mp3", "audio/ui_shop_mod_hover_weapon_03.mp3", 
+  "audio/ui_shop_mod_hover_weapon_04.mp3", "audio/ui_shop_mod_hover_weapon_05.mp3", "audio/ui_shop_mod_hover_weapon_06.mp3", 
+  "audio/ui_shop_mod_hover_weapon_07.mp3", "audio/ui_shop_mod_hover_weapon_08.mp3", "audio/ui_shop_mod_hover_weapon_09.mp3", 
+  "audio/ui_shop_mod_hover_weapon_10.mp3", "audio/ui_shop_mod_hover_weapon_11.mp3"];     
+  
+function playRandomWeaponAudio() {
+const audioIndex = Math.floor(Math.random() * weaponaudioArray.length);
+const weaponhoveraudio = new Audio(weaponaudioArray[audioIndex]);
+weaponhoveraudio.play();
+};
+
+const kaboosharray = ["audio/ui_menu_press_big_01.mp3", "audio/ui_menu_press_big_02.mp3", "audio/ui_menu_press_big_03.mp3", 
+  "audio/ui_menu_press_big_04.mp3"];     
+  
+function playKabooshAudio() {
+const audioIndex = Math.floor(Math.random() * kaboosharray.length);
+const kabooshaudio = new Audio(kaboosharray[audioIndex]);
+kabooshaudio.play();
+};
+
+const rosteraudioArray = ["audio/ui_roster_card_hover_01.mp3", "audio/ui_roster_card_hover_02.mp3", "audio/ui_roster_card_hover_03.mp3", 
+  "audio/ui_roster_card_hover_04.mp3", "audio/ui_roster_card_hover_05.mp3", "audio/ui_roster_card_hover_06.mp3", 
+  "audio/ui_roster_card_hover_07.mp3", "audio/ui_roster_card_hover_08.mp3", "audio/ui_roster_card_hover_09.mp3", 
+  "audio/ui_roster_card_hover_10.mp3"];  
+
+      function playRandomRosterAudio() {
+  const audioIndex2 = Math.floor(Math.random() * rosteraudioArray.length);
+  const rosteraudio = new Audio(rosteraudioArray[audioIndex2]);
+  rosteraudio.play();
+  rosteraudio.volume = 0.2;
+};
+
 const randomIndex = Math.floor(Math.random() * 5);
 
 const textSelect= [
@@ -10,7 +43,6 @@ const textSelect= [
     '"I\'m Already Addicted!"',
     '"A Unique Take On The MOBA Genre"'
   ];
-   
 
   function getRandomText() {
     return textSelect[randomIndex];
@@ -48,7 +80,7 @@ const textSelect= [
          let out = "";
          for(let hero of heroes){
             out += `
-                <div id="rosterselect" class="HeroCard2 CardBG">
+                <div onmouseleave="PlayLess();" onmouseover="playRandomRosterAudio(); PlayMore();" style="pointer-events:auto;" id="rosterselect" class="HeroCard2 CardBG">
           <span><span><a href="${hero.name}.html" title="${hero.name}">
             <img src="${hero.images.top_bar_vertical_image}" decoding="async" width="120" height="200"></a></span></span>
           <p class="CardText">${hero.name}</p>
@@ -60,14 +92,15 @@ const textSelect= [
       
     }
 
- 
-
-
     var weaponbuttonpressed = 0;
     var vitalitybuttonpressed = 0;
     var spiritbuttonpressed = 0;
 
     async function weaponShopClick() {
+
+      if (weaponbuttonpressed == 1){
+      }
+      else {
 
       var element1 = document.getElementById("vitalitycont");
       element1.classList.remove("active");
@@ -87,6 +120,16 @@ const textSelect= [
       const open3 = document.querySelector('#spiritcont'); 
       open3.style.backgroundImage = "url('images/shop/shop_tab_tech.png')"; 
 
+      const pageaudioArray = ["audio/ui_shop_panel_page_01.mp3", "audio/ui_shop_panel_page_02.mp3", "audio/ui_shop_panel_page_03.mp3", "audio/ui_shop_panel_page_04.mp3", "audio/ui_shop_panel_page_05.mp3", "audio/ui_shop_panel_page_06.mp3"];
+
+      const audioIndex = Math.floor(Math.random() * pageaudioArray.length);
+
+      var click = new Audio("audio/ui_shop_panel_weapon.mp3");
+      var click2 = new Audio(pageaudioArray[audioIndex]);
+      click.volume = 0.5;
+      click2.volume = 0.2;
+      click2.play();
+      click.play();
       try {
         const response = await fetch("items.json");
         const items = await response.json();
@@ -104,7 +147,7 @@ const textSelect= [
                       <div class="tab-is-weapon">
                         <div class="tier-container tier-1">
                           <div class="mods-container tier-1">
-                          <div class="mod-box tier-1" id="462" style="cursor: default;">
+                          <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="462" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -120,7 +163,7 @@ const textSelect= [
                                     <div class="mod-name-label weapon" style="font-size: 13px;">${items[462].name}</div>
                                   </div>
                             </div>
-                           <div class="mod-box tier-1" id="445" style="cursor: default;">
+                           <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="445" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -136,7 +179,7 @@ const textSelect= [
                                     <div class="mod-name-label weapon" style="font-size: 13px;">${items[445].name}</div>
                                   </div>
                             </div>
-                            <div class="mod-box tier-1" id="481" style="cursor: default;">
+                            <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="481" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -152,7 +195,7 @@ const textSelect= [
                                     <div class="mod-name-label weapon" style="font-size: 13px;">${items[481].name}</div>
                                   </div>
                             </div>
-                          <div class="mod-box tier-1" id="457" style="cursor: default;">
+                          <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="457" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -168,7 +211,7 @@ const textSelect= [
                                     <div class="mod-name-label weapon" style="font-size: 11px;">${items[457].name}</div>
                                   </div>
                             </div>
-                            <div class="mod-box tier-1" id="446" style="cursor: default;">
+                            <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="446" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -184,7 +227,7 @@ const textSelect= [
                                     <div class="mod-name-label weapon" style="font-size: 13px;">${items[446].name}</div>
                                   </div>
                             </div>
-                            <div class="mod-box tier-1" id="526" style="cursor: default;">
+                            <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="526" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -200,7 +243,7 @@ const textSelect= [
                                     <div class="mod-name-label weapon" style="font-size: 13px;">${items[526].name}</div>
                                   </div>
                             </div>
-                            <div class="mod-box tier-1" id="651" style="cursor: default;">
+                            <div onmouseover="playRandomWeaponAudio();" class="mod-box tier-1" id="651" style="cursor: default;">
                                   <div class="card-background"
                                     style="background-image: url(&quot;images/shop/card_weapon_1.png&quot;);"></div>
                                   <div class="paper-texture"
@@ -387,6 +430,7 @@ const textSelect= [
         weaponbuttonpressed = 1;
         vitalitybuttonpressed = 0;
         spiritbuttonpressed = 0;
+       }
       }
       
     
@@ -410,6 +454,17 @@ const textSelect= [
   
         const open = document.querySelector('#vitalitycont'); 
         open.style.backgroundImage = "url('images/shop/shop_tab_vitality_open.png')"; 
+
+        const pageaudioArray = ["audio/ui_shop_panel_page_01.mp3", "audio/ui_shop_panel_page_02.mp3", "audio/ui_shop_panel_page_03.mp3", "audio/ui_shop_panel_page_04.mp3", "audio/ui_shop_panel_page_05.mp3", "audio/ui_shop_panel_page_06.mp3"];
+
+        const audioIndex = Math.floor(Math.random() * pageaudioArray.length);
+  
+        var click = new Audio("audio/ui_shop_panel_vitality.mp3");
+        var click2 = new Audio(pageaudioArray[audioIndex]);
+        click.volume = 0.5;
+        click2.volume = 0.2;
+        click2.play();
+        click.play();
   
           let list = document.querySelector("#list-output");
           let out2 = `<div class="shop-mod-list" data-aos="fade-down" style="background-image: url(&quot;images/shop/shop_bg_vitality.png&quot;);">
@@ -1307,6 +1362,17 @@ const textSelect= [
     
           const open2 = document.querySelector('#spiritcont'); 
           open2.style.backgroundImage = "url('images/shop/shop_tab_tech_open.png')"; 
+
+          const pageaudioArray = ["audio/ui_shop_panel_page_01.mp3", "audio/ui_shop_panel_page_02.mp3", "audio/ui_shop_panel_page_03.mp3", "audio/ui_shop_panel_page_04.mp3", "audio/ui_shop_panel_page_05.mp3", "audio/ui_shop_panel_page_06.mp3"];
+
+          const audioIndex = Math.floor(Math.random() * pageaudioArray.length);
+    
+          var click = new Audio("audio/ui_shop_panel_magic.mp3");
+          var click2 = new Audio(pageaudioArray[audioIndex]);
+          click.volume = 0.5;
+          click2.volume = 0.2;
+          click2.play();
+          click.play();
     
             let list = document.querySelector("#list-output");
             let out3 = `<div class="shop-mod-list" data-aos="fade-down"

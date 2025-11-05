@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="aos.css">
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript" src="aos.js"></script>
+  <script type="text/javascript" src="howler.js"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <meta charset="utf-8">
@@ -17,19 +18,19 @@
 <body style="overflow: hidden;" class="H">
   <div class="navbar-container navbar-border">
     <div class="navbar">
-      <a class="TitleLogo" href="index.html"></a>
+      <a onmouseover="playRandomRosterAudio();"class="TitleLogo" href="index.html"></a>
       <div class="navbar-buttons-container">
-        <a class="button" style="opacity: 100%" href="heroes.html">Heroes</a>
-        <a class="button" href="updates.html">Updates</a>
-        <a class="button" href="items.html">Items</a>
-        <a class="button" href="https://forums.playdeadlock.com/">Forums</a>
+        <a onclick="playKabooshAudio(); " onmouseover="playRandomRosterAudio(); "class="button" style="opacity: 100%" href="heroes.html">Heroes</a>
+        <a onmouseover="playRandomRosterAudio();"class="button" href="updates.html">Updates</a>
+        <a onmouseover="playRandomRosterAudio();"class="button" href="items.html">Items</a>
+        <a onmouseover="playRandomRosterAudio();"class="button" href="https://forums.playdeadlock.com/">Forums</a>
       </div>
       <div class="sideoptions-container">
         <a style="text-decoration:none;" class="playtestbutton-container"
           href="https://store.steampowered.com/app/1422450/Deadlock/">
           <div class="playtestbutton">
             <div class="steamicon"></div>
-            <div class="playtestbutton-text">Join the Playtest</div>
+            <div onmouseover="playRandomRosterAudio();"class="playtestbutton-text">Join the Playtest</div>
           </div>
         </a>
       </div>
@@ -77,6 +78,39 @@
       audiohover.play();
     });
   });
+
+
+
+  const menumusiclayer1 = new Audio("audio/music_hideout_play_base_lp_155bpm.mp3");
+  const menumusiclayer2 = new Audio("audio/music_hideout_play_low_lp_155bpm.mp3");
+  const menumusiclayer3 = new Audio("audio/music_hideout_play_high_lp_155bpm.mp3");
+
+  menumusiclayer1.play();
+  menumusiclayer2.play();
+  menumusiclayer3.play();
+
+  menumusiclayer1.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+menumusiclayer2.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+menumusiclayer3.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+  menumusiclayer2.volume = 0.0;
+  menumusiclayer3.volume = 0.0;
+  function PlayMore() {
+    menumusiclayer2.volume = 1.0;
+  }
+  function PlayLess() {
+    menumusiclayer2.volume = 0.0;
+  }
+  AOS.init();
       </script>
       </body>
       </html>
