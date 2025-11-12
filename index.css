@@ -788,6 +788,18 @@ overflow: hidden;
   pointer-events: none;
 }
 
+.volumebutton {
+width: 100%;
+max-width: 24px;
+background-image: url("images/icon_sound_on.svg");
+background-size: cover;
+padding: 10px;
+display: block;
+right: 340px;
+top: 60px;
+position: absolute;
+
+}
 .CardBG {
   display:inline-block; 
   border-radius: 1px; 
@@ -932,26 +944,32 @@ vertical-align: middle;
 #WeaponStats,#ArmorStats,#TechStats
 {
 	width: 520px;
-	display: flex;
-	border-radius: 10px;
+	border-radius: 50px;
 	padding-top: 0px;
 	padding: 0px;
 }
 
-.HeroStatsWeapon {
+.CitadelHeroStatsWeapon {
   overflow: visible;
+  border-radius: 10px;
 }
 
-.HeroStatsWeapon .BackgroundContainer {
+.CitadelHeroStatsWeapon #BackgroundContainer {
   background-color: gradient( linear, 0% 0%, 100% 0%, from( #493516 ), to( #271904) );
-  background-image: url(images/shop/catalog_tooltip_modifies_header_weapon_psd.png);
-  background-size: cover;
+  background-image: url("images/shop/catalog_tooltip_modifies_header_weapon_psd.png");
 }
 
-.BackgroundContainer {
+#BackgroundContainer {
   height: 100%;
   width: 100%;
   background-size: cover;
+}
+
+#WeaponInfoContainer {
+  background-color: #00000080;
+  height: 120px;
+  width: 100%;
+  overflow: visible;
 }
 
 .WeaponContainer {
@@ -961,24 +979,32 @@ vertical-align: middle;
   overflow: visible;
 }
 
-.GunImage {
+#GunImage {
   width: 250px;
   height: 120px;
+  left: 270px;
   align-content: right;
-  margin-left: 270px;
-  margin-right: auto;
-  vertical-align: bottom;
 }
 
 .weaponNameAndAttributes {
   width: 100%;
   padding: 15px;
-  top: 1px;
+}
+
+.TopBottomFlow {
+  flex-direction: row;
+}
+
+#WeaponAttributesContainer {
+  width: 370px;
+  min-height: 27px;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .statTitle {
   font-size: 18px;
-
+  text-transform: uppercase;
   font-weight: bold;
   opacity: 0.6;
   margin-bottom: 0px;
@@ -993,37 +1019,43 @@ vertical-align: middle;
   margin-top: 4px;
 }
 
-.WeaponAttributesContainer .AttributeLabel {
-  background-color: black;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 0px 6px 1px 6px;
-  border-radius: 3px;
-  margin-top: 8px;
-  margin-right: 8px;
+.LeftRightFlow {
+  flex-direction: column;
+  align-content: right;
+  float: right;
 }
 
-.AttributeLabel {
+#WeaponAttributesContainer #AttributeLabel {
+background-color: rgba(0, 0, 0, .5);
+font-size: 16px;
+font-weight: bold;
+padding: 0px 6px 1px 6px;
+border-radius: 3px;
+margin-top: 8px;
+margin-right: 8px;
+}
+
+#AttributeLabel {
   color: white;
+  float: left;
 }
 
-.WeaponAttributesContainer {
-  width: 370px;
-  min-height: 27px;
-  display: flex;
+#BulletDPSContainer {
+align-items: right;
+vertical-align: top;
+margin-bottom: 50px;
+transform: scale(105%);
+float: right;
+flex-direction: column;
 }
 
-.BulletDPSContainer {
-  vertical-align: top;
-  margin-bottom: 50px;
-}
-
-.StatContainer_DPS {
+#StatContainer_DPS {
   margin: 0px;
   border-radius: 0px;
   min-width: 100px;
-  right: 0px;
-  top: 0px;
+  position: absolute;
+  top: -75px;
+  left: 275px;
 }
 
 .statAttributeContainer {
@@ -1034,11 +1066,53 @@ vertical-align: middle;
   border-radius: 3px;
 }
 
-.LabelsContainer {
+#BulletDPSContainer .CitadelModifiedAttributeLabel {
+  width:fit-content;
+}
+
+.CitadelModifiedAttributeLabel {
+width:fit-content;
+flex-direction: column;
+align-content: right;
+}
+
+.statAttributeContainer .CitadelModifiedAttributeLabel {
   vertical-align: center;
+  width: 100%;
+  height: 24px;
+}
+
+.LabelsContainer {
+  flex-direction: column;
+  vertical-align: center;
+  width: fit-content;
   font-weight: bold;
   margin-right: 5px;
-  float:left;
+}
+
+.HasStatImage .StatImageArea {
+  visibility: visible;
+  vertical-align: middle;
+  float: right;
+  left: 0px;
+  bottom: 14px;
+  position: absolute;
+}
+
+#AdditionalText {
+  font-size: 15px;
+  vertical-align: middle;
+  font-weight: bold;
+  opacity: 0.6;
+  max-height: 28px;
+  color: white;
+  font-family: "Retail";
+  text-overflow: clip;
+  text-shadow: 0px 0px 20px #000000;
+  align-content: center;
+  position: absolute;
+  top: -10px;
+  left: 52px;
 }
 
 .StatDesc_DPS {
@@ -1046,37 +1120,60 @@ vertical-align: middle;
   opacity: 1;
 }
 
+.NewOverride {
+  vertical-align: center;
+  align-content: center;
+  color: gold;
+  font-size: 10px;
+  text-shadow: 0px 0px 0px 3.0;
+  visibility: collapse;
+}
+
 .StatImage {
   width: 18px;
   height: 18px;
   background-size: contain;
   margin-right: 4px;
-  margin-top: 3px;
   vertical-align: center;
 }
 
-.StatImageArea {
-  vertical-align: middle;
-  float: left;
-}
-
-.BaseLabel {
-  font-family: "Reaver";
-  max-height: 35px;
-  color: white;
-  float: left;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.AdditionalText {
-  font-size: 17px;
-  vertical-align: middle;
-  font-weight: bold;
-  opacity: 0.6;
-  max-height: 28px;
-  color: white;
+.LabelsText {
+  width: fit-content;
+  align-content: right;
+  flex-direction: column;
   float: right;
+  text-shadow: 0px 0px 20px #000000;
+  position: absolute;
+  top: -10px;
+  left: 25px;
+}
+
+#BaseLabel {
+  text-overflow: clip;
+  max-height: 35px;
+  font-weight: 800;
+  text-shadow: 0px 0px 20px #000000;
+  font-family: "Retail";
+  font-size: 15px;
+}
+
+#WeaponFalloffRange {
+  align-content: right;
+  float: right;
+  vertical-align: bottom;
+  flex-direction: row;
+  background-color: #000;
+}
+
+.FalloffLabel {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.3;
+  vertical-align: center;
+  margin-bottom: -6px;
+  max-width: 140px;
+  text-align: center;
 }
 
 .navbar-container .navbar-border {
@@ -2013,10 +2110,6 @@ transition: 0.1s ease-in-out;
 .HeroNameAndLevelsIcon {
   align-items: center;
   z-index: 0;
-}
-
-.LeftRightFlow {
-  flex-direction: row;
 }
 
 #HeroName {
