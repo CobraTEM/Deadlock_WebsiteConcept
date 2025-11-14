@@ -941,7 +941,7 @@ vertical-align: middle;
   background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 24%, rgba(255, 255, 255, 0) 100%);
 }
 
-#WeaponStats {
+#WeaponStats, #VitalityStats {
 	width: 520px;
 	padding-top: 0px;
 	padding: 0px;
@@ -949,7 +949,7 @@ vertical-align: middle;
   left: 40px;
 }
 
-.CitadelHeroStatsWeapon {
+.CitadelHeroStatsWeapon .CitadelHeroArmor {
   overflow: hidden;
   border-collapse: separate; 
   border-radius: 10px;
@@ -957,7 +957,14 @@ vertical-align: middle;
 
 .CitadelHeroStatsWeapon #BackgroundContainer {
   background-color: gradient( linear, 0% 0%, 100% 0%, from( #493516 ), to( #271904) );
-  background-image: url("images/shop/catalog_tooltip_modifies_header_weapon_psd.png");
+  background-image: url("images/shop/catalog_tooltip_bg_weapon_psd.png");
+  background-size: auto;
+}
+
+.CitadelHeroArmor #BackgroundContainer {
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #493516 ), to( #271904) );
+  background-image: url("images/shop/catalog_tooltip_bg_vitality_psd.png");
+  background-size: auto;
 }
 
 #BackgroundContainer {
@@ -1011,14 +1018,14 @@ vertical-align: middle;
   font-weight: bold;
   opacity: 0.6;
   margin-bottom: 0px;
-  color: white;
+  color: #ffefd7;
   font-family: "Reaver";
 }
 
 .WeaponName {
   font-weight: bold;
   font-size: 22px;
-  color: white;
+  color: #ffefd7;
   margin-top: 4px;
 }
 
@@ -1045,12 +1052,20 @@ margin-right: 8px;
 }
 
 #AttributeLabel {
-  color: white;
+  color: #ffefd7;
   float: left;
 }
 
 #AttributeLabel2 {
-  color: white;
+  color: #ffefd7;
+}
+
+#AttributeLabelStats {
+  color: #ffefd7;
+  display: inline-flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  vertical-align: middle;
 }
 
 
@@ -1078,7 +1093,20 @@ flex-direction: column;
   height: 40px;
   margin: 2px;
   padding: 0px 0px 0px 10px;
+  background-color: #00000070;
   border-radius: 3px;
+}
+
+.statAttributeContainerDPS {
+  width: 80px;
+  height: 40px;
+  margin: 2px;
+  padding: 0px 0px 0px 10px;
+  border-radius: 3px;
+}
+
+.fillerstatsbg {
+  background-color: #00000070;
 }
 
 .statAttributeContainer2 {
@@ -1094,7 +1122,7 @@ flex-direction: column;
 
 .CitadelModifiedAttributeLabel {
 width:fit-content;
-flex-direction: column;
+flex-direction: row;
 align-content: right;
 }
 
@@ -1106,6 +1134,7 @@ align-content: right;
 
 .LabelsContainer {
   flex-direction: row;
+  display: inline-flex;
   vertical-align: center;
   width: fit-content;
   font-weight: bold;
@@ -1121,13 +1150,27 @@ align-content: right;
   position: absolute;
 }
 
+.HasStatImage2 .StatImageArea2 {
+  visibility: visible;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.StatImage2 {
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  vertical-align: center;
+  margin-right: 4px;
+}
+
 #AdditionalText {
   font-size: 15px;
   vertical-align: middle;
   font-weight: bold;
   opacity: 0.6;
   max-height: 28px;
-  color: white;
+  color: #ffefd7;
   font-family: "Retail";
   text-overflow: clip;
   text-shadow: 0px 0px 20px #000000;
@@ -1137,9 +1180,157 @@ align-content: right;
   left: 52px;
 }
 
+#AdditionalText2 {
+  font-size: 16.5px;
+  font-weight: bold;
+  opacity: 0.6;
+  max-height: 28px;
+  color: #ffefd7;
+  font-family: "Retail";
+  text-overflow: clip;
+  align-content: center;
+  margin-top: 5px;
+  margin-left: 6px;
+}
+
+#AdditionalText3 {
+  font-size: 16.5px;
+  font-weight: bold;
+  opacity: 0.6;
+  max-height: 28px;
+  color: #ffefd7;
+  font-family: "Retail";
+  text-overflow: clip;
+  align-content: center;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
 .StatDesc_DPS {
   background-image: url("images/stats/damage_bullet_color.svg");
   opacity: 1;
+}
+
+.StatDesc_BulletDamage {
+  background-image: url("images/stats/damage_bullet_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_MaxHealth {
+  background-image: url("images/stats/health.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_BulletResist {
+  background-image: url("images/stats/armor_bullet_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_SpiritResist {
+  background-image: url("images/stats/armor_spirit_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_HealthRegen {
+  background-image: url("images/stats/health_regen.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_DebuffResist {
+  background-image: url("images/stats/debuff_remove.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_MeleeResist {
+  background-image: url("images/stats/armor_melee_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_HealAmp {
+  background-image: url("images/stats/healing_booster.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_BulletPerSec {
+  background-image: url("images/stats/fire_rate.svg");
+  filter: brightness(0) saturate(100%) invert(56%) sepia(92%) saturate(448%) hue-rotate(355deg) brightness(97%) contrast(91%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_Ammo {
+  background-image: url("images/stats/ammo_clip_size.svg");
+  filter: brightness(0) saturate(100%) invert(56%) sepia(92%) saturate(448%) hue-rotate(355deg) brightness(97%) contrast(91%);
+  opacity: 1;
+  margin-right: 4px;
+}
+
+.StatDesc_ReloadTime {
+  background-image: url("images/stats/ammo_reload.svg");
+  filter: brightness(0) saturate(100%) invert(56%) sepia(92%) saturate(448%) hue-rotate(355deg) brightness(97%) contrast(91%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_BulletVelocity {
+  background-image: url("images/stats/bullet_velocity.svg");
+  filter: brightness(0) saturate(100%) invert(56%) sepia(92%) saturate(448%) hue-rotate(355deg) brightness(97%) contrast(91%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_BulletLifeSteal {
+  background-image: url("images/stats/health_stealing_bullets_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_CritBonusScale {
+  background-image: url("images/stats/damage_crit_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_LightMelee {
+  background-image: url("images/stats/melee_light.svg");
+  filter: brightness(0) saturate(100%) invert(56%) sepia(92%) saturate(448%) hue-rotate(355deg) brightness(97%) contrast(91%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_HeavyMelee {
+  background-image: url("images/stats/melee.svg");
+  filter: brightness(0) saturate(100%) invert(56%) sepia(92%) saturate(448%) hue-rotate(355deg) brightness(97%) contrast(91%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+#SpiritInc {
+  background-image: url("images/stats/keystat_spirit_arrow_png.png");
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin-left: 193px;
+  margin-top: -40px;
+  z-index: 2;
+  position: absolute;
+  visibility: collapse;
+}
+
+#SpiritInc .visibleinc {
+  visibility: visible;
 }
 
 .NewOverride {
@@ -1172,10 +1363,8 @@ align-content: right;
 
 .LabelsText2 {
   width: fit-content;
-  align-content: right;
-  flex-direction: column;
   text-shadow: 0px 0px 20px #000000;
-  display: flex;
+  margin-top: 5px;
 }
 
 .RangeArrow {
@@ -1196,17 +1385,27 @@ align-content: right;
   font-size: 15px;
 }
 
+#BaseLabel2 {
+  text-overflow: clip;
+  max-height: 35px;
+  font-weight: 800;
+  font-family: "Retail";
+  color: #FFEFD7;
+  font-size: 18px;
+  padding-left: 3px;
+}
+
 #WeaponFalloffRange {
   align-content: right;
   vertical-align: bottom;
   flex-direction: column;
-  z-index: 2;
+  z-index: 0;
   background-color: rgba(0,0,0, 0.8);
   padding-bottom: 0px;
   float: right;
   display: flex;
   margin-left: 385px;
-  bottom: 0px;
+  bottom: 398px;
   position: absolute;
 }
 
@@ -1242,6 +1441,57 @@ align-items: center;
 z-index: 2;
 }
 
+.displayStatsContainer {
+ padding: 15px;
+ width: 100%;
+ flex-direction: column;
+ display: inline-flex;
+ flex-wrap: wrap;
+}
+
+.weaponDesc {
+ font-size: 17px;
+ font-weight: medium;
+ opacity: 0.9;
+ margin-bottom: 10px;
+ margin-top: -5px;
+ color: #ffefd7;
+}
+
+.statsContainer {
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+  column-count: 2;
+  max-height: 295px;
+}
+
+.statsContainer2 {
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+  column-count: 2;
+  max-height: 250px;
+}
+
+.LabelsTextStats {
+  width: fit-content;
+  flex-direction: row;
+}
+
+.displayStatsContainer .statAttributeContainer {
+  width: 48%;
+}
+
+.otherStats,#SpiritImpactContainer {
+  background-color: #00000060;
+}
+
+#WeaponDisplayStats {
+
+}
 .navbar-container .navbar-border {
   top: 0;
   position: fixed;
