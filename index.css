@@ -826,7 +826,9 @@ max-height: 400px;
 .DivideUpdates {
 display: inline-flex;
 padding: 15px;
-margin-left: 70px;
+width: 100%;
+align-content: center;
+justify-content: center;
 margin-bottom: -150px;
 }
 
@@ -941,15 +943,13 @@ vertical-align: middle;
   background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 24%, rgba(255, 255, 255, 0) 100%);
 }
 
-#WeaponStats, #VitalityStats {
+#WeaponStats, #VitalityStats #SpiritStats {
 	width: 520px;
 	padding-top: 0px;
 	padding: 0px;
-  position: absolute;
-  left: 40px;
 }
 
-.CitadelHeroStatsWeapon .CitadelHeroArmor {
+.CitadelHeroStatsWeapon .CitadelHeroArmor .CitadelHeroSpirit {
   overflow: hidden;
   border-collapse: separate; 
   border-radius: 10px;
@@ -964,6 +964,12 @@ vertical-align: middle;
 .CitadelHeroArmor #BackgroundContainer {
   background-color: gradient( linear, 0% 0%, 100% 0%, from( #493516 ), to( #271904) );
   background-image: url("images/shop/catalog_tooltip_bg_vitality_psd.png");
+  background-size: auto;
+}
+
+.CitadelHeroSpirit #BackgroundContainer {
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #493516 ), to( #271904) );
+  background-image: url("images/shop/catalog_tooltip_bg_spirit_psd.png");
   background-size: auto;
 }
 
@@ -990,7 +996,7 @@ vertical-align: middle;
 #GunImage {
   width: 250px;
   height: 120px;
-  left: 270px;
+  left: 300px;
   align-content: right;
   position: absolute
 }
@@ -1085,7 +1091,7 @@ flex-direction: column;
   min-width: 100px;
   position: absolute;
   top: -75px;
-  left: 275px;
+  left: 310px;
 }
 
 .statAttributeContainer {
@@ -1217,6 +1223,82 @@ align-content: right;
   margin-right: 3px;
 }
 
+.StatDesc_MoveSpeed {
+  background-image: url("images/stats/move_speed.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_AbilityCooldown {
+  background-image: url("images/stats/cooldown.svg");
+  filter: brightness(0) saturate(100%) invert(62%) sepia(55%) saturate(1311%) hue-rotate(216deg) brightness(101%) contrast(101%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_AbilityRange {
+  background-image: url("images/stats/range.svg");
+  filter: brightness(0) saturate(100%) invert(62%) sepia(55%) saturate(1311%) hue-rotate(216deg) brightness(101%) contrast(101%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_MaxChargesIncrease {
+  background-image: url("images/stats/charge.svg");
+  filter: brightness(0) saturate(100%) invert(62%) sepia(55%) saturate(1311%) hue-rotate(216deg) brightness(101%) contrast(101%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_AbilityDuration {
+  background-image: url("images/stats/duration.svg");
+  filter: brightness(0) saturate(100%) invert(62%) sepia(55%) saturate(1311%) hue-rotate(216deg) brightness(101%) contrast(101%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_SpiritLifesteal {
+  background-image: url("images/stats/health_stealing_spirit_color.svg");
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_Spirit {
+  background-image: url("images/stats/spirit.svg");
+  filter: brightness(0) saturate(100%) invert(62%) sepia(55%) saturate(1311%) hue-rotate(216deg) brightness(101%) contrast(101%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_ChargeCooldown {
+  background-image: url("images/stats/recharge.svg");
+  filter: brightness(0) saturate(100%) invert(62%) sepia(55%) saturate(1311%) hue-rotate(216deg) brightness(101%) contrast(101%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_SprintSpeed {
+  background-image: url("images/stats/move_sprint.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_StaminaCooldown {
+  background-image: url("images/stats/move_stamina_recharge.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
+.StatDesc_Stamina {
+  background-image: url("images/stats/move_stamina.svg");
+  filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
+  opacity: 1;
+  margin-right: 3px;
+}
+
 .StatDesc_MaxHealth {
   background-image: url("images/stats/health.svg");
   filter: brightness(0) saturate(100%) invert(78%) sepia(65%) saturate(3591%) hue-rotate(103deg) brightness(110%) contrast(109%);
@@ -1333,6 +1415,14 @@ align-content: right;
   visibility: visible;
 }
 
+.HeroStatsFlex {
+  display: inline-flex;
+  margin: 0 auto;
+  width: fit-content;
+  max-height: 450px;
+  justify-content: center;
+}
+
 .NewOverride {
   vertical-align: center;
   align-content: center;
@@ -1402,11 +1492,10 @@ align-content: right;
   z-index: 0;
   background-color: rgba(0,0,0, 0.8);
   padding-bottom: 0px;
-  float: right;
-  display: flex;
+  display: inline-flex;
   margin-left: 385px;
-  bottom: 398px;
-  position: absolute;
+  margin-top: -34px;
+  position: relative;
 }
 
 .FalloffLabel {
@@ -1476,6 +1565,15 @@ z-index: 2;
   max-height: 250px;
 }
 
+.statsContainer3 {
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+  column-count: 2;
+  max-height: 150px;
+}
+
 .LabelsTextStats {
   width: fit-content;
   flex-direction: row;
@@ -1492,6 +1590,60 @@ z-index: 2;
 #WeaponDisplayStats {
 
 }
+
+#SpiritValueContainer {
+  width: 45%;
+  height: fit-content;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.SpiritPower {
+  width: 100%;
+}
+
+#SpiritImpactContainer {
+  width: 100%;
+}
+
+.SpiritPowerImpactLabel {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 5px;
+  color: #ffefd7;
+  font-family: "Retail";
+}
+
+#StatContainer_TechPower {
+  width: 200px;
+}
+
+.SpiritPowerDesc {
+  width: 100%;
+  font-size: 14px;
+  opacity: 0.6;
+  font-weight: normal;
+  margin-top: 5px;
+  padding-left: 2px;
+  color: #ffefd7;
+  font-family: "Retail";
+}
+
+.CitadelModifiedAbilities {
+  background-color: #26142e50;
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 0px;
+}
+
+.CitadelModifiedAbilities .noModifiedAbilities {
+ opacity: 0.5;
+}
+
 .navbar-container .navbar-border {
   top: 0;
   position: fixed;
