@@ -108,7 +108,7 @@
 </div>
 </div>
 <div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" class="DivideUpdates">
-  <div style="pointer-events: auto; display: block; margin: 25px;" id="WeaponStats" class="NoSecondaryWeaponDesc CitadelHeroStatsWeapon">
+  <div style="pointer-events: auto; display: block; margin: 25px; " id="WeaponStats" class="NoSecondaryWeaponDesc CitadelHeroStatsWeapon">
       <div id="BackgroundContainer">
       <div id="WeaponInfoContainer">
         <img id="GunImage" src="images/guns/bull_gun_psd.png" scaling="cover">
@@ -711,10 +711,10 @@
       </div>
     </div>
     <div id="SpiritImpactContainer">
-      <div style="max-height: 150px;"  class="SpiritPower">
+      <div style="height: 320px; display: inline-flex; width: 100%;"  class="SpiritPower">
         <div id="SpiritValueContainer">
           <div class="SpiritPowerImpactLabel">SPIRIT POWER IMPACT</div>
-            <div id="SpiritPowerStat" class="StatElement statAttributeContainer">
+            <div id="SpiritPowerStat" class="StatElement statAttributeContainer3">
               <div id="AttributeLabelStats" class="HasStatImage2">
                 <div class="LabelsContainer">
                   <div class="StatImageArea2">
@@ -732,11 +732,73 @@
          <div class="SpiritPowerDesc">Spirit Power increases the effectiveness of your Abilities and Items.</div>
         </div>
         <div id="ModifiedAbilitesPanel" class="CitadelModifiedAbilities noModifiedAbilities">
-          
+          <div id="InnateModified" class="modifiedContainer"></div>
+          <div id="AbilitiesModified" class="modifiedContainer">
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Siphon_Life.png" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">Radius</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">10<span style="padding-left: 5px; color: gray;">m</span></div>
+                    </div>
+                </div>
+             </div>
+          </div>
+          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+            <div id="Icon">
+              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Siphon_Life.png" scaling="stretch"></div>
+            </div>
+            <div id="AffectedPropertiesContainer">
+              <div id="Property_Radius" class="AffectedAbilityProperty">
+                <div class="PropertyNameContainer">
+                  <div class="AffectedPropertyName">Damage Per Second</div>
+                </div>
+                <div class="AffectedPropertyDeltaContainer">
+                  <div class="AffectedValCur">29</div>
+                </div>
+            </div>
+          </div>
+          </div>
+          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+            <div id="Icon">
+              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Shoulder_Charge.png" scaling="stretch"></div>
+            </div>
+            <div id="AffectedPropertiesContainer">
+              <div id="Property_Radius" class="AffectedAbilityProperty">
+                <div class="PropertyNameContainer">
+                  <div class="AffectedPropertyName">Damage</div>
+                </div>
+                <div class="AffectedPropertyDeltaContainer">
+                  <div class="AffectedValCur">37</div>
+                </div>
+            </div>
+          </div>
+          </div>
+          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+            <div id="Icon">
+              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Seismic_Impact.png" scaling="stretch"></div>
+            </div>
+            <div id="AffectedPropertiesContainer">
+              <div id="Property_Radius" class="AffectedAbilityProperty">
+                <div class="PropertyNameContainer">
+                  <div class="AffectedPropertyName">Damage</div>
+                </div>
+                <div class="AffectedPropertyDeltaContainer">
+                  <div class="AffectedValCur">55</div>
+                </div>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
     <!--Siphon Life--> 

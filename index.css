@@ -943,7 +943,7 @@ vertical-align: middle;
   background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 24%, rgba(255, 255, 255, 0) 100%);
 }
 
-#WeaponStats, #VitalityStats #SpiritStats {
+#WeaponStats, #VitalityStats, #SpiritStats {
 	width: 520px;
 	padding-top: 0px;
 	padding: 0px;
@@ -977,6 +977,7 @@ vertical-align: middle;
   height: 100%;
   width: 100%;
   background-size: cover;
+  border-radius: 5px;
 }
 
 #WeaponInfoContainer {
@@ -996,9 +997,8 @@ vertical-align: middle;
 #GunImage {
   width: 250px;
   height: 120px;
-  left: 300px;
-  align-content: right;
-  position: absolute
+  margin-left: 270px;
+  position: absolute;
 }
 
 .weaponNameAndAttributes {
@@ -1076,22 +1076,20 @@ margin-right: 8px;
 
 
 #BulletDPSContainer {
-align-items: right;
 vertical-align: top;
 margin-bottom: 50px;
 transform: scale(105%);
-position: absolute;
-left: 130px;
 flex-direction: column;
+position: absolute;
 }
 
 #StatContainer_DPS {
   margin: 0px;
   border-radius: 0px;
   min-width: 100px;
-  position: absolute;
+  position: relative;
   top: -75px;
-  left: 310px;
+  left: 400px;
 }
 
 .statAttributeContainer {
@@ -1099,6 +1097,19 @@ flex-direction: column;
   height: 40px;
   margin: 2px;
   padding: 0px 0px 0px 10px;
+  background-color: #00000070;
+  border-radius: 3px;
+}
+
+.statAttributeContainer3 {
+  height: 40px;
+  width: 170px;
+  padding-right: 10px;
+  justify-content: left;
+  flex-direction: row;
+  margin: 2px;
+  display: inline-flex;
+  text-align: center;
   background-color: #00000070;
   border-radius: 3px;
 }
@@ -1592,7 +1603,7 @@ z-index: 2;
 }
 
 #SpiritValueContainer {
-  width: 45%;
+  width: 85%;
   height: fit-content;
   padding: 10px;
   display: inline-flex;
@@ -1633,8 +1644,7 @@ z-index: 2;
 }
 
 .CitadelModifiedAbilities {
-  background-color: #26142e50;
-  flex-direction: column;
+  flex-direction: row;
   height: fit-content;
   width: fit-content;
   padding: 5px 0px;
@@ -1644,6 +1654,94 @@ z-index: 2;
  opacity: 0.5;
 }
 
+.modifiedContainer {
+  margin-left: 10px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.AffectedAbility,.AffectedItem,.AffectedStat{
+  width: 100%;
+  height: fit-content;
+  margin: 5px 0px;
+  font-size: 18px;
+  flex-direction: row;
+  display: inline-flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin-bottom: 5px;
+  
+}
+
+.AffectedAbility #Icon {
+  background-color: #ffffff60;
+  border-radius: 50px;
+  padding: 4px;
+}
+
+#Icon {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+#AbilityImage {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.6;
+}
+
+#SpiritImpactContainer #AbilityImage,#SpiritImpactContainer #StatAbilityImage {
+  width: 20px;
+  height: 20px;
+}
+
+#AbilityImage,#StatAbilityImage {
+  width: 23px;
+  height: 23px;
+  border-radius: 5px;
+  vertical-align: center;
+  margin-bottom: 7px;
+}
+
+#StatAbilityImage {
+}
+
+#AffectedPropertiesContainer {
+  width: 90%;
+  height: 5px;
+  flex-direction: row;
+  vertical-align: center;
+}
+
+.AffectedAbilityProperty {
+  width: 100%;
+  vertical-align: center;
+  display: inline-flex;
+  margin-left: 15px;
+  vertical-align: middle;
+  color: rgb(243, 240, 231);
+}
+
+.AffectedPropertyName {
+  margin-right: 8px;
+  font-weight: 600;
+  color: rgb(243, 240, 231);
+  font-size: 16px;
+  width: 170px;
+  height: 22px;
+  flex-direction: row;
+  font-family: "Retail";
+}
+
+.AffectedValCur {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(243, 240, 231);
+  flex-direction: row;
+  font-family: "Retail";
+  opacity: 0.8;
+}
 .navbar-container .navbar-border {
   top: 0;
   position: fixed;
