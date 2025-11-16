@@ -8,6 +8,14 @@
 }
 
 @font-face {
+  font-family: "Radiance";
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.eot");
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.ttf") format("truetype"), url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.svg#ywftsvg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Occult';
   src: url("font/valveoccult-semibold.ttf") format("truetype");
   font-weight: 800;
@@ -30,24 +38,32 @@
 
 @font-face {
   font-family: "Retail";
-  src: url("font/retaildemo-regular.ttf") format("truetype");
+  src: url("font/retaildemo-regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Retail";
-  src: url("font/retaildemo-bold.ttf") format("truetype");
-  font-weight: 1200;
-  font-style: bold;
+  src: url("font/retaildemo-bold.ttf");
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Retail";
-  src: url("font/retaildemo-medium.ttf") format("truetype");
-  font-weight: 600;
-  font-style: medium;
+  src: url("font/retaildemo-semibold.ttf");
+  font-weight: 700;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "Retail";
+  src: url("font/retaildemo-medium.ttf");
+  font-weight: medium;
+  font-style: normal;
+}
+
 
 @font-face {
   font-family: "Radiance";
@@ -830,6 +846,28 @@ width: 100%;
 align-content: center;
 justify-content: center;
 margin-bottom: -150px;
+}
+
+.Textbox {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  width: 330px;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.TextRange {
+font-family: "Retail";
+font-size: 16px;
+color: white;
+opacity: 0.9;
+}
+
+@media(max-width: 1200px) {
+  .DivideUpdates {
+    display: inline-block;
+    }
 }
 
 .block-container {
@@ -2508,13 +2546,11 @@ z-index: 2;
     margin-left: 50px;
   }
 }
+
 #RightPanel {
-  width: 1300px;
-  height: 100%;
   margin-left: 550px;
-  flex-direction: column-reverse;
   z-index: -1;
-  align-items: center;
+  padding-bottom: 350px;
 }
 
 
@@ -2626,12 +2662,13 @@ transition: 0.1s ease-in-out;
 
 #HeroScenePanel {
   width: 1840px;
-  display: block;
   padding-left: 150px;
   margin-top: -650px;
   height: 100%;
-  align-items: center;
-  z-index: 100;
+  position: absolute;
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(to top, transparent 5%, black 50%);
+  mask-image: linear-gradient(to top, transparent 5%, black 50%)
 }
 
 #HeroScenePanel2 {
@@ -2671,6 +2708,210 @@ transition: 0.1s ease-in-out;
 
 .TableSkills {
    align-items: center; display:inline-block; padding-bottom: 15px; padding-left: 75px; width:min(768px, 90vw);
+   
+}
+
+.TableSkillsAbility {
+  align-items: center; 
+  display:inline-flex; 
+  justify-content: center; 
+  margin-top: -55px;
+  width:min(768px, 90vw);
+  z-index: 2;
+  position: absolute;
+}
+
+.AbilityContainerPadding {
+  width: 100%;
+  min-height: 400px;
+  padding: 80px 0px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.AbilityContainerPadding .AbilityContainerHeader {
+  text-align: center;
+  font-family: "Pulp", serif;
+  font-size: 52px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 240px;
+  margin-bottom: 130px;
+  width: 100%;
+	height: 96%;
+  margin-left: auto;
+  margin-right:  auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.AbilityMainConatiner {
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.AbilityCoreContainer {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 542px;
+  display: flex;
+  flex-direction: row
+}
+
+.AbilityVideo {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1500px;
+  -webkit-mask-image: linear-gradient(to top, transparent 10%, black 50%);
+  mask-image: linear-gradient(to top, transparent 10%, black 50%)
+}
+
+@media(max-width: 1200px) {
+  .AbilityVideo {
+      height: 90%;
+      min-height: 40%;
+      margin-top: 20px;
+      width: auto;
+      -webkit-mask-image: linear-gradient(to top, transparent 20%, black 50%);
+      mask-image: linear-gradient(to top, transparent 20%, black 50%)
+  }
+}
+
+@media(max-width: 900px) {
+  .AbilityCoreContainer {
+      flex-direction: column
+  }
+}
+
+.AbilityCoreContainer .AbilityVideoContainer {
+  width: 55%;
+  margin-right: 20px
+}
+
+@media(max-width: 900px) {
+  .AbilityCoreContainer .AbilityVideoContainer {
+      width: 100%
+  }
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .AbilityVideoContainerPadding {
+  width: 100%;
+  padding-top: 56.25%;
+  height: 0px;
+  position: relative;
+  border-radius: 1px;
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .AbilityVideoContainerPadding .VideoRE {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .AbilityVideoContainerPadding .VideoRE {
+  animation-duration: .3s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-name: Crazy
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .AbilityVideoContainerPadding video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 {
+  width: 100%;
+  margin-top: -15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 {
+  width: 80px;
+  height: 80px;
+  margin: 0px 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: .1s;
+  box-shadow: 0px 0px 10px #000;
+  position: relative
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 .VideoRE3.VideoRE4,
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 .VideoRE3.VideoRE5 {
+  margin-left: 16px
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 .VideoRE3  {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 .VideoRE3 {
+  filter: saturate(0) brightness(0.6)
+}
+
+.AbilityCoreContainer .AbilityVideoContainer .VideoRE2 .VideoRE3:hover {
+  transform: scale(1.1)
+}
+
+.AbilityCoreContainer .MainAbilityContainer {
+  width: 45%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+@media(max-width: 900px) {
+  .AbilityCoreContainer .MainAbilityContainer {
+      width: 100%
+  }
+}
+
+.AbilityCoreContainer .MainAbilityContainer .VideoRe6 {
+  width: 100%;
+  height: 100%
+}
+
+.AbilityCoreContainer .MainAbilityContainer .VideoRe6 {
+  width: 100%;
+  padding: 8px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: row
 }
 
 .HeroNameAndLevelsIcon {

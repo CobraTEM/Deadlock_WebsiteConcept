@@ -80,6 +80,12 @@
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/abrams_bg.webp",
 			"name_image": "https://assets-bucket.deadlock-api.com/assets-api-res/icons/abrams.svg"
 		},
+		"videos": {
+			"abilityvid1": "videos/hero_abilities/atlas_siphon_life.webm",
+			"abilityvid2": "videos/hero_abilities/atlas_shoulder_charge.webm",
+			"abilityvid3": "videos/hero_abilities/atlas_beefiness.webm",
+			"abilityvid4": "videos/hero_abilities/atlas_leap.webm"
+		},
 		"items": {
 			"ability_climb_rope": "citadel_ability_climb_rope",
 			"ability_innate1": "citadel_ability_dash",

@@ -70,6 +70,36 @@ const textSelect= [
         myDiv2.innerHTML= getRandomText2();
       }
 
+      const ability1button = document.querySelector("#Ability1");
+      const ability2button = document.getElementById("Ability2");
+      const ability3button = document.getElementById("Ability3");
+      const ability4button = document.getElementById("Ability4");
+
+async function AbilityChange() {
+
+      try {
+
+
+        const response = await fetch("heroes.json");
+        const hero = await response.json();
+        console.log(hero);
+
+
+        let list = document.querySelector("#video-output");
+
+        ability1button.onclick = () => {
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid1}"></video>`
+        list.innerHTML = out;
+        }
+        
+
+      }
+      catch(error){
+        console.error(error);
+      }
+
+    }
+    
     function LoadData() {
       fetch("heroes.json")
       .then(function(response){
