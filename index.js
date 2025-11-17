@@ -75,22 +75,666 @@ const textSelect= [
       const ability3button = document.getElementById("Ability3");
       const ability4button = document.getElementById("Ability4");
 
-async function AbilityChange() {
+
+      async function BackstoryAdd() {
+
+        try {
+  
+  
+          const response = await fetch("heroes.json");
+          const hero = await response.json();
+  
+  
+          let list = document.querySelector("#Backstory-output");
+  
+          let out = `<div class="BackstoryContainer">${hero[0].description.lore}</div>`
+          list.innerHTML = out;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
+
+async function Ability1Change() {
 
       try {
 
 
         const response = await fetch("heroes.json");
         const hero = await response.json();
-        console.log(hero);
 
 
         let list = document.querySelector("#video-output");
+        let list2 = document.querySelector("#AbilityStats-output");
 
-        ability1button.onclick = () => {
         let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid1}"></video>`
+        let out2 = `        <div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="SiphonLife" class="AbilityContainer">
+          <div style="width: 100%">
+            <div class="AbilityHeaderContainer">
+              <div class="AbilityHeaderTop">
+                <div style="font-size: 1.3rem;">
+                  <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Siphon_Life.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Siphon Life</span>
+                  </p>
+                </div>
+                <div class="AbilityHeaderFlex">
+                  <p><br>
+                  </p>
+                  <p><br>
+                  </p>
+                  <div class="AbilityStatsMainContainer">
+                    <span class="AbilityStatsIconGrey"><span title="Radius"><img alt="Radius" src="images/stats/range.svg" decoding="async" width="20" height="20"></span></span>
+                    <span style="font-family:'Retail'; font-weight: bold; color: inherit; padding-left: 3px;">10</span><span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2">m</span>
+                  </div>
+                  <div style="position: relative;">
+                    <div style="position: absolute; top: -13px; right: 12px">
+                      <p><span style="font-size: 0.8em; color: #E3BDFA; white-space: nowrap;"><span><img src="images/stats/keystat_spirit_arrow_png.png" decoding="async" width="28" height="20"></span></span></span>
+                      </p>
+                    </div>
+                  </div>
+                  <p><br>
+                  </p>
+                  <div class="AbilityStatsMainContainer">
+                    <span class="AbilityStatsIconGrey"><span title="Duration"><img alt="Duration" src="images/stats/duration.svg" decoding="async" width="20" height="20"></span></span>
+                    <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit; padding-left: 3px;">4</span><span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items: end; justify-content: flex-end;">
+                <div
+                  style="display:flex; flex-direction:row; justify-content: flex-end; margin-bottom: 5px; margin-right: 20px;">
+                  <p><br>
+                  </p>
+                  <p><br>
+                  </p>
+                </div>
+                <div style="background-color: #2C2C2C; padding: 10px 6px 10px 6px; margin-right: 20px; white-space: nowrap;">
+                  <span class="AbilityStatsIconGrey">
+                  <span title="Cooldown">
+                  <img alt="Cooldown" src="images/stats/cooldown.svg" decoding="async" width="20" height="20">
+                </span>
+                </span>
+                <span style="font-family:'Retail'; font-weight:bold; color: inherit; padding-left: 7px;">42</span>
+                <span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+              </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div style="margin: 5px 10px 0px 10px; padding: 3px 0 5px 0; width: calc(100% - 18px); box-sizing: unset;">
+            <div style="display:flex; flex-direction:column; align-items: center; width: 100%">
+              <div style="padding: 0 10px 0 10px">Drain health from nearby enemies in front of you, dealing 
+                <span style="text-wrap:nowrap; font-weight:bold; color:#bc8ee8;"><span style="position: relative;">
+                <span><img src="images/stats/damage_magic_color.svg" decoding="async" width="12" height="12"></span></span></span><span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:#bc8ee8;">spirit damage over time</span></span> and <span style="text-wrap:nowrap; font-weight:bold; color:#13f278;"><span style="position: relative; bottom: 2px; filter: brightness(0)saturate(100%)invert(66%)sepia(32%)saturate(1046%)hue-rotate(95deg)brightness(103%)contrast(102%);">
+                  <span><img src="images/stats/health_regen.svg" decoding="async" width="20" height="20"></span></span></span>
+                <span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:#13f278;">healing</span> for a portion of the damage dealt.</div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+                <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                  <div style="position: relative;">
+                    <div style="position: absolute; top: -10px; right: -2px">
+                      <p><span style="font-size: 0.8em; color: #E3BDFA; white-space: nowrap;"><span><img src="images/stats/keystat_spirit_arrow_png.png" decoding="async" width="40" height="28"></spam></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background: rgb(42,41,43); background: radial-gradient(circle, rgba(42,41,43,1) 0%, rgba(59,49,69,1) 100%);; text-align: center; border: 3px solid #583D6F; box-shadow: 0 0 10px #3d2c4d; border-radius: 1px">
+                    <div style="font-weight: bold;">
+                      <p><span style="position: relative;">
+                          <span><img src="images/stats/damage_magic_color.svg" decoding="async" width="15" height="15"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">32</span><span style="font-size: calc(1em - 2px); color: #B2B2B2"></span>
+                        </span>
+                      </p>
+                    </div>
+                    <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Damage Per Second</div>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                  <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background-color: #2A2A2A; text-align: center; border: 3px solid #2A2A2A; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px">
+                    <div style="font-weight: bold;">
+                      <p><span class="AbilityStatsIconGrey">
+                          <span><img src="images/stats/duration.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">4</span><span style="font-family:'Retail','Open Sans'; font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+                        </span>
+                      </p>
+                    </div>
+                    <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Duration</div>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                  <div style="font-family:'Retail','Open Sans'; font-weight: bold; padding-bottom: 2px; font-size: 0.8rem; color: #9C9C9C; font-variant: small-caps;">On Hit:
+                  </div>
+                  <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background-color: #2A2A2A; text-align: center; border: 3px solid #2A2A2A; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px">
+                    <div style="font-weight: bold;">
+                      <p><span style="position: relative; bottom: 2px; filter: brightness(0)saturate(100%)invert(66%)sepia(32%)saturate(1046%)hue-rotate(95deg)brightness(103%)contrast(102%);">
+                          <span><img src="images/stats/heal.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">60</span><span style="font-size: calc(1em - 2px); color: #B2B2B2">%</span>
+                        </span></p>
+                    </div>
+                    <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Lifesteal</div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+                <div style="display:flex; flex-direction:row; flex-grow: 1; flex-basis: 0; justify-content: left; background-color: #2A2A2A; font-size: 0.85em; margin: 3px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px; white-space: nowrap">
+                  <p><span style="white-space: nowrap">
+                      <span style="position: relative; bottom: 2px; filter: brightness(0)saturate(100%)invert(66%)sepia(32%)saturate(1046%)hue-rotate(95deg)brightness(103%)contrast(102%);">
+                        <span><img src="images/stats/heal.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                      <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">30</span><span style="font-family:'Retail','Open Sans'; font-size: 10px; color: #9C9C9C">%</span>
+                    </span>&nbsp;<span style="font-family:'Retail','Open Sans'; font-size: 0.75rem; white-space: nowrap">Lifesteal vs Non-Heroes</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+              <div style="padding: 0 10px 0 10px"></div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+              </div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+              <div style="padding: 0 10px 0 10px"></div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+              </div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:row; flex-wrap: wrap; margin-bottom: 5px; justify-content: center; width: calc(97% - 16px); min-width: 280px;">
+            <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+              <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>1</b></span></div>
+              <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans';">-19</span><span style="font-family:'Retail','Open Sans'; font-size: 12px;">s</span> Cooldown</div>
+              <div></div>
+            </div>
+            <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+              <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>2</b></span></div>
+              <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans';">+2</span><span style="font-family:'Retail','Open Sans'; font-size: 12px;">s</span> Duration</div>
+              <div></div>
+            </div>
+            <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+              <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>5</b></span></div>
+              <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.875rem);"><span style="font-family:'Retail','Open Sans';">+38</span><span style="font-size: 12px;"></span> Damage Per Second</div>
+           <div>
+         </div>
+        </div>
+        </div>
+       </div>`
         list.innerHTML = out;
-        }
+        list2.innerHTML = out2;
+        
+
+      }
+      catch(error){
+        console.error(error);
+      }
+
+    }
+
+    async function Ability2Change() {
+
+      try {
+
+
+        const response = await fetch("heroes.json");
+        const hero = await response.json();
+
+
+        let list = document.querySelector("#video-output");
+        let list2 = document.querySelector("#AbilityStats-output");
+
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid2}"></video>`
+        let out2 = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="ShoulderCharge" class="AbilityContainer">
+        <div style="width: 100%">
+          <div class="AbilityHeaderContainer">
+            <div class="AbilityHeaderTop">
+              <div style="font-size: 1.3rem;">
+                <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Shoulder_Charge.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Shoulder Charge</span>
+                </p>
+              </div>
+              <div class="AbilityHeaderFlex">
+                <p><br>
+                </p>
+                <p><br>
+                </p>
+                <div class="AbilityStatsMainContainer">
+                  <span class="AbilityStatsIconGrey"><span title="Radius"><img alt="Radius" src="images/stats/duration.svg" decoding="async" width="20" height="20"></span></span>
+                  <span style="font-family:'Retail'; font-weight: bold; color: inherit; padding-left: 3px;">1.4</span><span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+                </div>
+                <div style="position: relative;">
+                  <div style="position: absolute; top: -13px; right: 12px">
+                    <p><span style="font-size: 0.8em; color: #E3BDFA; white-space: nowrap;"><span></span></span></span>
+                    </p>
+                  </div>
+                </div>
+                <p><br>
+                </p>
+                <div>
+                  <span></span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items: end; justify-content: flex-end;">
+              <div
+                style="display:flex; flex-direction:row; justify-content: flex-end; margin-bottom: 5px; margin-right: 20px;">
+                <p><br>
+                </p>
+                <p><br>
+                </p>
+              </div>
+              <div style="background-color: #2C2C2C; padding: 10px 6px 10px 6px; margin-right: 20px; white-space: nowrap;">
+                <span class="AbilityStatsIconGrey">
+                <span title="Cooldown">
+                <img alt="Cooldown" src="images/stats/cooldown.svg" decoding="async" width="20" height="20">
+              </span>
+              </span>
+              <span style="font-family:'Retail'; font-weight:bold; color: inherit; padding-left: 7px;">37</span>
+              <span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+            </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div style="margin: 5px 10px 0px 10px; padding: 3px 0 5px 0; width: calc(100% - 18px); box-sizing: unset;">
+          <div style="display:flex; flex-direction:column; align-items: center; width: 100%">
+            <div style="padding: 0 10px 0 10px">Charge forward, 
+              <span style="text-wrap:nowrap; font-weight:bold; color:#bc8ee8;"><span style="position: relative;">
+              <span><img src="images/stats/condition_knockdown.svg" decoding="async" width="20" height="20"></span></span></span><span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:white;">pulling</span></span> enemies you hit. Pushing a hero into a wall applies<span style="text-wrap:nowrap; font-weight:bold; color:white;"><span style="position: relative; bottom: 2px;">
+                <span><img src="images/stats/condition_stun.svg" decoding="async" width="20" height="20"></span></span></span>
+              <span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:white;">stun</span>.<div>
+              <span style="font-style: italic;color:#C0C0C0">If you collide with a hero you move faster during your charge.</span></div></div>
+              
+            <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+              <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                <div style="position: relative;">
+                  <div style="position: absolute; top: 5px; right: -1px">
+                    <p><span style="font-size: 0.8em; color: #E3BDFA; white-space: nowrap;"><span><img src="images/stats/keystat_spirit_arrow_png.png" decoding="async" width="40" height="28"></spam></span>
+                    </p>
+                  </div>
+                </div>
+                <div style="font-family:'Retail','Open Sans'; font-weight: bold; padding-bottom: 2px; font-size: 0.8rem; color: #9C9C9C; font-variant: small-caps;">On Hero Collide:
+                </div>
+                <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background: rgb(42,41,43); background: radial-gradient(circle, rgba(42,41,43,1) 0%, rgba(59,49,69,1) 100%);; text-align: center; border: 3px solid #583D6F; box-shadow: 0 0 10px #3d2c4d; border-radius: 1px">
+                  <div style="font-weight: bold;">
+                    <p><span style="position: relative;">
+                        <span><img src="images/stats/damage_magic_color.svg" decoding="async" width="15" height="15"></span></span></span><span style="color: inherit;">
+                        <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">37</span><span style="font-size: calc(1em - 2px); color: #B2B2B2"></span>
+                      </span>
+                    </p>
+                  </div>
+                  <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Damage Per Second</div>
+                </div>
+              </div>
+          </div>
+          <div style="display:flex; ">
+            <div style="display:flex;">
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+          <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+            <div style="padding: 0 10px 0 10px"></div>
+            <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+            </div>
+            <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+            <div style="padding: 0 10px 0 10px"></div>
+            <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+            </div>
+            <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:row; flex-wrap: wrap; margin-bottom: 5px; justify-content: center; width: calc(97% - 16px); min-width: 280px;">
+          <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+            <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+              <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>1</b></span></div>
+            <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans'; ">On Hero Collide:+25% Weapon Damage for 8</span><span style="font-family:'Retail','Open Sans'; font-style: bold; font-size: 12px;">s</span></div>
+            <div></div>
+          </div>
+          <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+            <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+              <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>2</b></span></div>
+            <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans';">On Wall Hit: +0.45s Stun Duration</span><span style="font-family:'Retail','Open Sans'; font-size: 12px;"></span> </div>
+            <div></div>
+          </div>
+          <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+            <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+              <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>5</b></span></div>
+            <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.875rem);"><span style="font-family:'Retail','Open Sans';">-22</span><span style="font-size: 12px;">s</span> Cooldown</div>
+         <div>
+       </div>
+      </div>
+      </div>
+     </div>`
+        list.innerHTML = out;
+        list2.innerHTML = out2;
+        
+
+      }
+      catch(error){
+        console.error(error);
+      }
+
+    }
+
+    async function Ability3Change() {
+
+      try {
+
+
+        const response = await fetch("heroes.json");
+        const hero = await response.json();
+
+
+        let list = document.querySelector("#video-output");
+        let list2 = document.querySelector("#AbilityStats-output");
+
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid3}"></video>`
+        let out2 = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="InfernalResilience" class="AbilityContainer">
+            <div style="width: 100%">
+              <div class="AbilityHeaderContainer">
+                <div class="AbilityHeaderTop">
+                  <div style="font-size: 1.3rem;">
+                    <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Infernal_Resilience.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Infernal Resilience</span>
+                    </p>
+                  </div>
+                  <div class="AbilityHeaderFlex">
+                    <p><br>
+                    </p>
+                    <p><br>
+                    </p>
+                    <div class="">
+                      <span></span></span>
+                      <span></span>
+                    </div>
+                    <div style="position: relative;">
+                      <div style="position: absolute; top: -13px; right: 12px">
+                        <p><span style="font-size: 0.8em; color: #E3BDFA; white-space: nowrap;"><span></span></span></span>
+                        </p>
+                      </div>
+                    </div>
+                    <p><br>
+                    </p>
+                    <div>
+                      <span></span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items: end; justify-content: flex-end;">
+                  <div
+                    style="display:flex; flex-direction:row; justify-content: flex-end; margin-bottom: 5px; margin-right: 20px;">
+                    <p><br>
+                    </p>
+                    <p><br>
+                    </p>
+                  </div>
+                  <div style=" padding: 10px 6px 10px 6px; margin-right: 20px; white-space: nowrap;">
+                    <span class="">
+                    <span title="">
+                  </span>
+                  </span>
+                  <span style="font-family:'Retail'; font-weight:bold; color: inherit; padding-left: 7px;"></span>
+                  <span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2"></span>
+                </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div style="margin: 5px 10px 0px 10px; padding: 3px 0 5px 0; width: calc(100% - 18px); box-sizing: unset;">
+              <div style="display:flex; flex-direction:column; align-items: center; width: 100%">
+                <div style="padding: 0 10px 0 10px">Gain bonus defensive attributes. Taking damage grants temporary 
+                  <span style="text-wrap:nowrap; font-weight:bold; color:#bc8ee8;"><span style="position: relative;">
+                  <span><span style="position: relative; bottom: 2px; filter: brightness(0)saturate(100%)invert(66%)sepia(32%)saturate(1046%)hue-rotate(95deg)brightness(103%)contrast(102%);"><img src="images/stats/health_regen.svg" decoding="async" width="20" height="20"></span></span></span><span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:#13f278;">regeneration</span></span> for a portion of the damage taken.<span style="text-wrap:nowrap; font-weight:bold; color:white;"></span></span></span>
+                  <span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:white;"></span><div>
+                  <span style="font-style: italic;color:#C0C0C0"></span></div></div>
+                  <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+                    <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                      <div style="font-family:'Retail','Open Sans'; font-weight: bold; padding-bottom: 2px; font-size: 0.8rem; color: #9C9C9C; font-variant: small-caps;">Passive:
+                      </div>
+                      <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background-color: #2A2A2A; text-align: center; border: 3px solid #2A2A2A; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px">
+                        <div style="font-weight: bold;">
+                          <p><span style="position: relative; bottom: 2px; filter: brightness(0)saturate(100%)invert(66%)sepia(32%)saturate(1046%)hue-rotate(95deg)brightness(103%)contrast(102%);">
+                              <span><img src="images/stats/heal.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                              <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">13</span><span style="font-size: calc(1em - 2px); color: #B2B2B2">%</span>
+                            </span></p>
+                        </div>
+                        <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Damage Regenerated</div>
+                      </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                      <div style="font-family:'Retail','Open Sans'; font-weight: bold; padding-bottom: 2px; font-size: 0.8rem; color: #9C9C9C; font-variant: small-caps;">Passive:
+                      </div>
+                      <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background-color: #2A2A2A; text-align: center; border: 3px solid #2A2A2A; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px">
+                        <div style="font-weight: bold;">
+                          <p><span class="AbilityStatsIconGrey" style="position: relative; bottom: 2px; ">
+                              <span><img src="images/stats/duration.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                              <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">20</span><span style="font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+                            </span></p>
+                        </div>
+                        <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Regeneration Time</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+                    <div style="display:flex; flex-direction:row; flex-grow: 1; flex-basis: 0; justify-content: left; background-color: #2A2A2A; font-size: 0.85em; margin: 3px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px; white-space: nowrap">
+                      <p><span style="white-space: nowrap">
+                          <span style="position: relative; bottom: 2px; filter: brightness(0)saturate(100%)invert(66%)sepia(32%)saturate(1046%)hue-rotate(95deg)brightness(103%)contrast(102%);">
+                            <span><img src="images/stats/health.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">1</span><span style="font-family:'Retail','Open Sans'; font-size: 10px; color: #9C9C9C"></span>
+                        </span>&nbsp;<span style="font-family:'Retail','Open Sans'; font-size: 0.75rem; white-space: nowrap">Health Regen</span></span>
+                      </p>
+                    </div>
+              </div>
+              <div style="display:flex; ">
+                <div style="display:flex;">
+                  <p>
+                  </p>
+                </div>
+              </div>
+            </div>
+              <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+                <div style="padding: 0 10px 0 10px"></div>
+                <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+                </div>
+                <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+                <div style="padding: 0 10px 0 10px"></div>
+                <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+                </div>
+                <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:row; flex-wrap: wrap; margin-bottom: 5px; justify-content: center; width: calc(97% - 16px); min-width: 280px;">
+              <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+                <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                  <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>1</b></span></div>
+                <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans'; ">+1.5 Health Regen</span><span style="font-family:'Retail','Open Sans'; font-style: bold; font-size: 12px;"></span></div>
+                <div></div>
+              </div>
+              <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+                <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                  <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>2</b></span></div>
+                <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans';">+150 Max Health</span><span style="font-family:'Retail','Open Sans'; font-size: 12px;"></span> </div>
+                <div></div>
+              </div>
+              <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+                <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                  <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>5</b></span></div>
+                <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.875rem);"><span style="font-family:'Retail','Open Sans';">+7<span style="font-size: 12px;">%</span> Damage Regenerated</span></div>
+             <div>
+           </div>
+          </div>
+          </div>
+         </div>`
+        list.innerHTML = out;
+        list2.innerHTML = out2;
+        
+
+      }
+      catch(error){
+        console.error(error);
+      }
+
+    }
+
+    async function Ability4Change() {
+
+      try {
+
+
+        const response = await fetch("heroes.json");
+        const hero = await response.json();
+
+
+        let list = document.querySelector("#video-output");
+        let list2 = document.querySelector("#AbilityStats-output");
+
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid4}"></video>`
+        let out2 = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="SeismicImpact" class="AbilityContainer">
+          <div style="width: 100%">
+            <div class="AbilityHeaderContainer">
+              <div class="AbilityHeaderTop">
+                <div style="font-size: 1.3rem;">
+                  <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Seismic_Impact.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Seismic Impact</span>
+                  </p>
+                </div>
+                <div class="AbilityHeaderFlex">
+                  <p><br>
+                  </p>
+                  <p><br>
+                  </p>
+                  <div class="">
+                  </div>
+                  <p><br>
+                  </p>
+                  <div class="">
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items: end; justify-content: flex-end;">
+                <div
+                  style="display:flex; flex-direction:row; justify-content: flex-end; margin-bottom: 5px; margin-right: 20px;">
+                  <p><br>
+                  </p>
+                  <p><br>
+                  </p>
+                </div>
+                <div style="background-color: #2C2C2C; padding: 10px 6px 10px 6px; margin-right: 20px; white-space: nowrap;">
+                  <span class="AbilityStatsIconGrey">
+                  <span title="Cooldown">
+                  <img alt="Cooldown" src="images/stats/cooldown.svg" decoding="async" width="20" height="20">
+                </span>
+                </span>
+                <span style="font-family:'Retail'; font-weight:bold; color: inherit; padding-left: 7px;">185</span>
+                <span style="font-family:'Retail'; font-weight: bold; font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+              </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div style="margin: 5px 10px 0px 10px; padding: 3px 0 5px 0; width: calc(100% - 18px); box-sizing: unset;">
+            <div style="display:flex; flex-direction:column; align-items: center; width: 100%">
+              <div style="padding: 0 10px 0 10px">Leap high into the air before crashing into the ground, dealing
+                <span style="text-wrap:nowrap; font-weight:bold; color:#bc8ee8;"><span style="position: relative;">
+                <span><img src="images/stats/damage_magic_color.svg" decoding="async" width="12" height="12"></span></span></span><span style="color: inherit;"></span><span style="text-wrap:nowrap; font-weight:bold; color:#bc8ee8;">spirit Damage</span></span> and applying <span style="text-wrap:nowrap; font-weight:bold; color:white;"><span style="position: relative; bottom: 2px;">
+                  <span><img src="images/stats/condition_stun.svg" decoding="async" width="20" height="20"></span></span></span>
+                <span style="color: inherit;"> </span> <span style="text-wrap:nowrap; font-weight:bold; color:white;">stun</span>.</div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+                <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                  <div style="position: relative;">
+                    <div style="position: absolute; top: -10px; right: -2px">
+                      <p><span style="font-size: 0.8em; color: #E3BDFA; white-space: nowrap;"><span><img src="images/stats/keystat_spirit_arrow_png.png" decoding="async" width="40" height="28"></spam></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background: rgb(42,41,43); background: radial-gradient(circle, rgba(42,41,43,1) 0%, rgba(59,49,69,1) 100%);; text-align: center; border: 3px solid #583D6F; box-shadow: 0 0 10px #3d2c4d; border-radius: 1px">
+                    <div style="font-weight: bold;">
+                      <p><span style="position: relative;">
+                          <span><img src="images/stats/damage_magic_color.svg" decoding="async" width="15" height="15"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">55</span><span style="font-size: calc(1em - 2px); color: #B2B2B2"></span>
+                        </span>
+                      </p>
+                    </div>
+                    <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Damage Per Second</div>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                  <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background-color: #2A2A2A; text-align: center; border: 3px solid #2A2A2A; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px">
+                    <div style="font-weight: bold;">
+                      <p><span class="AbilityStatsIconGrey">
+                          <span><img src="images/stats/range.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">10.5</span><span style="font-family:'Retail','Open Sans'; font-size: calc(1em - 2px); color: #B2B2B2">m</span>
+                        </span>
+                      </p>
+                    </div>
+                    <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Duration</div>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; max-height: 100%; padding: 10px 0px 10px 0px; margin: 3px; overflow: hidden;">
+                  <div style="font-family:'Retail','Open Sans'; font-weight: bold; padding-bottom: 2px; font-size: 0.8rem; color: #9C9C9C; font-variant: small-caps;">On Hit:
+                  </div>
+                  <div style="display:flex; flex-direction:column; flex-grow: 1; justify-content: space-between; background-color: #2A2A2A; text-align: center; border: 3px solid #2A2A2A; box-shadow: 0 0 10px #2A2A2A; border-radius: 1px">
+                    <div style="font-weight: bold;">
+                      <p><span class="AbilityStatsIconGrey" style="position: relative; bottom: 2px; ">
+                          <span><img src="images/stats/duration.svg" decoding="async" width="18" height="18"></span></span></span><span style="color: inherit;">
+                          <span style="font-family:'Retail','Open Sans'; font-weight:bold; color: inherit;">1.5</span><span style="font-size: calc(1em - 2px); color: #B2B2B2">s</span>
+                        </span></p>
+                    </div>
+                    <div style="font-family:'Retail','Open Sans'; font-size: 0.8rem; padding-bottom: 3px">Stun Duration</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+              <div style="padding: 0 10px 0 10px"></div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+              </div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items: center; width: 100%; padding-top: 8px">
+              <div style="padding: 0 10px 0 10px"></div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; width: calc(97% - 5px); min-width: 280px;">
+              </div>
+              <div style="display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; background-color: #2A2A2A; width: calc(97% - 19px); min-width: 267px; padding: 0 4px 0 4px; column-gap: 15px">
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:row; flex-wrap: wrap; margin-bottom: 5px; justify-content: center; width: calc(97% - 16px); min-width: 280px;">
+            <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+              <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>1</b></span></div>
+              <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans';">-35</span><span style="font-family:'Retail','Open Sans'; font-size: 12px;">s</span> Cooldown</div>
+              <div></div>
+            </div>
+            <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+              <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>2</b></span></div>
+              <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.95rem);"><span style="font-family:'Retail','Open Sans';">On Hero Hit: +100 Max HP and +15<span style="font-family:'Retail','Open Sans'; font-size: 12px;">%</span> Fire Rate</span></div>
+              <div></div>
+            </div>
+            <div style="display:flex; flex-direction:column; flex-grow: 1; flex-basis: 0; justify-content: flex-start; max-height: 140px; background-color: #555555; padding: 0 0px 20px 0px; margin: 6px; text-align: center; box-shadow: 0 0 10px #2A2A2A; border-radius: 5px">
+              <div style="padding: 2px 0 0 2px; font-family:Retail Demo bold; font-size: clamp(0.70em, 2vw, 1em); background-color: #121212; border-radius: 5px 5px 0 0;">
+                <span style="position: relative; bottom: 2px; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1312%) hue-rotate(197deg) brightness(107%) contrast(101%);"><span><img src="images/stats/ap_icon.svg" decoding="async" width="15" height="15"></span></span></span> <span style="color:#bc8ee8;"><b>5</b></span></div>
+              <div style="font-family:'Retail','Open Sans'; padding: 10px 4px 4px 4px; font-size: clamp(0.70em, 2vw, 0.875rem);"><span style="font-family:'Retail','Open Sans';">On cast, become </span><span style="text-wrap:nowrap; font-weight:bold; color:white;">Unstoppable</span>.</div>
+           <div>
+         </div>
+        </div>`
+        list.innerHTML = out;
+        list2.innerHTML = out2;
         
 
       }
