@@ -75,6 +75,891 @@ const textSelect= [
       const ability3button = document.getElementById("Ability3");
       const ability4button = document.getElementById("Ability4");
 
+      async function StatsAdd() {
+
+        try {
+  
+  
+          const response = await fetch("heroes.json");
+          const hero = await response.json();
+          var Id = document.body.id;
+  
+  
+          let list = document.querySelector("#statses-output");
+  
+          let out = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" class="DivideUpdates">
+  <div style="pointer-events: auto; display: block; margin: 25px; " id="WeaponStats" class="NoSecondaryWeaponDesc CitadelHeroStatsWeapon">
+      <div id="BackgroundContainer">
+      <div id="WeaponInfoContainer">
+        <img id="GunImage" src="images/guns/bull_gun_psd.png" scaling="cover">
+        <div class="weaponNameAndAttributes TopBottomFlow">
+          <div class="statTitle">WEAPON STATS</div>
+          <div class="WeaponName">Case Closed</div>
+          <div id="WeaponAttributesContainer" class="LeftRightFlow">
+            <div class="AttributeLabel">
+              <div id="AttributeLabel">${hero[Id].shop_stat_display.weapon_stats_display.weapon_attributes[0]}</div>
+            </div>
+            <div class="AttributeLabel">
+              <div id="AttributeLabel">${hero[Id].shop_stat_display.weapon_stats_display.weapon_attributes[1]}</div>
+            </div>
+          </div>
+        </div>
+        <div id="BulletDPSContainer">
+          <div id="StatContainer_DPS" class="StatElement statAttributeContainerDPS">
+            <div id="AttributeLabel" class="HasStatImage CitadelModifiedAttributeLabel">
+              <div class="LabelsContainer">
+                <div class="StatImageArea">
+                  <div id="StatImage" class="StatImage StatDesc_DPS"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText">
+                  <div id="BaseLabel">${hero[Id].hero_stats_ui.display_stats[5].value}</div>
+                </div>
+              </div>
+              <div id="AdditionalText">DPS</div>
+            </div>
+          </div>
+        </div>
+        <div id="WeaponFalloffRange">
+          <div class="FalloffLabel">FALLOFF RANGE</div>
+          <div id="WeaponRangeContainer" class="">
+            <div id="WeaponMinRangeContainer">
+              <div style="text-align: center; " id="StatContainer_WeaponRangeFalloffMin" class="StatElement statAttributeContainer2">
+                <div id="AttributeLabel2" class=" CitadelModifiedAttributeLabel">
+                  <div class="LabelsContainer">
+                    <div class="LabelsText2">
+                      <div id="BaseLabel">${hero[Id].hero_stats_ui.display_stats[14].value}<span style="color: gray;">m</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="RangeArrow"></div>
+              <div id="WeaponMaxRangeContainer">
+                <div style="text-align: center; " id="StatContainer_WeaponRangeFalloffMax" class="StatElement statAttributeContainer2">
+                  <div id="AttributeLabel2" class=" CitadelModifiedAttributeLabel">
+                    <div class="LabelsContainer">
+                      <div class="LabelsText2">
+                        <div id="BaseLabel">${hero[Id].hero_stats_ui.display_stats[15].value}<span style="color: gray;">m</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="WeaponDisplayStats" class="displayStatsContainer">
+        <div class="weaponDesc">Reloads single shells at a time. Can be interrupted.</div>
+        <div id="InitialWeaponStatsContainer" class="statsContainer">
+         <div id="BulletDamage" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletDamage"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">${hero[Id].starting_stats.bullet_damage.value}</div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Bullet Damage</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="BulletPerSec" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletPerSec"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">${hero[Id].starting_stats.bullets_persec.value}</div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Bullets per sec</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="Ammo" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_Ammo"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">${hero[Id].starting_stats.ammo.value}</div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Ammo</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="ReloadTime" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_ReloadTime"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">${hero[Id].starting_stats.reload_speed.value}<span style="color: gray;">s</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Reload Time</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="BulletVelocity" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletVelocity"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">610<span style="color: gray;">m/s</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Bullet Velocity</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="BulletLifeSteal" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletLifeSteal"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Bullet Lifesteal</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="WeaponDamage" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletDamage"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Weapon Damage</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="FireRate" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletPerSec"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Fire Rate</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="ClipSizeIncrease" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_Ammo"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Clip Size Increase</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="ReloadReduction" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_ReloadTime"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Reload Reduction</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="BulletVelocityIncrease" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_BulletVelocity"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div style="font-size: 14.5px;" id="AdditionalText2">Bullet Velocity Increase</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="CritBonusScale" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_CritBonusScale"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Crit Bonus Scale</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 1px;" id="WeaponOtherStatsDisplay" class="displayStatsContainer otherStats">
+      <div style=" max-height: 50px;" id="OtherWeaponStatsContainer" class="statsContainer">
+        <div id="LightMelee" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_LightMelee"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">50</div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Light Melee</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="HeavyMelee" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_HeavyMelee"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">116</div>
+              </div>
+            </div>
+            <div id="AdditionalText2">Heavy Melee</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div style="pointer-events: auto; display: block; margin: 25px;" id="VitalityStats" class="CitadelHeroArmor">
+    <div id="BackgroundContainer">
+      <div id="ArmorDisplayStats" class="displayStatsContainer">
+        <div style="padding-bottom: 10px;" class="statTitle">VITALITY STATS</div>
+        <div id="InitialVitalityStatsContainer" class="statsContainer2">
+          <div id="MaxHealth" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_MaxHealth"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">720</div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Max Health</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="HealAmp" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_HealAmp"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Heal Amp</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="BulletResist" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_BulletResist"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Bullet Resist</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="MeleeResist" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_MeleeResist"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Melee Resist</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="CritReduction" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_CritBonusScale"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Crit Reduction</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="HealthRegen" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_HealthRegen"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">1.5</div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Health Regen</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="NonCombatHealthRegen" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_HealthRegen"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0</div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Non-Combat Regen</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="SpiritResist" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_SpiritResist"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Spirit Resist</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="DebuffResist" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_DebuffResist"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Debuff Resist</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+        </div>
+      </div>
+      <div id="ArmorOtherDisplayStats" style="margin-top: 70px; " class="displayStatsContainer otherStats">
+        <div style=" max-height: 150px;" id="ArmorOtherDisplayStats" class="statsContainer">
+          <div id="MoveSpeed" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_MoveSpeed"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">6.5<span style="color: gray;">m/s</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Move Speed</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="StaminaCooldown" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_StaminaCooldown"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">5<span style="color: gray;">s</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Stamina Cooldown</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="Stamina" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_Stamina"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">3</div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Stamina</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="SprintSpeed" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_SprintSpeed"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">2.0<span style="color: gray;">m/s</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Sprint Speed</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+          <div id="StaminaRecovery" class="StatElement statAttributeContainer">
+            <div id="AttributeLabelStats" class="HasStatImage2">
+              <div class="LabelsContainer">
+                <div class="StatImageArea2">
+                  <div id="StatImage2" class="StatImage2 StatDesc_StaminaCooldown"></div>
+                  <div class="NewOverride">NEW</div>
+                </div>
+                <div class="LabelsText2">
+                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                </div>
+              </div>
+              <div id="AdditionalText3">Stamina Recovery</div>
+           </div>
+           <div id="SpiritInc" class=""></div>
+          </div>
+  </div>
+</div>
+</div>
+</div>
+<div style="pointer-events: auto; display: block; margin: 25px;" id="SpiritStats" class="CitadelHeroSpirit">
+  <div id="BackgroundContainer">
+    <div id="SpiritDisplayStats" class="displayStatsContainer">
+      <div style="padding-bottom: 10px;" class="statTitle">SPIRIT STATS</div>
+      <div id="InitialSpiritStatsContainer" class="statsContainer3">
+        <div id="AbilityCooldown" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_AbilityCooldown"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText3">Ability Cooldown</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="AbilityRange" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_AbilityRange"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText3">Ability Range</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="MaxChargesIncrease" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_MaxChargesIncrease"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0</div>
+              </div>
+            </div>
+            <div id="AdditionalText3">Max Charges Increase</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="AbilityDuration" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_AbilityDuration"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText3">Ability Duration</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="SpiritLifesteal" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_SpiritLifesteal"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText3">Spirit Lifesteal</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+        <div id="ChargeCooldown" class="StatElement statAttributeContainer">
+          <div id="AttributeLabelStats" class="HasStatImage2">
+            <div class="LabelsContainer">
+              <div class="StatImageArea2">
+                <div id="StatImage2" class="StatImage2 StatDesc_ChargeCooldown"></div>
+                <div class="NewOverride">NEW</div>
+              </div>
+              <div class="LabelsText2">
+                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+              </div>
+            </div>
+            <div id="AdditionalText3">Charge Cooldown</div>
+         </div>
+         <div id="SpiritInc" class=""></div>
+        </div>
+      </div>
+    </div>
+    <div id="SpiritImpactContainer">
+      <div style="height: 320px; display: inline-flex; width: 100%;"  class="SpiritPower">
+        <div id="SpiritValueContainer">
+          <div class="SpiritPowerImpactLabel">SPIRIT POWER IMPACT</div>
+            <div id="SpiritPowerStat" class="StatElement statAttributeContainer3">
+              <div id="AttributeLabelStats" class="HasStatImage2">
+                <div class="LabelsContainer">
+                  <div class="StatImageArea2">
+                    <div id="StatImage2" class="StatImage2 StatDesc_Spirit"></div>
+                    <div class="NewOverride">NEW</div>
+                  </div>
+                  <div class="LabelsText2">
+                    <div id="BaseLabel2">0</div>
+                  </div>
+                </div>
+                <div id="AdditionalText3">Spirit Power</div>
+             </div>
+             <div id="SpiritInc" class=""></div>
+           </div>
+         <div class="SpiritPowerDesc">Spirit Power increases the effectiveness of your Abilities and Items.</div>
+        </div>
+        <div id="ModifiedAbilitesPanel" class="CitadelModifiedAbilities noModifiedAbilities">
+          <div id="InnateModified" class="modifiedContainer"></div>
+          <div id="AbilitiesModified" class="modifiedContainer">
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Siphon_Life.png" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">Radius</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">10<span style="padding-left: 5px; color: gray;">m</span></div>
+                    </div>
+                </div>
+             </div>
+          </div>
+          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+            <div id="Icon">
+              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Siphon_Life.png" scaling="stretch"></div>
+            </div>
+            <div id="AffectedPropertiesContainer">
+              <div id="Property_Radius" class="AffectedAbilityProperty">
+                <div class="PropertyNameContainer">
+                  <div class="AffectedPropertyName">Damage Per Second</div>
+                </div>
+                <div class="AffectedPropertyDeltaContainer">
+                  <div class="AffectedValCur">29</div>
+                </div>
+            </div>
+          </div>
+          </div>
+          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+            <div id="Icon">
+              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Shoulder_Charge.png" scaling="stretch"></div>
+            </div>
+            <div id="AffectedPropertiesContainer">
+              <div id="Property_Radius" class="AffectedAbilityProperty">
+                <div class="PropertyNameContainer">
+                  <div class="AffectedPropertyName">Damage</div>
+                </div>
+                <div class="AffectedPropertyDeltaContainer">
+                  <div class="AffectedValCur">37</div>
+                </div>
+            </div>
+          </div>
+          </div>
+          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+            <div id="Icon">
+              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Seismic_Impact.png" scaling="stretch"></div>
+            </div>
+            <div id="AffectedPropertiesContainer">
+              <div id="Property_Radius" class="AffectedAbilityProperty">
+                <div class="PropertyNameContainer">
+                  <div class="AffectedPropertyName">Damage</div>
+                </div>
+                <div class="AffectedPropertyDeltaContainer">
+                  <div class="AffectedValCur">55</div>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>`
+          list.innerHTML = out;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
+
+
+      async function AddTags() {
+
+        try {
+  
+  
+          const response = await fetch("heroes.json");
+          const hero = await response.json();
+          var Id = document.body.id;
+  
+          let list = document.querySelector("#tag-output");
+  
+          let out = `      <div class="HeroTags">
+        <div class="heroTag Tag1">
+          <div class="tagBacker">${hero[Id].tags[0]}</div>
+        </div>
+        <div class="heroTag Tag2">
+          <div class="tagBacker">${hero[Id].tags[1]}</div>
+        </div>
+        <div class="heroTag Tag3">
+          <div class="tagBacker">${hero[Id].tags[2]}</div>
+        </div>
+      </div>`
+          list.innerHTML = out;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
+
+      async function AbilityIcons() {
+
+        try {
+  
+
+
+          const response = await fetch("ability.json");
+          const hero = await response.json();
+  
+  
+          let list = document.querySelector("#table-output");
+          let list2 = document.querySelector("#table2-output");
+  
+          let out = `
+         <table class="TableSkillsAbility">
+          <tr style="font-size:14px; height:50px; text-align:center;">
+           <td>
+              <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" id="Ability1" href="#Ability1">
+                <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                    <div><span><img src="images/abilities/abrams/Siphon_Life.png" decoding="async" width="69" height="69"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" id="Ability2" href="#Ability2">
+                <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                    <div><span><img src="images/abilities/abrams/Shoulder_Charge.png" decoding="async" width="69" height="69"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" id="Ability3" href="#Ability3">
+                <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                    <div><span><img src="images/abilities/abrams/Infernal_Resilience.png" decoding="async" width="69" height="69"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+             <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" id="Ability4" href="#Ability4">
+                <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                    <div><span><img src="images/abilities/abrams/Seismic_Impact.png" decoding="async" width="69" height="69"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              </div>
+             </div>
+            </td>
+           </tr>
+           </table>`
+           let out2 = `
+           <table class="TableSkills">
+            <tr style="font-size:14px; height:50px; text-align:center;">
+             <td>
+                <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability1">
+                  <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                      <div><span><img src="images/abilities/abrams/Siphon_Life.png" decoding="async" width="69" height="69"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability2">
+                  <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                      <div><span><img src="images/abilities/abrams/Shoulder_Charge.png" decoding="async" width="69" height="69"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability3">
+                  <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                      <div><span><img src="images/abilities/abrams/Infernal_Resilience.png" decoding="async" width="69" height="69"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+               <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability4">
+                  <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
+                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
+                      <div><span><img src="images/abilities/abrams/Seismic_Impact.png" decoding="async" width="69" height="69"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                </div>
+               </div>
+              </td>
+             </tr>
+             </table>`
+          list.innerHTML = out2;
+          list2.innerHTML = out;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
+
+      async function AddNameImage() {
+
+        try {
+  
+  
+          const response = await fetch("heroes.json");
+          const hero = await response.json();
+  
+          var Id = document.body.id;
+
+          let list = document.querySelector("#name-output");
+  
+          let out = `<img class="HeroLogo" src="${hero[Id].images.name_image}">`
+          list.innerHTML = out;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
 
       async function BackstoryAdd() {
 
@@ -84,10 +969,11 @@ const textSelect= [
           const response = await fetch("heroes.json");
           const hero = await response.json();
   
+          var Id = document.body.id;
   
           let list = document.querySelector("#Backstory-output");
   
-          let out = `<div class="BackstoryContainer">${hero[0].description.lore}</div>`
+          let out = `<div class="BackstoryContainer">${hero[Id].description.lore}</div>`
           list.innerHTML = out;
           
   
@@ -105,12 +991,12 @@ async function Ability1Change() {
 
         const response = await fetch("heroes.json");
         const hero = await response.json();
-
+        var Id = document.body.id;
 
         let list = document.querySelector("#video-output");
         let list2 = document.querySelector("#AbilityStats-output");
 
-        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid1}"></video>`
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[Id].videos.abilityvid1}"></video>`
         let out2 = `        <div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="SiphonLife" class="AbilityContainer">
           <div style="width: 100%">
             <div class="AbilityHeaderContainer">
@@ -281,12 +1167,13 @@ async function Ability1Change() {
 
         const response = await fetch("heroes.json");
         const hero = await response.json();
+        var Id = document.body.id;
 
 
         let list = document.querySelector("#video-output");
         let list2 = document.querySelector("#AbilityStats-output");
 
-        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid2}"></video>`
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[Id].videos.abilityvid2}"></video>`
         let out2 = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="ShoulderCharge" class="AbilityContainer">
         <div style="width: 100%">
           <div class="AbilityHeaderContainer">
@@ -432,12 +1319,12 @@ async function Ability1Change() {
 
         const response = await fetch("heroes.json");
         const hero = await response.json();
-
+        var Id = document.body.id;
 
         let list = document.querySelector("#video-output");
         let list2 = document.querySelector("#AbilityStats-output");
 
-        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid3}"></video>`
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[Id].videos.abilityvid3}"></video>`
         let out2 = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="InfernalResilience" class="AbilityContainer">
             <div style="width: 100%">
               <div class="AbilityHeaderContainer">
@@ -596,12 +1483,13 @@ async function Ability1Change() {
 
         const response = await fetch("heroes.json");
         const hero = await response.json();
+        var Id = document.body.id;
 
 
         let list = document.querySelector("#video-output");
         let list2 = document.querySelector("#AbilityStats-output");
 
-        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[0].videos.abilityvid4}"></video>`
+        let out = `<video class="AbilityVideo" autoplay="" preload="auto" loop="" playsinline=""><source type="video/webm" src="${hero[Id].videos.abilityvid4}"></video>`
         let out2 = `<div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" id="SeismicImpact" class="AbilityContainer">
           <div style="width: 100%">
             <div class="AbilityHeaderContainer">

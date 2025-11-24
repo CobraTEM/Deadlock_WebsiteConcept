@@ -845,6 +845,7 @@ padding: 15px;
 width: 100%;
 align-content: center;
 justify-content: center;
+z-index: 2;
 margin-bottom: -150px;
 }
 
@@ -876,6 +877,9 @@ max-height: 300px;
 border-top: 2px solid grey;
 display: block;
 border-radius: 2px;
+z-index: 2;
+height: 100%;
+max-height: 265px;
 background-size: cover;
 transition-property: filter, transform, background-size, opacity, border-top;
 transition-duration: .2s;
@@ -898,7 +902,7 @@ filter: brightness(1.0);
 
 .block-container:hover {
   transform: scale(1.06);
-    z-index: 100;
+    z-index: 2;
     box-shadow: 0px 0px 30px #000;
     border-top: 2px solid #ffefd7;
     transition-property: filter, transform, background-size, opacity, border-top;
@@ -949,13 +953,14 @@ filter: brightness(1.0);
  font-family: "Pulp";
  font-weight: lighter;
  font-size: 80px;
-align-items: center;
-vertical-align: middle;
  margin-top: -150px;
- margin-left: 540px;
- z-index: 1000000;
+ justify-content: center;
+ z-index: 100;
  color: #e2dace;
  padding-top: 50px;
+ text-align:center; 
+ position:relative;
+ align-items: center; 
 }
 
 .HeroCard2:hover {
@@ -978,7 +983,7 @@ vertical-align: middle;
   padding-bottom: 100px;
   position: absolute;
   z-index: 9999;
-  background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 24%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 54%, rgba(255, 255, 255, 0) 100%);
 }
 
 #WeaponStats, #VitalityStats, #SpiritStats {
@@ -1842,7 +1847,7 @@ z-index: 2;
   flex-direction: row;
   align-items: center;
   position: relative;
-  padding-top: 4px;
+  padding-top: 0px;
 }
 
 @media(max-width: 700px) {
@@ -1854,16 +1859,16 @@ z-index: 2;
 .navbar-container .navbar .navbar-buttons-container .button {
   text-decoration: none;
   font-size: 26px;
-  font-family: "Pulp", serif;
+  font-family: "Occult", serif;
   letter-spacing: 1.5px;
   opacity: .8;
   color: #fff;
   display: flex;
+  text-transform: uppercase;
   flex-direction: row;
   align-items: center;
   padding: 5px 0px;
   margin: 0px 20px;
-  text-transform: none;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent
 }

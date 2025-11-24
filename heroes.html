@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deadlock</title>
+  <title>Deadlock - Heroes</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" type="text/css" href="aos.css">
   <script type="text/javascript" src="index.js"></script>
@@ -43,6 +43,7 @@
         <tr>
           <td>
             <div id="data-output"></div>
+            <div id="hero-output"></div>
         </div>
       </td>
       </tr>
@@ -68,22 +69,10 @@
       <script>LoadData();
       </script>
       <script defer>
-            document.addEventListener('DOMContentLoaded', () => {
-    var audiohover = new Audio('audio/ui_shop_panel_weapon.mp3');
-    const hover = document.getElementById('rosterselect');
 
-    console.log(hover);
-
-    hover.addEventListener('mouseover', function() {
-      audiohover.play();
-    });
-  });
-
-
-
-  const menumusiclayer1 = new Audio("audio/music_hideout_play_base_lp_155bpm.mp3");
-  const menumusiclayer2 = new Audio("audio/music_hideout_play_low_lp_155bpm.mp3");
-  const menumusiclayer3 = new Audio("audio/music_hideout_play_high_lp_155bpm.mp3");
+  const menumusiclayer1 = new Audio("audio/music_hideout_play1.mp3");
+  const menumusiclayer2 = new Audio("audio/music_hideout_play2.mp3");
+  const menumusiclayer3 = new Audio("audio/music_hideout_play3.mp3");
 
   menumusiclayer1.play();
   menumusiclayer2.play();
@@ -97,18 +86,16 @@ menumusiclayer2.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
 }, false);
-menumusiclayer3.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-}, false);
 
-  menumusiclayer2.volume = 0.01;
-  menumusiclayer3.volume = 0.01;
+  menumusiclayer2.volume = 0.00;
+  menumusiclayer3.volume = 0.00;
   function PlayMore() {
     menumusiclayer2.volume = 1.0;
+    menumusiclayer1.volume = 0.00;
   }
   function PlayLess() {
     menumusiclayer2.volume = 0.0;
+    menumusiclayer1.volume = 1.0;
   }
   AOS.init();
       </script>
