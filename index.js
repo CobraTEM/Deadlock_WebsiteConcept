@@ -948,10 +948,10 @@ const textSelect= [
   
           var Id = document.body.id;
 
-          let list = document.querySelector("#name-output");
+          let list2 = document.querySelector("#name-output");
   
-          let out = `<img class="HeroLogo" src="${hero[Id].images.name_image}">`
-          list.innerHTML = out;
+          let out4 = `<img class="HeroLogo" src="${hero[Id].images.name_image}">`
+          list2.innerHTML = out4;
           
   
         }
