@@ -140,31 +140,31 @@ font-size: 65px;
 
 .ContainerShitWE {
   height: 100%;
-  width: fit-content;
+  width: 60%;
   max-width: 60%;
   display: flex;
-  margin-right: 350px;
   flex-direction: column;
   justify-content: center;
   align-content: flex-end;
   pointer-events: auto;
   font-size: 20px;
+  padding-right: 150px;
   font-family: "Radiance", sans-serif;
   letter-spacing: 2px;
   color: #ffffff90;
   font-weight: 600;
-  margin-top: 5px;
   margin-bottom: 20px;
   text-transform: uppercase;
   bottom: 0;
   top: 1;
+  left: 150px;
   z-index: 10;
   position: absolute;
 }
 
-@media(max-width: 1900px) {
-  .ShitWE .WE .ContainerShitWE {
-    font-size: 1px;
+@media(max-width: 900px) {
+  .ContainerShitWE {
+    padding-top: 150px;
   }
 }
 
@@ -451,16 +451,17 @@ overflow: hidden;
   width: 100%;
   max-width: 100%;
   min-height: 1000px;
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   margin-bottom: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: -2;
-  z-index: 40;
   position: relative;
-    background-image: url("images/1422450_20250820185105_12.png")
+  -webkit-mask-image: linear-gradient(to top, transparent 5%, black 50%);
+  mask-image: linear-gradient(to top, transparent 5%, black 50%);
 }
 
 .fullscreen-bg__video2 {
@@ -564,7 +565,7 @@ overflow: hidden;
   background-repeat: no-repeat;
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1000px) {
   .ContainerShitWE{
     display: none;
   }
@@ -849,6 +850,12 @@ z-index: 2;
 margin-bottom: -150px;
 }
 
+@media(max-width: 1000px) {
+  .DivideUpdates {
+    padding-left: 185px;
+    }
+}
+
 .Textbox {
   flex: 1;
   display: flex;
@@ -970,20 +977,6 @@ filter: brightness(1.0);
   filter: brightness(1.1);
   z-index: 1;
 
-}
-
-.navbar-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 0px 30px;
-  padding-bottom: 100px;
-  position: absolute;
-  z-index: 9999;
-  background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 54%, rgba(255, 255, 255, 0) 100%);
 }
 
 #WeaponStats, #VitalityStats, #SpiritStats {
@@ -1785,6 +1778,21 @@ z-index: 2;
   font-family: "Retail";
   opacity: 0.8;
 }
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0px 30px;
+  padding-bottom: 100px;
+  position: absolute;
+  z-index: 9999;
+  background: linear-gradient(180deg,rgba(0, 0, 0, 0.51) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
 .navbar-container .navbar-border {
   top: 0;
   position: fixed;
@@ -2008,38 +2016,50 @@ z-index: 2;
 }
 
 @media(max-width: 700px) {
-  .navbar-container .navbar .playtest-container {
+  .navbar-container .navbar .playtest-container .loginbutton {
       text-decoration: none;
       display: none
   }
 }
 
-.navbar-container .navbar .playtest-container .sideoptions-container {
+.sideoptions-container {
   text-decoration: none;
   min-height: 0;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.navbar-container .navbar .playtest-container .sideoptions-container .loginsystem {
+.navbar-container .navbar .playtest-container .sideoptions-container .loginbutton {
   text-decoration: none;
   font-size: 14px;
   margin-bottom: 4px;
+  font-family: "Pulp";
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #ffffff90
 }
 
-.navbar-container .navbar .playtest-container .sideoptions-container .loginbutton:hover {
+.navbar-container .navbar .sideoptions-container .loginbutton {
+  font-family: "Pulp";
+  color: #ffff;
+  padding-right: 15px;
+  padding-top: 3px;
+  opacity: 0.6;
+}
+
+.navbar-container .navbar .sideoptions-container .loginbutton:hover {
   text-decoration: none;
+  font-family: "Pulp";
+  opacity: 1.0;
   color: #fff
 }
 
-.navbar-container .navbar .playtest-container .sideoptions-container .loginbutton .invisiblebutton {
+.invisiblebutton {
   text-decoration: none;
-  display: none
+  display: none;
 }
 
 .navbar-container .navbar .playtest-container .sideoptions-container .logoutbutton {
@@ -2048,6 +2068,7 @@ z-index: 2;
   margin-bottom: 4px;
   color: #fff;
   display: flex;
+  font-family: "Pulp";
   flex-direction: row
 }
 
@@ -2059,6 +2080,7 @@ z-index: 2;
 .navbar-container .navbar .playtest-container .sideoptions-container .logoutbutton .logoutbuttona {
   text-decoration: none;
   margin-left: 4px;
+  font-family: "Pulp";
   color: #999
 }
 
