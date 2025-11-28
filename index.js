@@ -97,10 +97,10 @@ const textSelect= [
           <div class="WeaponName">Case Closed</div>
           <div id="WeaponAttributesContainer" class="LeftRightFlow">
             <div class="AttributeLabel">
-              <div id="AttributeLabel">${hero[Id].shop_stat_display.weapon_stats_display.weapon_attributes[0]}</div>
+              <div id="AttributeLabel">Spreadshot</div>
             </div>
             <div class="AttributeLabel">
-              <div id="AttributeLabel">${hero[Id].shop_stat_display.weapon_stats_display.weapon_attributes[1]}</div>
+              <div id="AttributeLabel">Close Range</div>
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText">
-                  <div id="BaseLabel">${hero[Id].hero_stats_ui.display_stats[5].value}</div>
+                  <div id="BaseLabel">54</div>
                 </div>
               </div>
               <div id="AdditionalText">DPS</div>
@@ -128,7 +128,7 @@ const textSelect= [
                 <div id="AttributeLabel2" class=" CitadelModifiedAttributeLabel">
                   <div class="LabelsContainer">
                     <div class="LabelsText2">
-                      <div id="BaseLabel">${hero[Id].hero_stats_ui.display_stats[14].value}<span style="color: gray;">m</span></div>
+                      <div id="BaseLabel">20<span style="color: gray;">m</span></div>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ const textSelect= [
                   <div id="AttributeLabel2" class=" CitadelModifiedAttributeLabel">
                     <div class="LabelsContainer">
                       <div class="LabelsText2">
-                        <div id="BaseLabel">${hero[Id].hero_stats_ui.display_stats[15].value}<span style="color: gray;">m</span></div>
+                        <div id="BaseLabel">46<span style="color: gray;">m</span></div>
                       </div>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">${hero[Id].starting_stats.bullet_damage.value}</div>
+                <div id="BaseLabel2">3.86</div>
               </div>
             </div>
             <div id="AdditionalText2">Bullet Damage</div>
@@ -175,7 +175,7 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">${hero[Id].starting_stats.bullets_persec.value}</div>
+                <div id="BaseLabel2">1.59</div>
               </div>
             </div>
             <div id="AdditionalText2">Bullets per sec</div>
@@ -190,7 +190,7 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">${hero[Id].starting_stats.ammo.value}</div>
+                <div id="BaseLabel2">9</div>
               </div>
             </div>
             <div id="AdditionalText2">Ammo</div>
@@ -205,7 +205,7 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">${hero[Id].starting_stats.reload_speed.value}<span style="color: gray;">s</span></div>
+                <div id="BaseLabel2">0.35<span style="color: gray;">s</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Reload Time</div>
@@ -830,8 +830,9 @@ const textSelect= [
   
 
 
-          const response = await fetch("ability.json");
+          const response = await fetch("heroes.json");
           const hero = await response.json();
+          var Id = document.body.id;
   
   
           let list = document.querySelector("#table-output");
@@ -845,7 +846,7 @@ const textSelect= [
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                    <div><span><img src="images/abilities/abrams/Siphon_Life.png" decoding="async" width="69" height="69"></span>
+                    <div><span><img src="${hero[Id].icons.ability1}" decoding="async" width="69" height="69"></span>
                     </div>
                   </div>
                 </div>
@@ -854,7 +855,7 @@ const textSelect= [
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                    <div><span><img src="images/abilities/abrams/Shoulder_Charge.png" decoding="async" width="69" height="69"></span>
+                    <div><span><img src="${hero[Id].icons.ability2}" decoding="async" width="69" height="69"></span>
                     </div>
                   </div>
                 </div>
@@ -863,7 +864,7 @@ const textSelect= [
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                    <div><span><img src="images/abilities/abrams/Infernal_Resilience.png" decoding="async" width="69" height="69"></span>
+                    <div><span><img src="${hero[Id].icons.ability3}" decoding="async" width="69" height="69"></span>
                     </div>
                   </div>
                 </div>
@@ -872,7 +873,7 @@ const textSelect= [
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                    <div><span><img src="images/abilities/abrams/Seismic_Impact.png" decoding="async" width="69" height="69"></span>
+                    <div><span><img src="${hero[Id].icons.ability4}" decoding="async" width="69" height="69"></span>
                     </div>
                   </div>
                 </div>
@@ -890,7 +891,7 @@ const textSelect= [
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                      <div><span><img src="images/abilities/abrams/Siphon_Life.png" decoding="async" width="69" height="69"></span>
+                      <div><span><img src="${hero[Id].icons.ability1}" decoding="async" width="69" height="69"></span>
                       </div>
                     </div>
                   </div>
@@ -899,7 +900,7 @@ const textSelect= [
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                      <div><span><img src="images/abilities/abrams/Shoulder_Charge.png" decoding="async" width="69" height="69"></span>
+                      <div><span><img src="${hero[Id].icons.ability2}" decoding="async" width="69" height="69"></span>
                       </div>
                     </div>
                   </div>
@@ -908,7 +909,7 @@ const textSelect= [
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                      <div><span><img src="images/abilities/abrams/Infernal_Resilience.png" decoding="async" width="69" height="69"></span>
+                      <div><span><img src="${hero[Id].icons.ability3}" decoding="async" width="69" height="69"></span>
                       </div>
                     </div>
                   </div>
@@ -917,7 +918,7 @@ const textSelect= [
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
-                      <div><span><img src="images/abilities/abrams/Seismic_Impact.png" decoding="async" width="69" height="69"></span>
+                      <div><span><img src="${hero[Id].icons.ability4}" decoding="async" width="69" height="69"></span>
                       </div>
                     </div>
                   </div>
@@ -973,7 +974,7 @@ const textSelect= [
   
           let list = document.querySelector("#Backstory-output");
   
-          let out = `<div class="BackstoryContainer">${hero[Id].description.lore}</div>`
+          let out = `<div class="BackstoryContainer">${hero[Id].lore}</div>`
           list.innerHTML = out;
           
   
