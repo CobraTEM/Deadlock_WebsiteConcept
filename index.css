@@ -1,5 +1,4 @@
 
-
 @font-face {
   font-family: 'Pulp';
   src: url("font/valvepulp-bold.ttf") format("truetype");
@@ -234,12 +233,37 @@ overflow: hidden;
 	height: 50px;
 }
 
+.abramsColor {
+	background-color: #2092AE;
+  box-shadow: 0px 0px 1px #2092AE;
+}
+
+.abramsColorSVG {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(60%) saturate(566%) hue-rotate(145deg) brightness(96%) contrast(91%);
+}
+
+.bebopColor {
+	background-color: #9F4734;
+  box-shadow: 0px 0px 1px #9F4734;
+}
+
+.bebopColorSVG {
+  filter: brightness(0) saturate(100%) invert(28%) sepia(99%) saturate(850%) hue-rotate(337deg) brightness(84%) contrast(79%);
+}
+
+.billyColor {
+	background-color: #D4AD0E;
+  box-shadow: 0px 0px 1px #D4AD0E;
+}
+
+.billyColorSVG {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(4356%) hue-rotate(9deg) brightness(99%) contrast(89%);
+}
+
 .HeroInfo .HeroTags .heroTag .tagBacker
 {
 	width: 100%;
 	height: 96%;
-	background-color: #2092AE;
-  box-shadow: 0px 0px 1px #2092AE;
 	margin: 1px;
 }
 
@@ -471,6 +495,28 @@ overflow: hidden;
   overflow: hidden;
   overflow-x: hidden;
   width: 100%;
+}
+
+.errortext {
+  font-family: "Occult";
+  color: white;
+  font-size: 48px;
+  padding-top: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.errortext2 {
+  font-family: "Radiance";
+  color: grey;
+  font-size: 18px;
+  padding-bottom: 500px;
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .newsbutton {
@@ -3092,7 +3138,6 @@ transition: 0.1s ease-in-out;
 .abilityImageRe {
   z-index: -1; 
   position:absolute;
-  filter: brightness(0) saturate(100%) invert(44%) sepia(60%) saturate(566%) hue-rotate(145deg) brightness(96%) contrast(91%);
 }
 
 .abilityImage {
@@ -3809,4 +3854,164 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
 
 .spiritColor {
   filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(1455%) hue-rotate(231deg) brightness(85%) contrast(87%)
+}
+
+.NavHero-container {
+  width: 100%;
+  height: 150px;
+  background-color: #111;
+  z-index: 1;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+.NavHero-container .HeroBoxContainer {
+  width: 10%;
+  height: 150px;
+  padding-top: 30px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition-property: filter, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: .2s
+}
+
+.NavHero-container .HeroBoxContainer:hover {
+  filter: brightness(1.6)
+}
+
+.NavHero-container .HeroBoxContainer .TableFlexContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BoxFlex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  transform: scale(1.2);
+  background-image: url("images/heroselect_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.NavHero-container .TableFlexText {
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Pulp", serif;
+  text-align: center
+}
+
+.HeroSelect-container {
+  width: 45%;
+  height: 150px;
+  position: relative;
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-property: filter, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: .2s
+}
+
+.HeroSelect-container:hover {
+  filter: brightness(1.2)
+}
+
+.HeroSelect-container:hover .HeroImage {
+  bottom: -210px
+}
+
+.HeroSelect-container.Goleftbro {
+  justify-content: flex-end
+}
+
+.HeroSelect-container.Goleftbro .HeroImage {
+  left: 0px
+}
+
+.HeroSelect-container .HeroImage {
+  position: absolute;
+  bottom: -220px;
+  width: 450px;
+  right: 0px;
+  overflow: hidden;
+  transition-duration: .3s
+}
+
+.HeroSelect-container .HeroImage.Goleftbro {
+  left: 0px;
+  right: 0
+}
+
+.HeroSelect-container .HeroSelectText-container {
+  width: 250px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 6
+}
+
+.HeroSelect-container .HeroSelectText-container .HeroSelectText-small {
+  font-size: 15px;
+  color: #9f9f9f;
+  text-transform: uppercase;
+  font-family: "Pulp", serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px #000;
+  margin-bottom: 5px
+}
+
+.HeroSelect-container .HeroSelectText-container .HeroSelectText-big {
+  font-size: 28px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Occult", serif;
+  font-weight: bold;
+  line-height: 112%;
+  text-shadow: 1px 1px 4px #000
+}
+
+.HeroSelect-container .HeroSelectText-container .HeroSelectTextFlex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.HeroSelect-container .HeroSelectText-container .HeroSelectTextFlex {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  filter: drop-shadow(1px 1px 4px black)
+}
+
+.HeroSelect-container .HeroSelectText-container .HeroSelectTextFlex {
+  color: #ddd;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px #000
 }

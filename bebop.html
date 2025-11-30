@@ -52,7 +52,6 @@
     </div>
   <div id="RightPanel">
     <div id="HeroScenePanel">
-      <img data-aos="fade-left" data-aos-duration="2000"  data-aos-anchor-placement="right-bottom" class="imagesize" src="images/ingame/Bebop_Render.png">
   </div>
 </div>
 </div>
@@ -78,6 +77,27 @@
       </div> 
         </div>
        </div>
+       <div class="NavHero-container">
+        <a style="text-decoration:none; overflow: hidden; border-right: 2px solid grey;" class="HeroSelect-container Goleftbro" href="abrams.html">
+        <img class="HeroImage" src="images/ingame/Abrams_Render.png">
+          <div class="HeroSelectText-container">
+            <div class="HeroSelectText-small" style="text-decoration:none;">Previous Hero</div>
+            <div class="HeroSelectText-big" style="text-decoration:none;">ABRAMS</div>
+          </div>
+        </a><a style="text-decoration:none;" class="HeroBoxContainer" href="heroes.html">
+          <div class="TableFlexContainer">
+            <div class="BoxFlex"></div>
+          </div>
+          <div class="TableFlexText">All Heroes </div>
+        </a>
+        <a style="text-decoration:none; overflow: hidden; border-left: 2px solid grey;" class="HeroSelect-container" href="billy.html">
+          <img class="HeroImage" src="images/ingame/Billy_Render.png">
+          <div class="HeroSelectText-container">
+            <div class="HeroSelectText-small" style="text-decoration:none;" >Next Hero</div>
+            <div class="HeroSelectText-big" style="text-decoration:none;" >BILLY</div>
+          </div>
+        </a>
+      </div>
     <video class="fullscreen-bg__video2" autoplay muted loop playsinline>
       <source src="videos/selectscreen_bg1.mp4" preload="auto" decoding="async" type="video/mp4">
     </video>
@@ -96,6 +116,7 @@
     BackstoryAdd();
     AddNameImage();
     AbilityIcons();
+    AddHeroRender();
     StatsAdd();
     AOS.init();
   const menumusiclayer3 = new Audio("audio/music_hideout_play3.mp3");

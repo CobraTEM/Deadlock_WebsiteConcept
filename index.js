@@ -805,15 +805,37 @@ const textSelect= [
   
           let out = `      <div class="HeroTags">
         <div class="heroTag Tag1">
-          <div class="tagBacker">${hero[Id].tags[0]}</div>
+          <div class="tagBacker ${hero[Id].color[0]}">${hero[Id].tags[0]}</div>
         </div>
         <div class="heroTag Tag2">
-          <div class="tagBacker">${hero[Id].tags[1]}</div>
+          <div class="tagBacker ${hero[Id].color[0]}">${hero[Id].tags[1]}</div>
         </div>
         <div class="heroTag Tag3">
-          <div class="tagBacker">${hero[Id].tags[2]}</div>
+          <div class="tagBacker ${hero[Id].color[0]}">${hero[Id].tags[2]}</div>
         </div>
       </div>`
+          list.innerHTML = out;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
+
+      async function AddHeroRender() {
+
+        try {
+  
+  
+          const response = await fetch("heroes.json");
+          const hero = await response.json();
+          var Id = document.body.id;
+  
+          let list = document.querySelector("#HeroScenePanel");
+  
+          let out = `      <img data-aos="fade-left" data-aos-duration="2000"  data-aos-anchor-placement="right-bottom" class="imagesize" src="${hero[Id].images.selection_image}">      `
           list.innerHTML = out;
           
   
@@ -844,7 +866,7 @@ const textSelect= [
            <td>
               <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" id="Ability1" href="#Ability1">
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                     <div><span><img src="${hero[Id].icons.ability1}" decoding="async" width="69" height="69"></span>
                     </div>
@@ -852,8 +874,8 @@ const textSelect= [
                 </div>
               </a>
               <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" id="Ability2" href="#Ability2">
-                <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                <div class="abilityImage " style="display:inline-block; width:100px; height:100px;">
+                  <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                     <div><span><img src="${hero[Id].icons.ability2}" decoding="async" width="69" height="69"></span>
                     </div>
@@ -862,7 +884,7 @@ const textSelect= [
               </a>
               <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" id="Ability3" href="#Ability3">
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                     <div><span><img src="${hero[Id].icons.ability3}" decoding="async" width="69" height="69"></span>
                     </div>
@@ -871,7 +893,7 @@ const textSelect= [
               </a>
              <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" id="Ability4" href="#Ability4">
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                  <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                  <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                     <div><span><img src="${hero[Id].icons.ability4}" decoding="async" width="69" height="69"></span>
                     </div>
@@ -889,7 +911,7 @@ const textSelect= [
              <td>
                 <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability1">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                       <div><span><img src="${hero[Id].icons.ability1}" decoding="async" width="69" height="69"></span>
                       </div>
@@ -898,7 +920,7 @@ const textSelect= [
                 </a>
                 <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability2">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                       <div><span><img src="${hero[Id].icons.ability2}" decoding="async" width="69" height="69"></span>
                       </div>
@@ -907,7 +929,7 @@ const textSelect= [
                 </a>
                 <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability3">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                       <div><span><img src="${hero[Id].icons.ability3}" decoding="async" width="69" height="69"></span>
                       </div>
@@ -916,7 +938,7 @@ const textSelect= [
                 </a>
                <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability4">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
-                    <div class="abilityImageRe"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
+                    <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
                       <div><span><img src="${hero[Id].icons.ability4}" decoding="async" width="69" height="69"></span>
                       </div>
@@ -1645,7 +1667,7 @@ async function Ability1Change() {
             out += `
                 <div onmouseleave="PlayLess();" onmouseover="playRandomRosterAudio(); PlayMore();" style="pointer-events:auto;" id="rosterselect" class="HeroCard2 CardBG">
           <span><span><a href="${hero.name}.html" title="${hero.name}">
-            <img src="${hero.images.top_bar_vertical_image}" decoding="async" width="120" height="200"></a></span></span>
+            <img src="${hero.images.icon_hero_card}" decoding="async" width="120" height="200"></a></span></span>
           <p class="CardText">${hero.name}</p>
         </div>
             `;

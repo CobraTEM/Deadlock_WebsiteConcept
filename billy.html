@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html id="Heroes" lang="en" class="responsive">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadlock - Billy</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" type="text/css" href="aos.css">
+  <script type="text/javascript" src="aos.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <meta charset="utf-8">
+  <meta name="description" content="Deadlock Bebop" />
+</head>
+
+<body id="2" class="HP3">
+  <div class="navbar-container navbar-border">
+    <div class="navbar">
+      <a onmouseover="playRandomRosterAudio();" class="TitleLogo" href="index.html"></a>
+      <div class="navbar-buttons-container">
+        <a onmouseover="playRandomRosterAudio();" class="button" href="heroes.html">Heroes</a>
+        <a onmouseover="playRandomRosterAudio();" class="button" href="updates.html">Updates</a>
+        <a onmouseover="playRandomRosterAudio();"class="button" href="items.html">Items</a>
+        <a onmouseover="playRandomRosterAudio();" class="button" href="https://forums.playdeadlock.com/">Forums</a>
+      </div>
+      <div class="sideoptions-container">
+        <a onmouseover="playRandomRosterAudio();" style="text-decoration:none;" href="https://store.steampowered.com/app/1422450/Deadlock/" class="loginbutton">LOGIN</a>
+        <a onmouseover="playRandomRosterAudio();" style="text-decoration:none;" href="https://store.steampowered.com/app/1422450/Deadlock/" class="loginbutton">REGISTER</a>
+      </div>
+      <div class="sideoptions-container">
+        <a style="text-decoration:none;" class="playtestbutton-container"
+          href="https://store.steampowered.com/app/1422450/Deadlock/">
+          <div class="playtestbutton">
+            <div class="steamicon"></div>
+            <div  onmouseover="playRandomRosterAudio();"class="playtestbutton-text">Join the Playtest</div>
+          </div>
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="addspaces"></div>
+  <div  data-aos="fade-right" data-aos-duration="2000"  data-aos-anchor-placement="left-bottom" class="clampwidth">
+    <div class="HeroInfo">
+      <div id="name-output"></div>
+      <div id="tag-output"></div>
+          <div id="table-output"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <div id="RightPanel">
+    <div id="HeroScenePanel">
+  </div>
+</div>
+</div>
+<div id="statses-output"></div>
+<div class="AbilityMainConatiner">
+  <div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" class="AbilityContainerPadding">
+  <div class="AbilityContainerHeader">Backstory</div>
+  <div id="Backstory-output"></div>
+</div>
+<div class="AbilityMainConatiner">
+  <div data-aos="fade-up" data-aos-duration="2000"  data-aos-anchor-placement="bottom" class="AbilityContainerPadding">
+    <div class="AbilityContainerHeader">Ability Details:</div>
+    <div class="AbilityCoreContainer">
+      <div class="AbilityVideoContainer">
+        <div id="video-output" class="AbilityVideoContainerPadding">
+        </div>
+          <table class="TableSkillsAbility">
+            <div id="table2-output"></div>
+          </table>
+      </div>
+      <div class="MainAbilityContainer">
+        <div id="AbilityStats-output"></div>
+      </div> 
+        </div>
+       </div>
+       <div class="NavHero-container">
+        <a style="text-decoration:none; overflow: hidden; border-right: 2px solid grey;" class="HeroSelect-container Goleftbro" href="bebop.html">
+        <img class="HeroImage" src="images/ingame/Bebop_Render.png">
+          <div class="HeroSelectText-container">
+            <div class="HeroSelectText-small" style="text-decoration:none;">Previous Hero</div>
+            <div class="HeroSelectText-big" style="text-decoration:none;">BEBOP</div>
+          </div>
+        </a><a style="text-decoration:none;" class="HeroBoxContainer" href="heroes.html">
+          <div class="TableFlexContainer">
+            <div class="BoxFlex"></div>
+          </div>
+          <div class="TableFlexText">All Heroes </div>
+        </a>
+        <a style="text-decoration:none; overflow: hidden; border-left: 2px solid grey;" class="HeroSelect-container" href="calico.html">
+          <img class="HeroImage" src="images/ingame/Calico_Render.png">
+          <div class="HeroSelectText-container">
+            <div class="HeroSelectText-small" style="text-decoration:none;" >Next Hero</div>
+            <div class="HeroSelectText-big" style="text-decoration:none;" >CALICO</div>
+          </div>
+        </a>
+      </div>
+    <video class="fullscreen-bg__video2" autoplay muted loop playsinline>
+      <source src="videos/selectscreen_bg1.mp4" preload="auto" decoding="async" type="video/mp4">
+    </video>
+  </div>
+  <div class="Footer">
+    <div class="ValveLink"><a href="https://www.valvesoftware.com/en/about"><img class="ValveLogo"
+          src="images/Valve_logo.png"></a><a href="index.html"><img class="ValveLogo"
+          src="images/logo/deadlocklogo_v2.png"></a></div>
+    <div class="rights">Deadlock and the Deadlock logo are trademarks and/or registered trademarks of Valve Corporation.
+      2025 Valve Corporation, all rights reserved.</div>
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    Ability1Change();
+    AddTags();
+    BackstoryAdd();
+    AddNameImage();
+    AbilityIcons();
+    AddHeroRender();
+    StatsAdd();
+    AOS.init();
+  const menumusiclayer3 = new Audio("audio/music_hideout_play3.mp3");
+
+  menumusiclayer3.play();
+
+  menumusiclayer3.addEventListener('play', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+  
+menumusiclayer3.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+  </script>
+</body>
+</html>
