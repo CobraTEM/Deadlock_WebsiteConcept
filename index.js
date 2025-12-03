@@ -5,13 +5,22 @@ window.onload= function(){ loadTextBIG(); loadTextSMALL(); }
 const weaponaudioArray = ["audio/ui_shop_mod_hover_weapon_01.mp3", "audio/ui_shop_mod_hover_weapon_02.mp3", "audio/ui_shop_mod_hover_weapon_03.mp3", 
   "audio/ui_shop_mod_hover_weapon_04.mp3", "audio/ui_shop_mod_hover_weapon_05.mp3", "audio/ui_shop_mod_hover_weapon_06.mp3", 
   "audio/ui_shop_mod_hover_weapon_07.mp3", "audio/ui_shop_mod_hover_weapon_08.mp3", "audio/ui_shop_mod_hover_weapon_09.mp3", 
-  "audio/ui_shop_mod_hover_weapon_10.mp3", "audio/ui_shop_mod_hover_weapon_11.mp3"];     
+  "audio/ui_shop_mod_hover_weapon_10.mp3", "audio/ui_shop_mod_hover_weapon_11.mp3"];  
+  
+  const arpbell = ["audio/arp/music_hideout_arp_bell_71.mp3", "audio/arp/music_hideout_arp_bell_70.mp3", "audio/arp/music_hideout_arp_bell_69.mp3","audio/arp/music_hideout_arp_bell_68.mp3","audio/arp/music_hideout_arp_bell_67.mp3","audio/arp/music_hideout_arp_bell_66.mp3","audio/arp/music_hideout_arp_bell_65.mp3","audio/arp/music_hideout_arp_bell_64.mp3","audio/arp/music_hideout_arp_bell_63.mp3","audio/arp/music_hideout_arp_bell_62.mp3","audio/arp/music_hideout_arp_bell_61.mp3","audio/arp/music_hideout_arp_bell_60.mp3"];    
   
 function playRandomWeaponAudio() {
 const audioIndex = Math.floor(Math.random() * weaponaudioArray.length);
 const weaponhoveraudio = new Audio(weaponaudioArray[audioIndex]);
 weaponhoveraudio.play();
 };
+
+function playRandomArpAudio() {
+  const audioIndex = Math.floor(Math.random() * arpbell.length);
+  const arpbellaudio = new Audio(arpbell[audioIndex]);
+  arpbellaudio.volume = 0.2;
+  arpbellaudio.play();
+  };
 
 const kaboosharray = ["audio/ui_menu_press_big_01.mp3", "audio/ui_menu_press_big_02.mp3", "audio/ui_menu_press_big_03.mp3", 
   "audio/ui_menu_press_big_04.mp3"];     
@@ -91,16 +100,19 @@ const textSelect= [
   <div style="pointer-events: auto; display: block; margin: 25px; " id="WeaponStats" class="NoSecondaryWeaponDesc CitadelHeroStatsWeapon">
       <div id="BackgroundContainer">
       <div id="WeaponInfoContainer">
-        <img id="GunImage" src="images/guns/bull_gun_psd.png" scaling="cover">
+        <img id="GunImage" src="${hero[Id].images.weapon_image}" scaling="cover">
         <div class="weaponNameAndAttributes TopBottomFlow">
           <div class="statTitle">WEAPON STATS</div>
-          <div class="WeaponName">Case Closed</div>
+          <div class="WeaponName">${hero[Id].gun_tag}</div>
           <div id="WeaponAttributesContainer" class="LeftRightFlow">
-            <div class="AttributeLabel">
-              <div id="AttributeLabel">Spreadshot</div>
+            <div class="${hero[Id].stats.WeaponStats.primary_tab.WeaponTag.Tag1.isactive}">
+              <div class="AttributeLabelTag">${hero[Id].stats.WeaponStats.primary_tab.WeaponTag.Tag1.name}</div>
             </div>
-            <div class="AttributeLabel">
-              <div id="AttributeLabel">Close Range</div>
+            <div class="${hero[Id].stats.WeaponStats.primary_tab.WeaponTag.Tag2.isactive}">
+              <div class="AttributeLabelTag">${hero[Id].stats.WeaponStats.primary_tab.WeaponTag.Tag2.name}</div>
+            </div>
+             <div class="${hero[Id].stats.WeaponStats.primary_tab.WeaponTag.Tag3.isactive}">
+              <div class="AttributeLabelTag">${hero[Id].stats.WeaponStats.primary_tab.WeaponTag.Tag3.name}</div>
             </div>
           </div>
         </div>
@@ -113,7 +125,7 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText">
-                  <div id="BaseLabel">54</div>
+                  <div id="BaseLabel">${hero[Id].stats.WeaponStats.primary_tab.DPS}</div>
                 </div>
               </div>
               <div id="AdditionalText">DPS</div>
@@ -128,7 +140,7 @@ const textSelect= [
                 <div id="AttributeLabel2" class=" CitadelModifiedAttributeLabel">
                   <div class="LabelsContainer">
                     <div class="LabelsText2">
-                      <div id="BaseLabel">20<span style="color: gray;">m</span></div>
+                      <div id="BaseLabel">${hero[Id].stats.WeaponStats.primary_tab.FalloffMin}<span style="color: gray;">m</span></div>
                     </div>
                   </div>
                 </div>
@@ -140,7 +152,7 @@ const textSelect= [
                   <div id="AttributeLabel2" class=" CitadelModifiedAttributeLabel">
                     <div class="LabelsContainer">
                       <div class="LabelsText2">
-                        <div id="BaseLabel">46<span style="color: gray;">m</span></div>
+                        <div id="BaseLabel">${hero[Id].stats.WeaponStats.primary_tab.FalloffMax}<span style="color: gray;">m</span></div>
                       </div>
                     </div>
                   </div>
@@ -150,7 +162,7 @@ const textSelect= [
         </div>
       </div>
       <div id="WeaponDisplayStats" class="displayStatsContainer">
-        <div class="weaponDesc">Reloads single shells at a time. Can be interrupted.</div>
+        <div class="weaponDesc ${hero[Id].stats.WeaponStats.primary_tab.WeaponDescOpt.isactive}">${hero[Id].stats.WeaponStats.primary_tab.WeaponDescOpt.text}</div>
         <div id="InitialWeaponStatsContainer" class="statsContainer">
          <div id="BulletDamage" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -160,12 +172,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">3.86</div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.BulletDamage.value}</div>
               </div>
             </div>
             <div id="AdditionalText2">Bullet Damage</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.BulletDamage.spiritscaling}"></div>
         </div>
         <div id="BulletPerSec" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -175,12 +187,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">1.59</div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.BulletsPerSec.value}</div>
               </div>
             </div>
             <div id="AdditionalText2">Bullets per sec</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.BulletsPerSec.spiritscaling}"></div>
         </div>
         <div id="Ammo" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -190,12 +202,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">9</div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.Ammo.value}</div>
               </div>
             </div>
             <div id="AdditionalText2">Ammo</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.Ammo.spiritscaling}"></div>
         </div>
         <div id="ReloadTime" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -205,12 +217,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0.35<span style="color: gray;">s</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.ReloadTime.value}<span style="color: gray; font-family: "Retail"">s</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Reload Time</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.ReloadTime.spiritscaling}"></div>
         </div>
         <div id="BulletVelocity" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -220,12 +232,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">610<span style="color: gray;">m/s</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.BulletVelocity.value}<span style="color: gray; font-family: "Retail"; ">m/s</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Bullet Velocity</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.BulletVelocity.spiritscaling}"></div>
         </div>
         <div id="BulletLifeSteal" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -235,12 +247,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.BulletLifesteal.value}<span style="color: gray; font-family: "Retail"">%</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Bullet Lifesteal</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.BulletLifesteal.spiritscaling}"></div>
         </div>
         <div id="WeaponDamage" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -250,12 +262,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.WeaponDamage.value}<span style="color: gray; font-family: "Retail"">%</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Weapon Damage</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.WeaponDamage.spiritscaling}"></div>
         </div>
         <div id="FireRate" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -265,12 +277,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.FireRate.value}<span style="color: gray; font-family: "Retail";">%</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Fire Rate</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.FireRate.spiritscaling}"></div>
         </div>
         <div id="ClipSizeIncrease" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -280,12 +292,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.ClipSizeIncrease.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Clip Size Increase</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.ClipSizeIncrease.spiritscaling}"></div>
         </div>
         <div id="ReloadReduction" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -295,12 +307,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.ReloadReduction.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Reload Reduction</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.ReloadReduction.spiritscaling}"></div>
         </div>
         <div id="BulletVelocityIncrease" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -310,12 +322,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.BulletVelocityIncrease.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div style="font-size: 14.5px;" id="AdditionalText2">Bullet Velocity Increase</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.BulletVelocityIncrease.spiritscaling}"></div>
         </div>
         <div id="CritBonusScale" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -325,12 +337,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.CritBonusScale.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText2">Crit Bonus Scale</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.CritBonusScale.spiritscaling}"></div>
         </div>
       </div>
     </div>
@@ -344,12 +356,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">50</div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.LightMelee.value}</div>
               </div>
             </div>
             <div id="AdditionalText2">Light Melee</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.LightMelee.spiritscaling}"></div>
         </div>
         <div id="HeavyMelee" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -359,12 +371,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">116</div>
+                <div id="BaseLabel2">${hero[Id].stats.WeaponStats.secondary_tab.HeavyMelee.value}</div>
               </div>
             </div>
             <div id="AdditionalText2">Heavy Melee</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.WeaponStats.secondary_tab.HeavyMelee.spiritscaling}"></div>
         </div>
       </div>
     </div>
@@ -383,12 +395,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">720</div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.MaxHealth.value}</div>
                 </div>
               </div>
               <div id="AdditionalText3">Max Health</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.MaxHealth.spiritscaling}"></div>
           </div>
           <div id="HealAmp" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -398,12 +410,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.HealAmp.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Heal Amp</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.HealAmp.spiritscaling}"></div>
           </div>
           <div id="BulletResist" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -413,12 +425,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.BulletResist.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Bullet Resist</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.BulletResist.spiritscaling}"></div>
           </div>
           <div id="MeleeResist" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -428,12 +440,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.MeleeResist.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Melee Resist</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.MeleeResist.spiritscaling}"></div>
           </div>
           <div id="CritReduction" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -443,12 +455,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.CritReduction.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Crit Reduction</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.CritReduction.spiritscaling}"></div>
           </div>
           <div id="HealthRegen" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -458,12 +470,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">1.5</div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.HealthRegen.value}</div>
                 </div>
               </div>
               <div id="AdditionalText3">Health Regen</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.HealthRegen.spiritscaling}"></div>
           </div>
           <div id="NonCombatHealthRegen" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -473,12 +485,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0</div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.NonCombatRegen.value}</div>
                 </div>
               </div>
               <div id="AdditionalText3">Non-Combat Regen</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.NonCombatRegen.spiritscaling}"></div>
           </div>
           <div id="SpiritResist" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -488,12 +500,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.SpiritResist.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Spirit Resist</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.SpiritResist.spiritscaling}"></div>
           </div>
           <div id="DebuffResist" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -503,16 +515,16 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.primary_tab.DebuffResist.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Debuff Resist</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.primary_tab.DebuffResist.spiritscaling}"></div>
           </div>
         </div>
       </div>
-      <div id="ArmorOtherDisplayStats" style="margin-top: 70px; " class="displayStatsContainer otherStats">
+      <div id="ArmorOtherDisplayStats" style="margin-top: 70.5px; " class="displayStatsContainer otherStats">
         <div style=" max-height: 150px;" id="ArmorOtherDisplayStats" class="statsContainer">
           <div id="MoveSpeed" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -522,12 +534,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">6.5<span style="color: gray;">m/s</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.secondary_tab.MoveSpeed.value}<span style="color: gray;">m/s</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Move Speed</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.secondary_tab.MoveSpeed.spiritscaling}"></div>
           </div>
           <div id="StaminaCooldown" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -537,12 +549,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">5<span style="color: gray;">s</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.secondary_tab.StaminaCooldown.value}<span style="color: gray;">s</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Stamina Cooldown</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.secondary_tab.StaminaCooldown.spiritscaling}"></div>
           </div>
           <div id="Stamina" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -552,12 +564,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">3</div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.secondary_tab.Stamina.value}</div>
                 </div>
               </div>
               <div id="AdditionalText3">Stamina</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.secondary_tab.Stamina.spiritscaling}"></div>
           </div>
           <div id="SprintSpeed" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -567,12 +579,12 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">2.0<span style="color: gray;">m/s</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.secondary_tab.SprintSpeed.value}<span style="color: gray;">m/s</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Sprint Speed</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.secondary_tab.SprintSpeed.spiritscaling}"></div>
           </div>
           <div id="StaminaRecovery" class="StatElement statAttributeContainer">
             <div id="AttributeLabelStats" class="HasStatImage2">
@@ -582,18 +594,18 @@ const textSelect= [
                   <div class="NewOverride">NEW</div>
                 </div>
                 <div class="LabelsText2">
-                  <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                  <div id="BaseLabel2">${hero[Id].stats.VitalityStats.secondary_tab.StaminaRecovery.value}<span style="color: gray;">%</span></div>
                 </div>
               </div>
               <div id="AdditionalText3">Stamina Recovery</div>
            </div>
-           <div id="SpiritInc" class=""></div>
+           <div id="SpiritInc" class="${hero[Id].stats.VitalityStats.secondary_tab.StaminaRecovery.spiritscaling}"></div>
           </div>
   </div>
 </div>
 </div>
 </div>
-<div style="pointer-events: auto; display: block; margin: 25px;" id="SpiritStats" class="CitadelHeroSpirit">
+<div style="pointer-events: auto; display: block; padding-top: 1px; margin: 25px;" id="SpiritStats" class="CitadelHeroSpirit">
   <div id="BackgroundContainer">
     <div id="SpiritDisplayStats" class="displayStatsContainer">
       <div style="padding-bottom: 10px;" class="statTitle">SPIRIT STATS</div>
@@ -606,12 +618,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.AbilityCooldown.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText3">Ability Cooldown</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.AbilityCooldown.spiritscaling}"></div>
         </div>
         <div id="AbilityRange" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -621,12 +633,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.AbilityRange.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText3">Ability Range</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.AbilityRange.spiritscaling}"></div>
         </div>
         <div id="MaxChargesIncrease" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -636,12 +648,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0</div>
+                <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.MaxChargesIncrease.value}</div>
               </div>
             </div>
             <div id="AdditionalText3">Max Charges Increase</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.MaxChargesIncrease.spiritscaling}"></div>
         </div>
         <div id="AbilityDuration" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -651,12 +663,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.AbilityDuration.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText3">Ability Duration</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.AbilityDuration.spiritscaling}"></div>
         </div>
         <div id="SpiritLifesteal" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -666,12 +678,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.SpiritLifesteal.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText3">Spirit Lifesteal</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.SpiritLifesteal.spiritscaling}"></div>
         </div>
         <div id="ChargeCooldown" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
@@ -681,12 +693,12 @@ const textSelect= [
                 <div class="NewOverride">NEW</div>
               </div>
               <div class="LabelsText2">
-                <div id="BaseLabel2">0<span style="color: gray;">%</span></div>
+                <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.ChargeCooldown.value}<span style="color: gray;">%</span></div>
               </div>
             </div>
             <div id="AdditionalText3">Charge Cooldown</div>
          </div>
-         <div id="SpiritInc" class=""></div>
+         <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.ChargeCooldown.spiritscaling}"></div>
         </div>
       </div>
     </div>
@@ -702,76 +714,153 @@ const textSelect= [
                     <div class="NewOverride">NEW</div>
                   </div>
                   <div class="LabelsText2">
-                    <div id="BaseLabel2">0</div>
+                    <div id="BaseLabel2">${hero[Id].stats.SpiritStats.primary_tab.SpiritPower.value}</div>
                   </div>
                 </div>
                 <div id="AdditionalText3">Spirit Power</div>
              </div>
-             <div id="SpiritInc" class=""></div>
+             <div id="SpiritInc" class="${hero[Id].stats.SpiritStats.primary_tab.SpiritPower.spiritscaling}"></div>
            </div>
          <div class="SpiritPowerDesc">Spirit Power increases the effectiveness of your Abilities and Items.</div>
         </div>
         <div id="ModifiedAbilitesPanel" class="CitadelModifiedAbilities noModifiedAbilities">
           <div id="InnateModified" class="modifiedContainer"></div>
           <div id="AbilitiesModified" class="modifiedContainer">
-             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect1.active}">
                 <div id="Icon">
-                  <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Siphon_Life.png" scaling="stretch"></div>
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect1.Icon}" scaling="stretch"></div>
                 </div>
                 <div id="AffectedPropertiesContainer">
                   <div id="Property_Radius" class="AffectedAbilityProperty">
                     <div class="PropertyNameContainer">
-                      <div class="AffectedPropertyName">Radius</div>
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect1.effect}</div>
                     </div>
                     <div class="AffectedPropertyDeltaContainer">
-                      <div class="AffectedValCur">10<span style="padding-left: 5px; color: gray;">m</span></div>
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect1.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect1.suffix}</span></div>
                     </div>
                 </div>
              </div>
           </div>
-          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
-            <div id="Icon">
-              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Siphon_Life.png" scaling="stretch"></div>
-            </div>
-            <div id="AffectedPropertiesContainer">
-              <div id="Property_Radius" class="AffectedAbilityProperty">
-                <div class="PropertyNameContainer">
-                  <div class="AffectedPropertyName">Damage Per Second</div>
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect2.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect2.Icon}" scaling="stretch"></div>
                 </div>
-                <div class="AffectedPropertyDeltaContainer">
-                  <div class="AffectedValCur">29</div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect2.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect2.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect2.suffix}</span></div>
+                    </div>
                 </div>
-            </div>
+             </div>
           </div>
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect3.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect3.Icon}" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect3.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect3.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect3.suffix}</span></div>
+                    </div>
+                </div>
+             </div>
           </div>
-          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
-            <div id="Icon">
-              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Shoulder_Charge.png" scaling="stretch"></div>
-            </div>
-            <div id="AffectedPropertiesContainer">
-              <div id="Property_Radius" class="AffectedAbilityProperty">
-                <div class="PropertyNameContainer">
-                  <div class="AffectedPropertyName">Damage</div>
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect4.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect4.Icon}" scaling="stretch"></div>
                 </div>
-                <div class="AffectedPropertyDeltaContainer">
-                  <div class="AffectedValCur">37</div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect4.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect4.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect4.suffix}</span></div>
+                    </div>
                 </div>
-            </div>
+             </div>
+          </div>    
+                    <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect5.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect5.Icon}" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect5.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect5.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect5.suffix}</span></div>
+                    </div>
+                </div>
+             </div>
           </div>
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect6.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect6.Icon}" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect6.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect6.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect6.suffix}</span></div>
+                    </div>
+                </div>
+             </div>
           </div>
-          <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility">
-            <div id="Icon">
-              <div id="StatAbilityImage"><img id="AbilityImage" src="images/abilities/abrams/Seismic_Impact.png" scaling="stretch"></div>
-            </div>
-            <div id="AffectedPropertiesContainer">
-              <div id="Property_Radius" class="AffectedAbilityProperty">
-                <div class="PropertyNameContainer">
-                  <div class="AffectedPropertyName">Damage</div>
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect7.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect7.Icon}" scaling="stretch"></div>
                 </div>
-                <div class="AffectedPropertyDeltaContainer">
-                  <div class="AffectedValCur">55</div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect7.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect7.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect7.suffix}</span></div>
+                    </div>
                 </div>
-            </div>
+             </div>
+          </div>
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect8.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect8.Icon}" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect8.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect8.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect8.suffix}</span></div>
+                    </div>
+                </div>
+             </div>
+          </div>    
+             <div id="AffectedStat_EStatsCount" class="ModifiedStatsPanel AffectedAbility ${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect9.active}">
+                <div id="Icon">
+                  <div id="StatAbilityImage"><img id="AbilityImage" src="${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect9.Icon}" scaling="stretch"></div>
+                </div>
+                <div id="AffectedPropertiesContainer">
+                  <div id="Property_Radius" class="AffectedAbilityProperty">
+                    <div class="PropertyNameContainer">
+                      <div class="AffectedPropertyName">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect9.effect}</div>
+                    </div>
+                    <div class="AffectedPropertyDeltaContainer">
+                      <div class="AffectedValCur">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect9.value}<span style="padding-left: 5px; color: gray;">${hero[Id].stats.SpiritStats.secondary_tab.AbilityAffect9.suffix}</span></div>
+                    </div>
+                </div>
+             </div>
+          </div>               
           </div>
           </div>
         </div>
@@ -864,7 +953,7 @@ const textSelect= [
          <table class="TableSkillsAbility">
           <tr style="font-size:14px; height:50px; text-align:center;">
            <td>
-              <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" id="Ability1" href="#Ability1">
+              <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" id="Ability1"  href="#AbilitySelect">
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -873,7 +962,7 @@ const textSelect= [
                   </div>
                 </div>
               </a>
-              <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" id="Ability2" href="#Ability2">
+              <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" id="Ability2"  href="#AbilitySelect">
                 <div class="abilityImage " style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -882,7 +971,7 @@ const textSelect= [
                   </div>
                 </div>
               </a>
-              <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" id="Ability3" href="#Ability3">
+              <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" id="Ability3" href="#AbilitySelect">
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -891,7 +980,7 @@ const textSelect= [
                   </div>
                 </div>
               </a>
-             <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" id="Ability4" href="#Ability4">
+             <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" id="Ability4" href="#AbilitySelect">
                 <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                   <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                   <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -909,7 +998,7 @@ const textSelect= [
            <table class="TableSkills">
             <tr style="font-size:14px; height:50px; text-align:center;">
              <td>
-                <a onclick="Ability1Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability1">
+                <a onclick="Ability1Change();" style="text-decoration: none;">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -918,7 +1007,7 @@ const textSelect= [
                     </div>
                   </div>
                 </a>
-                <a onclick="Ability2Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability2">
+                <a onclick="Ability2Change();" style="text-decoration: none;">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -927,7 +1016,7 @@ const textSelect= [
                     </div>
                   </div>
                 </a>
-                <a onclick="Ability3Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability3">
+                <a onclick="Ability3Change();" style="text-decoration: none;">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -936,7 +1025,7 @@ const textSelect= [
                     </div>
                   </div>
                 </a>
-               <a onclick="Ability4Change();" style="text-decoration: none; pointer-events:auto;" href="#Ability4">
+               <a onclick="Ability4Change();" style="text-decoration: none;"">
                   <div class="abilityImage" style="display:inline-block; width:100px; height:100px;">
                     <div class="abilityImageRe ${hero[Id].color[1]}"><img src="images/abilities/Passive_ability_frame.png" decoding="async" width="100" height="100"></div>
                     <div class="ability-icon" style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;">
@@ -975,6 +1064,48 @@ const textSelect= [
   
           let out4 = `<img class="HeroLogo" src="${hero[Id].images.name_image}">`
           list2.innerHTML = out4;
+          
+  
+        }
+        catch(error){
+          console.error(error);
+        }
+  
+      }
+
+      async function AddBottomFooterNav() {
+
+        try {
+  
+  
+          const response = await fetch("heroes.json");
+          const hero = await response.json();
+  
+          var Id = document.body.id;
+
+          let list2 = document.querySelector("#footer2-output");
+  
+          let out = `
+        <a style="text-decoration:none; overflow: hidden; border-right: 2px solid grey;" class="HeroSelect-container Goleftbro" href="${hero[Id.length--].name}.html">
+        <img style="margin-bottom: -30px;" class="HeroImage" src="${hero[Id.length--].images.selection_image}">
+          <div class="HeroSelectText-container">
+            <div class="HeroSelectText-small" style="text-decoration:none;">Previous Hero</div>
+            <div class="HeroSelectText-big" style="text-decoration:none;">${hero[Id.length--].name}</div>
+          </div>
+        </a><a style="text-decoration:none;" class="HeroBoxContainer" href="heroes.html">
+          <div class="TableFlexContainer">
+            <div class="BoxFlex"></div>
+          </div>
+          <div class="TableFlexText">All Heroes </div>
+        </a>
+        <a style="text-decoration:none; overflow: hidden; border-left: 2px solid grey;" class="HeroSelect-container" href="${hero[Id.length+1].name}.html">
+          <img style="margin-bottom: -10px;" class="HeroImage" src="${hero[Id.length+1].images.selection_image}">
+          <div class="HeroSelectText-container">
+            <div class="HeroSelectText-small" style="text-decoration:none;" >Next Hero</div>
+            <div class="HeroSelectText-big" style="text-decoration:none;" >${hero[Id.length+1].name}</div>
+          </div>
+        </a>`
+          list2.innerHTML = out;
           
   
         }
@@ -1025,7 +1156,7 @@ async function Ability1Change() {
             <div class="AbilityHeaderContainer">
               <div class="AbilityHeaderTop">
                 <div style="font-size: 1.3rem;">
-                  <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Siphon_Life.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Siphon Life</span>
+                  <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/bull_drain_psd.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Siphon Life</span>
                   </p>
                 </div>
                 <div class="AbilityHeaderFlex">
@@ -1202,7 +1333,7 @@ async function Ability1Change() {
           <div class="AbilityHeaderContainer">
             <div class="AbilityHeaderTop">
               <div style="font-size: 1.3rem;">
-                <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Shoulder_Charge.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Shoulder Charge</span>
+                <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/bull_charge_psd.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Shoulder Charge</span>
                 </p>
               </div>
               <div class="AbilityHeaderFlex">
@@ -1353,7 +1484,7 @@ async function Ability1Change() {
               <div class="AbilityHeaderContainer">
                 <div class="AbilityHeaderTop">
                   <div style="font-size: 1.3rem;">
-                    <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Infernal_Resilience.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Infernal Resilience</span>
+                    <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/bull_beef_psd.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Infernal Resilience</span>
                     </p>
                   </div>
                   <div class="AbilityHeaderFlex">
@@ -1518,7 +1649,7 @@ async function Ability1Change() {
             <div class="AbilityHeaderContainer">
               <div class="AbilityHeaderTop">
                 <div style="font-size: 1.3rem;">
-                  <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/Seismic_Impact.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Seismic Impact</span>
+                  <p><span style="filter: brightness(0) saturate(100%) invert(98%) sepia(19%) saturate(1458%) hue-rotate(301deg) brightness(102%) contrast(109%); padding: 0 15px 0 6px;"><img src="images/abilities/abrams/bull_jump_psd.png" decoding="async" width="45" height="45"></span><span style="font-family:'Retail'; font-weight: bold;">Seismic Impact</span>
                   </p>
                 </div>
                 <div class="AbilityHeaderFlex">
@@ -1665,7 +1796,7 @@ async function Ability1Change() {
          let out = "";
          for(let hero of heroes){
             out += `
-                <div onmouseleave="PlayLess();" onmouseover="playRandomRosterAudio(); PlayMore();" style="pointer-events:auto;" id="rosterselect" class="HeroCard2 CardBG">
+                <div onmouseleave="PlayLess();" onmouseover="playRandomArpAudio(); playRandomRosterAudio(); PlayMore();" style="pointer-events:auto;" id="rosterselect" class="HeroCard2 CardBG">
           <span><span><a href="${hero.name}.html" title="${hero.name}">
             <img src="${hero.images.icon_hero_card}" decoding="async" width="120" height="200"></a></span></span>
           <p class="CardText">${hero.name}</p>

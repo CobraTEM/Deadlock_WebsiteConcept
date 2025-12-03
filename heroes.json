@@ -24,17 +24,245 @@
 			"weapon_image": "images/guns/bull_gun_psd.png"
 		},
 		"videos": {
-			"abilityvid1": "videos/hero_abilities/atlas_siphon_life.webm",
-			"abilityvid2": "videos/hero_abilities/atlas_shoulder_charge.webm",
-			"abilityvid3": "videos/hero_abilities/atlas_beefiness.webm",
-			"abilityvid4": "videos/hero_abilities/atlas_leap.webm"
+			"abilityvid1": "videos/abrams/Abrams_SiphonLife.mp4",
+			"abilityvid2": "videos/abrams/Abrams_ShoulderCharge.mp4",
+			"abilityvid3": "videos/abrams/Abrams_InfernalResilience.mp4",
+			"abilityvid4": "videos/abrams/Abrams_SeismicImpact.mp4"
 		},
 		"icons": {
 			"ability1": "images/abilities/abrams/bull_drain_psd.png",
 			"ability2": "images/abilities/abrams/bull_charge_psd.png",
 			"ability3": "images/abilities/abrams/bull_beef_psd.png",
 			"ability4": "images/abilities/abrams/bull_jump_psd.png"
+		},
+		"stats": {
+		"WeaponStats": {
+			"primary_tab": {
+				"DPS": 54,
+				"FalloffMin": 20,
+				"FalloffMax": 46,
+				"WeaponTag": {
+					"Tag1": {
+						"name": "Close Range",
+						"isactive": ""
+					},
+					"Tag2": {
+						"name": "Spreadshot",
+						"isactive": ""
+					},
+					"Tag3": {
+						"name": "",
+						"isactive": "AttributeLabelInvisible"
+					}
+			    },
+				"WeaponDescOpt": {
+					"text": "Reloads single shells at a time. Can be interrupted.",
+					"isactive": ""
+				} 
+			},
+			"secondary_tab": {
+				"BulletDamage": {
+                    "value": 3.86,
+				    "spiritscaling": ""
+				},
+				"BulletsPerSec": {
+                    "value": 1.59,
+				    "spiritscaling": ""
+				},
+				"Ammo": {
+                    "value": 9,
+				    "spiritscaling": ""
+				},
+				"ReloadTime": {
+                    "value": 0.35,
+				    "spiritscaling": ""
+				},
+				"BulletVelocity": {
+                    "value": 610,
+				    "spiritscaling": ""
+				},
+				"BulletLifesteal": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"WeaponDamage": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"FireRate": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ClipSizeIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ReloadReduction": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"BulletVelocityIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"CritBonusScale": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"LightMelee": {
+                    "value": 50,
+				    "spiritscaling": ""
+				},
+				"HeavyMelee": {
+                    "value": 116,
+				    "spiritscaling": ""
+				}																					
+			}
+		},
+		"VitalityStats": {
+			"primary_tab": {
+				"MaxHealth": {
+                    "value": 770,
+				    "spiritscaling": ""
+				},
+				"HealAmp": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"BulletResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"MeleeResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"CritReduction": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"HealthRegen": {
+                    "value": 1.5,
+				    "spiritscaling": ""
+				},
+				"NonCombatRegen": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"DebuffResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																			
+			},
+			"secondary_tab": {
+				"MoveSpeed": {
+                    "value": 6.5,
+				    "spiritscaling": ""
+				},
+				"StaminaCooldown": {
+                    "value": 5,
+				    "spiritscaling": ""
+				},
+				"Stamina": {
+                    "value": 3,
+				    "spiritscaling": ""
+				},
+				"SprintSpeed": {
+                    "value": 2.0,
+				    "spiritscaling": ""
+				},
+				"StaminaRecovery": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																
+			}
+		},
+		"SpiritStats": {
+			"primary_tab": {
+				"AbilityCooldown": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"AbilityRange": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"MaxChargesIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"AbilityDuration": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritLifesteal": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ChargeCooldown": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritPower": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																	
+			},
+			"secondary_tab": {
+				"AbilityAffect1": {
+					"Icon": "images/abilities/abrams/bull_drain_psd.png",
+					"effect": "Radius",
+                    "value": 10,
+					"suffix": "m",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect2": {
+					"Icon": "images/abilities/abrams/bull_drain_psd.png",
+					"effect": "Damage Per Second",
+                    "value": 29,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect3": {
+					"Icon": "images/abilities/abrams/bull_charge_psd.png",
+					"effect": "Damage",
+                    "value": 37,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect4": {
+					"Icon": "images/abilities/abrams/bull_jump_psd.png",
+					"effect": "Damage",
+                    "value": 55,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},				
+				"AbilityAffect5": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect6": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect7": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect8": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect9": {
+				    "active": "AbilityAffectInvis"
+				}									
+			}
 		}
+	  }
 	},
 	{
 		"id": 1,
@@ -71,7 +299,235 @@
 			"ability2": "images/abilities/bebop/bebop_sticky_bomb_psd.png",
 			"ability3": "images/abilities/bebop/bebop_hook_psd.png",
 			"ability4": "images/abilities/bebop/bebop_hyper_beam_psd.png"
-		}
+		},
+		"stats": {
+		"WeaponStats": {
+			"primary_tab": {
+				"DPS": 59,
+				"FalloffMin": 20,
+				"FalloffMax": 51,
+				"WeaponTag": {
+					"Tag1": {
+						"name": "Beam Weapon",
+						"isactive": ""
+					},
+					"Tag2": {
+						"name": "Medium Range",
+						"isactive": ""
+					},
+					"Tag3": {
+						"name": "",
+						"isactive": "AttributeLabelInvisible"
+					}
+			    },
+				"WeaponDescOpt": {
+					"text": "Fires a continuous beam with no bullet travel.",
+					"isactive": ""
+				} 
+			},
+			"secondary_tab": {
+				"BulletDamage": {
+                    "value": 4.98,
+				    "spiritscaling": ""
+				},
+				"BulletsPerSec": {
+                    "value": 11.9,
+				    "spiritscaling": ""
+				},
+				"Ammo": {
+                    "value": 66,
+				    "spiritscaling": ""
+				},
+				"ReloadTime": {
+                    "value": 2.35,
+				    "spiritscaling": ""
+				},
+				"BulletVelocity": {
+                    "value": 508,
+				    "spiritscaling": ""
+				},
+				"BulletLifesteal": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"WeaponDamage": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"FireRate": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ClipSizeIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ReloadReduction": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"BulletVelocityIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"CritBonusScale": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"LightMelee": {
+                    "value": 63,
+				    "spiritscaling": ""
+				},
+				"HeavyMelee": {
+                    "value": 116,
+				    "spiritscaling": ""
+				}																					
+			}
+		},
+        "VitalityStats": {
+			"primary_tab": {
+				"MaxHealth": {
+                    "value": 850,
+				    "spiritscaling": ""
+				},
+				"HealAmp": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"BulletResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"MeleeResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"CritReduction": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"HealthRegen": {
+                    "value": 1.5,
+				    "spiritscaling": ""
+				},
+				"NonCombatRegen": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"DebuffResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																			
+			},
+			"secondary_tab": {
+				"MoveSpeed": {
+                    "value": 6.55,
+				    "spiritscaling": ""
+				},
+				"StaminaCooldown": {
+                    "value": 5,
+				    "spiritscaling": ""
+				},
+				"Stamina": {
+                    "value": 2,
+				    "spiritscaling": ""
+				},
+				"SprintSpeed": {
+                    "value": 4.5,
+				    "spiritscaling": ""
+				},
+				"StaminaRecovery": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																
+			}
+		},
+		"SpiritStats": {
+			"primary_tab": {
+				"AbilityCooldown": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"AbilityRange": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"MaxChargesIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"AbilityDuration": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritLifesteal": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ChargeCooldown": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritPower": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																	
+			},
+			"secondary_tab": {
+				"AbilityAffect1": {
+					"Icon": "images/abilities/bebop/bebop_uppercut_psd.png",
+					"effect": "Area Damage",
+                    "value": 75,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect2": {
+					"Icon": "images/abilities/bebop/bebop_uppercut_psd.png",
+					"effect": "Fire Rate",
+                    "value": -15,
+					"suffix": "%",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect3": {
+					"Icon": "images/abilities/bebop/bebop_sticky_bomb_psd.png",
+					"effect": "Damage",
+                    "value": 100,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect4": {
+					"Icon": "images/abilities/bebop/bebop_hyper_beam_psd.png",
+					"effect": "Damage",
+                    "value": 160,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},				
+				"AbilityAffect5": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect6": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect7": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect8": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect9": {
+				    "active": "AbilityAffectInvis"
+				}									
+			}
+		}		
+	  }
 	},
 	{
 		"id": 2,
@@ -176,7 +632,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_sm.webp",
@@ -186,7 +641,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/nano_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/nano_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/nano_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/calico_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/calico_bg.webp",
@@ -1003,7 +1458,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_sm.webp",
@@ -1013,7 +1467,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/doorman_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/doorman_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/doorman_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/doorman_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/doorman_bg.webp",
@@ -1871,7 +2325,7 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_card.png",
+		
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_sm.webp",
@@ -1881,7 +2335,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/shiv_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/shiv_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/drifter_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/drifter_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/drifter_bg.webp",
@@ -2737,7 +3191,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_sm.webp",
@@ -2747,7 +3200,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/sumo_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/sumo_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/sumo_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/dynamo_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/dynamo_bg.webp",
@@ -3603,7 +4056,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_sm.webp",
@@ -3613,7 +4065,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/archer_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/archer_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/archer_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/grey_talon_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/grey_talon_bg.webp",
@@ -4478,7 +4930,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_sm.webp",
@@ -4488,7 +4939,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/haze_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/haze_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/haze_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/haze_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/haze_bg.webp",
@@ -5347,7 +5798,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_sm.webp",
@@ -5357,7 +5807,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/astro_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/astro_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/astro_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/astro_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/astro_bg.webp",
@@ -6215,7 +6665,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_sm.webp",
@@ -6225,7 +6674,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/inferno_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/inferno_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/inferno_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/infernus_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/infernus_bg.webp",
@@ -7079,7 +7528,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_sm.webp",
@@ -7089,7 +7537,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/tengu_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/tengu_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/tengu_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/ivy_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/ivy_bg.webp",
@@ -7949,7 +8397,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_sm.webp",
@@ -7959,7 +8406,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/kelvin_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/kelvin_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kelvin_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/kelvin_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/kelvin_bg.webp",
@@ -8815,7 +9262,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_sm.webp",
@@ -8825,7 +9271,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/spectre_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/spectre_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/spectre_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/geist_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/geist_bg.webp",
@@ -9678,7 +10124,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_sm.webp",
@@ -9686,7 +10131,7 @@
 			"minimap_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_mm.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/lash_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/lash_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/lash_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/lash_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/lash_bg.webp",
@@ -10553,7 +10998,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_sm.webp",
@@ -10563,7 +11007,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/engineer_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/engineer_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/engineer_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/mcginnis_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/mcginnis_bg.webp",
@@ -11379,7 +11823,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_sm.webp",
@@ -11389,7 +11832,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/chrono_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/chrono_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/vampirebat_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/mina_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/mina_bg.webp",
@@ -12245,7 +12688,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_sm.webp",
@@ -12255,7 +12697,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/mirage_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/mirage_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/mirage_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/mirage_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/mirage_bg.webp",
@@ -13111,7 +13553,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_sm.webp",
@@ -13121,7 +13562,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/digger_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/digger_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/digger_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/krill_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/krill_bg.webp",
@@ -13937,7 +14378,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_sm.webp",
@@ -13947,7 +14387,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/hornet_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/hornet_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/bookworm_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/patience_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/patience_bg.webp",
@@ -14810,7 +15250,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_sm.webp",
@@ -14820,7 +15259,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/chrono_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/chrono_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/chrono_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/paradox_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/paradox_bg.webp",
@@ -15680,7 +16119,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_sm.webp",
@@ -15690,7 +16128,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/synth_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/synth_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/synth_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/pocket_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/pocket_bg.webp",
@@ -16553,7 +16991,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_sm.webp",
@@ -16563,7 +17000,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/gigwatt_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/gigwatt_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/gigawatt_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/seven_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/seven_bg.webp",
@@ -17425,7 +17862,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_sm.webp",
@@ -17435,7 +17871,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/shiv_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/shiv_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/shiv_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/shiv_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/shiv_bg.webp",
@@ -18291,7 +18727,6 @@
 		"complexity": 4,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_sm.webp",
@@ -18301,7 +18736,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/magician_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/magician_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/magician_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/magician_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/magician_bg.webp",
@@ -19123,7 +19558,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_sm.webp",
@@ -19133,7 +19567,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/warden_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/warden_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/frank_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/victor_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/victor_bg.webp",
@@ -20001,7 +20435,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_sm.webp",
@@ -20011,7 +20444,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/hornet_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/hornet_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/hornet_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/vindicta_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/vindicta_bg.webp",
@@ -20876,7 +21309,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_sm.webp",
@@ -20886,7 +21318,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/viscous_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/viscous_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/viscous_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/viscous_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/viscous_bg.webp",
@@ -21743,7 +22175,6 @@
 		"complexity": 1,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_sm.webp",
@@ -21753,7 +22184,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/kali_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/kali_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/kali_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/vyper_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/vyper_bg.webp",
@@ -22617,7 +23048,6 @@
 		"complexity": 2,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_sm.webp",
@@ -22627,7 +23057,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/warden_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/warden_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/warden_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/warden_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/warden_bg.webp",
@@ -23492,7 +23922,6 @@
 		"complexity": 1,
 		"skin": 1,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_sm.webp",
@@ -23502,7 +23931,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/wraith_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/wraith_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/wraith_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/wraith_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/wraith_bg.webp",
@@ -24368,7 +24797,6 @@
 		"complexity": 3,
 		"skin": 0,
 		"images": {
-			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_card.png",
 			"icon_hero_card_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_card.webp",
 			"icon_image_small": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_sm.png",
 			"icon_image_small_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_sm.webp",
@@ -24378,7 +24806,7 @@
 			"selection_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato.webp",
 			"top_bar_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/yamato_hud.png",
 			"top_bar_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/hud/hero_portraits/yamato_hud.webp",
-			"top_bar_vertical_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_vertical.png",
+			"icon_hero_card": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_vertical.png",
 			"top_bar_vertical_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/yamato_vertical.webp",
 			"background_image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/yamato_bg.png",
 			"background_image_webp": "https://assets-bucket.deadlock-api.com/assets-api-res/images/heroes/backgrounds/yamato_bg.webp",

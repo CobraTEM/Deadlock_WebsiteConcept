@@ -315,7 +315,6 @@ overflow: hidden;
 	font-family: "Pulp";
 	font-size: 22px;
 	text-transform: uppercase;
-	color: white;
 	margin: 1px;
   margin-top: 41px;
   padding: 0px 10px;  
@@ -1127,8 +1126,13 @@ filter: brightness(1.0);
 
 }
 
+.AttributeLabelInvisible {
+  visibility: collapse;
+  display: none;
+}
 
-#WeaponAttributesContainer #AttributeLabel {
+
+#WeaponAttributesContainer .AttributeLabelTag {
 background-color: rgba(0, 0, 0, .5);
 font-size: 16px;
 font-weight: bold;
@@ -1136,6 +1140,12 @@ padding: 0px 6px 1px 6px;
 border-radius: 3px;
 margin-top: 8px;
 margin-right: 8px;
+visibility: visible;
+}
+
+.AttributeLabelTag {
+  color: #ffefd7;
+  float: left;
 }
 
 #AttributeLabel {
@@ -1492,6 +1502,10 @@ align-content: right;
 }
 
 #SpiritInc {
+}
+
+.visibleinc {
+  visibility: visible;
   background-image: url("images/stats/keystat_spirit_arrow_png.png");
   background-size: cover;
   width: 32px;
@@ -1500,11 +1514,6 @@ align-content: right;
   margin-top: -40px;
   z-index: 2;
   position: absolute;
-  visibility: collapse;
-}
-
-#SpiritInc .visibleinc {
-  visibility: visible;
 }
 
 .HeroStatsFlex {
@@ -1637,6 +1646,17 @@ z-index: 2;
  margin-bottom: 10px;
  margin-top: -5px;
  color: #ffefd7;
+ visibility: visible;
+}
+
+.descinvisible {
+  visibility: collapse;
+  display: none;
+}
+
+.AbilityAffectInvis {
+  visibility: collapse;
+  display: none;
 }
 
 .statsContainer {
@@ -2751,7 +2771,11 @@ transition: 0.1s ease-in-out;
  padding-left: 75px;
  padding-right: 75px;
  margin-bottom: -150px;
+ flex-direction: column;
+ align-items: center;
  justify-content: center;
+ padding-left: 170px;
+ padding-right: 170px;
  color: white;
 
 }
@@ -2818,9 +2842,18 @@ transition: 0.1s ease-in-out;
   z-index: 2;
 }
 
+.AbilityContainerPadding2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
 .AbilityContainerPadding .AbilityContainerHeader {
   text-align: center;
-  font-family: "Pulp", serif;
+  font-family: "Occult", serif;
   font-size: 52px;
   color: #fff;
   font-weight: 500;
@@ -2828,6 +2861,22 @@ transition: 0.1s ease-in-out;
   letter-spacing: 3px;
   margin-top: 240px;
   margin-bottom: 130px;
+  width: 100%;
+	height: 96%;
+  margin-left: auto;
+  margin-right:  auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.AbilityContainerPadding2 .AbilityContainerHeader2 {
+  text-align: center;
+  font-family: "Occult", serif;
+  font-size: 52px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   width: 100%;
 	height: 96%;
   margin-left: auto;
@@ -3131,7 +3180,7 @@ transition: 0.1s ease-in-out;
 
 .ability-icon {
   filter: invert(100%);
-  opacity: 0.7;
+  opacity: 0.75;
   width: 90%;
 }
 
@@ -3401,8 +3450,22 @@ figure[typeof~='mw:File'].mw-halign-center,figure[typeof~='mw:File/Frameless'].m
   background-image: linear-gradient(180deg, transparent, black 8%);
   text-align: center;
   width: 100%;
+  height: 100%;
+  flex-grow: 1;
   z-index: 5;
   padding: 30px;
+  margin-top: auto;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 70%;
+  min-height: -webkit-calc(100% - 186px);
+  min-height: -moz-calc(100% - 186px);
+  min-height: calc(100% - 186px);
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
 .Footer .ValveLink {
