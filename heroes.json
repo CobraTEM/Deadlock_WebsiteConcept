@@ -534,6 +534,7 @@
 		"class_name": "hero_punkgoat",
 		"name": "Billy",
 		"lore": "Billy is a white hot ball of rage, furious at the very notion of...something.  Maybe it’s the cops.  Maybe it’s magic regulations.  Maybe it’s the service at the gyro place downtown.  (Not the good one.  The other one.)\n\nDon't ask him how he got the goat head.",
+		"disabled": false,
 		"color": [
 			"billyColor",
 			"billyColorSVG"
@@ -550,7 +551,7 @@
 			"icon_hero_card": "images/portraits/billy_card.png",
 			"selection_image": "images/ingame/Billy_Render.png",
 			"name_image": "images/hero_names/billy.svg",
-			"weapon_image": "images/guns/billy_gun_psd.png"
+			"weapon_image": "images/guns/punkgoat_gun_psd.png"
 		},
 		"videos": {
 			"abilityvid1": "videos/hero_abilities/.webm",
@@ -563,7 +564,247 @@
 			"ability2": "images/abilities/billy/goat_risingram_psd.png",
 			"ability3": "images/abilities/billy/goat_blasted_psd.png",
 			"ability4": "images/abilities/billy/goat_chaingang_psd.png"
+		},
+		"stats": {
+		"WeaponStats": {
+			"primary_tab": {
+				"DPS": 79,
+				"FalloffMin": 14,
+				"FalloffMax": 32,
+				"WeaponTag": {
+					"Tag1": {
+						"name": "Close Range",
+						"isactive": ""
+					},
+					"Tag2": {
+						"name": "",
+						"isactive": "AttributeLabelInvisible"
+					},
+					"Tag3": {
+						"name": "",
+						"isactive": "AttributeLabelInvisible"
+					}
+			    },
+				"WeaponDescOpt": {
+					"text": "Can regain a small amount of ammo when using melee.",
+					"isactive": ""
+				} 
+			},
+			"secondary_tab": {
+				"BulletDamage": {
+                    "value": 6.79,
+				    "spiritscaling": ""
+				},
+				"BulletsPerSec": {
+                    "value": 11.8,
+				    "spiritscaling": ""
+				},
+				"Ammo": {
+                    "value": 30,
+				    "spiritscaling": ""
+				},
+				"ReloadTime": {
+                    "value": 2.9,
+				    "spiritscaling": ""
+				},
+				"BulletVelocity": {
+                    "value": 513,
+				    "spiritscaling": ""
+				},
+				"BulletLifesteal": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"WeaponDamage": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"FireRate": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ClipSizeIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ReloadReduction": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"BulletVelocityIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"CritBonusScale": {
+                    "value": -20.0,
+				    "spiritscaling": ""
+				},
+				"LightMelee": {
+                    "value": 50,
+				    "spiritscaling": ""
+				},
+				"HeavyMelee": {
+                    "value": 116,
+				    "spiritscaling": ""
+				}																					
+			}
+		},
+		"VitalityStats": {
+			"primary_tab": {
+				"MaxHealth": {
+                    "value": 790,
+				    "spiritscaling": ""
+				},
+				"HealAmp": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"BulletResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"MeleeResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"CritReduction": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"HealthRegen": {
+                    "value": 3,
+				    "spiritscaling": ""
+				},
+				"NonCombatRegen": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"DebuffResist": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																			
+			},
+			"secondary_tab": {
+				"MoveSpeed": {
+                    "value": 7.11,
+				    "spiritscaling": ""
+				},
+				"StaminaCooldown": {
+                    "value": 5,
+				    "spiritscaling": ""
+				},
+				"Stamina": {
+                    "value": 3,
+				    "spiritscaling": ""
+				},
+				"SprintSpeed": {
+                    "value": 2.0,
+				    "spiritscaling": ""
+				},
+				"StaminaRecovery": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																
+			}
+		},
+		"SpiritStats": {
+			"primary_tab": {
+				"AbilityCooldown": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"AbilityRange": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"MaxChargesIncrease": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"AbilityDuration": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritLifesteal": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"ChargeCooldown": {
+                    "value": 0,
+				    "spiritscaling": ""
+				},
+				"SpiritPower": {
+                    "value": 0,
+				    "spiritscaling": ""
+				}																	
+			},
+			"secondary_tab": {
+				"AbilityAffect1": {
+					"Icon": "images/abilities/billy/goat_sigilslam_psd.png",
+					"effect": "Damage",
+                    "value": 35,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect2": {
+					"Icon": "images/abilities/billy/goat_risingram_psd.png",
+					"effect": "Damage",
+                    "value": 55,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect3": {
+					"Icon": "images/abilities/billy/goat_risingram_psd.png",
+					"effect": "Max Health Damage",
+                    "value": 0,
+					"suffix": "%",
+				    "active": "",
+					"iconbgactive": ""
+				},
+				"AbilityAffect4": {
+					"Icon": "images/abilities/billy/goat_blasted_psd.png",
+					"effect": "Melee Bonus Damage",
+                    "value": 80,
+					"suffix": "",
+				    "active": "",
+					"iconbgactive": ""
+				},				
+				"AbilityAffect5": {
+					"Icon": "images/abilities/billy/goat_chaingang_psd.png",
+					"effect": "Bonus Damage",
+                    "value": 0,
+					"suffix": "%",
+				    "active": ""
+				},
+				"AbilityAffect6": {
+					"Icon": "images/abilities/billy/goat_chaingang_psd.png",
+					"effect": "Damage",
+                    "value": 150,
+					"suffix": "",
+				    "active": ""
+				},
+				"AbilityAffect7": {
+					"Icon": "images/abilities/billy/goat_chaingang_psd.png",
+					"effect": "Damage Per Second",
+                    "value": 45,
+					"suffix": "",
+				    "active": ""
+				},
+				"AbilityAffect8": {
+				    "active": "AbilityAffectInvis"
+				},
+				"AbilityAffect9": {
+				    "active": "AbilityAffectInvis"
+				}									
+			}
 		}
+	  }
 	},
 	{
 		"id": 16,

@@ -346,8 +346,8 @@ const textSelect= [
         </div>
       </div>
     </div>
-    <div style="margin-top: 1px;" id="WeaponOtherStatsDisplay" class="displayStatsContainer otherStats">
-      <div style=" max-height: 50px;" id="OtherWeaponStatsContainer" class="statsContainer">
+    <div style="overflow: hidden; margin-top: 1px; id="WeaponOtherStatsDisplay" class="displayStatsContainer otherStats">
+      <div style="max-height: 50px;" id="OtherWeaponStatsContainer" class="statsContainer">
         <div id="LightMelee" class="StatElement statAttributeContainer">
           <div id="AttributeLabelStats" class="HasStatImage2">
             <div class="LabelsContainer">
